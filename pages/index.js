@@ -1,4 +1,4 @@
-import { motion, useCycle } from "framer-motion";
+import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import React, { useState } from "react";
