@@ -27,8 +27,8 @@ const sidebarVariants = {
 };
 
 function blogpage() {
-  const [isOpen, toggleOpen] = useCycle(false, true);
-  console.log({ isOpen });
+  // const [isOpen, toggleOpen] = useCycle(false, true);
+  // console.log({ isOpen });
   return (
     <>
       <Head>
@@ -72,7 +72,7 @@ function blogpage() {
             <img className="w-full" src="../tittablue.png" alt="" />
           </div>
           {}
-          <motion.nav
+          {/* <motion.nav
             animate={isOpen ? "open" : "closed"}
             initial={false}
             className="absolute top-0 right-0 bottom-0 w-[300px]"
@@ -92,7 +92,7 @@ function blogpage() {
                 "Contact",
               ]}
             />
-          </motion.nav>
+          </motion.nav> */}
         </header>
 
         <section className="heroblo z-10 text-white w-[100vw] h-[40vh] sm:h-[55vh] relative">

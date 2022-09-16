@@ -27,8 +27,8 @@ const sidebarVariants = {
 };
 
 function categorypage() {
-  const [isOpen, toggleOpen] = useCycle(false, true);
-  console.log({ isOpen });
+  // const [isOpen, toggleOpen] = useCycle(false, true);
+  // console.log({ isOpen });
   return (
     <>
       <Head>
@@ -72,7 +72,7 @@ function categorypage() {
             <img className="w-full" src="../tittablue.png" alt="" />
           </div>
           {}
-          <motion.nav
+          {/* <motion.nav
             animate={isOpen ? "open" : "closed"}
             initial={false}
             className="absolute top-0 right-0 bottom-0 w-[300px]"
@@ -92,7 +92,7 @@ function categorypage() {
                 "Contact",
               ]}
             />
-          </motion.nav>
+          </motion.nav> */}
         </header>
         <section className="pt-36 px-4">
           <div className="poppins text-5xl text-[#363636]  relative z-10 leading-tight opacity-75">
