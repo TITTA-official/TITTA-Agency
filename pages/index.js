@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import MenuToggler from "../components/MenuToggler";
 import Navigation from "../components/Navigation";
@@ -31,6 +32,32 @@ const sidebarVariants = {
 const Home = () => {
   // const [isOpen, toggleOpen] = useCycle(false, true);
   // console.log({ isOpen });
+  const portfolio = [
+    {
+      id: 0,
+      image: "/TITTA GLOBAL LOAN 2.jpg",
+      title: "Global Loan",
+      link: "https://global.com",
+    },
+    {
+      id: 1,
+      image: "/TITTA INVENTORY -1.jpg",
+      title: "inventory",
+      link: "https://global.com",
+    },
+    {
+      id: 2,
+      image: "/TITTA LODGE EASY 2.jpg",
+      title: "Lodge easy",
+      link: "https://global.com",
+    },
+    {
+      id: 3,
+      image: "/TITTA PGA 2.jpg",
+      title: "Pga",
+      link: "https://global.com",
+    },
+  ];
   return (
     <>
       <Head>
@@ -812,6 +839,39 @@ const Home = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+        <section className="min-h-[50vh] mb-10">
+          <h2 className="font-heading1 text-[#104cba] text-center font-semibold mb-5">
+            Featured Works
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {portfolio.map((item) => {
+              return (
+                <div
+                  key={item.id}
+                  className="relative h-96 w-full overflow-hidden group cursor-pointer"
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                  <div className="absolute translate-y-full transition-all duration-200 group-hover:translate-y-0 top-0 left-0 bg-black/50 flex justify-end items-start flex-col p-10 h-full w-full text-white">
+                    <h3 className="text-3xl font-semibold mb-3">
+                      {item.title}
+                    </h3>
+                    <Link href={item.link} passHref>
+                      <a className="text-sm before:transition-all block before:duration-200 relative before:animate-pulse before:absolute before:bottom-0 before:left-0 hover:before:w-full before:bg-white before:h-[2px]">
+                        View project
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
         <section className="px-4 w-full mx-auto md:max-w-6xl pb-10 md:flex md:items-center md:justify-center md:gap-x-6">
