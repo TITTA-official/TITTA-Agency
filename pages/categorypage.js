@@ -103,7 +103,7 @@ function categorypage() {
           <div className="post flex flex-col gap-y-4">
             <div className="poppins text-[#000] opacity-60">WEB DESIGN</div>
             <div className="text-[#363636] font-bold text-2xl">
-              Why you need a "Why" in design
+              Why you need a &quot;Why&quot; in design
             </div>
             <div className="thumbnail w-full">
               <img src="why.png" className="w-full" alt="" />
@@ -112,7 +112,7 @@ function categorypage() {
           <div className="post flex flex-col gap-y-4">
             <div className="poppins text-[#000] opacity-60">WEB DESIGN</div>
             <div className="text-[#363636] font-bold text-2xl">
-              Why you need a "Why" in design
+              Why you need a &quot;Why&quot; in design
             </div>
             <div className="thumbnail w-full">
               <img src="why.png" className="w-full" alt="" />
@@ -121,7 +121,7 @@ function categorypage() {
           <div className="post flex flex-col gap-y-4">
             <div className="poppins text-[#000] opacity-60">WEB DESIGN</div>
             <div className="text-[#363636] font-bold text-2xl">
-              Why you need a "Why" in design
+              Why you need a &quot;Why&quot; in design
             </div>
             <div className="thumbnail w-full">
               <img src="why.png" className="w-full" alt="" />

@@ -249,7 +249,7 @@ const Home = () => {
               Core Features
             </div>
             <div className="poppins text-3xl md:text-4xl md:leading-[1.4] leading-relaxed text-[#000] font-bold">
-              We're A Software Company That Provides Solutions.
+              We&apos;re A Software Company That Provides Solutions.
             </div>
             <div className="text-[#696969] mt-2">
               Passages of available, but the majority have suffered alteration
@@ -290,7 +290,7 @@ const Home = () => {
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
                     Simply dummy text of the and typesetting has been the
-                    industry's standard dummy text
+                    industry&apos;s standard dummy text
                   </div>
                 </div>
               </div>
@@ -330,7 +330,7 @@ const Home = () => {
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
                     Simply dummy text of the and typesetting has been the
-                    industry's standard dummy text
+                    industry&apos;s standard dummy text
                   </div>
                 </div>
               </div>
@@ -348,7 +348,7 @@ const Home = () => {
           <div className="cont px-4 py-14 md:flex md:items-center">
             <div className="left-content text-center md:text-left md:w-[75%] md:ml-12">
               <div className="poppins font-semibold text-4xl leading-relaxed ">
-                Let's Start A Cool Project With TITTA!
+                Let&apos;s Start A Cool Project With TITTA!
               </div>
               <div className="mt-2">
                 We Provide Best Solution For Your Business
