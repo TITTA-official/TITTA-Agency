@@ -66,8 +66,15 @@ const Home = () => {
       </Head>
       <main className="relative">
         <header className="w-full px-4 py-2 flex justify-between items-center absolute z-50 top-0 bg-transparent">
-          <div className="header--logo w-[145px]">
-            <img className="w-full" src="../titawhite.png" alt="" />
+          <div className="header--logo max-w-[145px]">
+            <Image
+              className="w-full"
+              src="/titawhite.png"
+              alt="logo"
+              priority
+              width="100"
+              height="50"
+            />
           </div>
           {}
           {/* <motion.nav
@@ -107,7 +114,7 @@ const Home = () => {
             animate={{ y: ["100%", "-100%"] }}
             className="particle1 w-[2px] md:w-[5px] absolute top-[18rem] -z-10 md:top-[22rem] left-[1rem] md:left-[5rem]"
           >
-            <img src="../particle.png" alt="" />
+            <Image src="/particle.png" alt="hero" layout="fill" priority />
           </motion.div>
           <motion.div
             transition={{
@@ -120,7 +127,7 @@ const Home = () => {
             animate={{ y: ["100%", "-100%"] }}
             className="particle3 absolute top-[24rem] -z-10 w-[2px] md:w-[5px] md:top-[32rem] right-[4rem] md:right-[67rem]"
           >
-            <img src="../particle.png" alt="" />
+            <Image src="/particle.png" alt="particle" layout="fill" />
           </motion.div>
           <motion.div
             transition={{
@@ -133,7 +140,7 @@ const Home = () => {
             animate={{ y: ["100%", "-100%"] }}
             className="particle4 absolute w-[2px] md:w-[5px] top-[6rem] md:top-[22rem] -z-10 right-[3rem] md:right-[19rem]"
           >
-            <img src="../particle.png" alt="" />
+            <img src="/particle.png" alt="" />
           </motion.div>
           <div className="hero-content w-full flex flex-col items-center sm:flex-row sm:justify-between sm:items-center mx-auto md:max-w-6xl  gap-y-12 px-4 md:px-0">
             <div className="sm:pl-4 left-content h-full w-full mt-[6.2rem] sm:mt-[7.5rem] md:mt-[9rem] justify-center md:gap-y-5 flex flex-col items-center sm:items-start sm:text-left text-center gap-4 sm:mr-6">
@@ -162,7 +169,7 @@ const Home = () => {
             <div className="banner-person-animation relative max-w-[22rem] sm:max-w-md sm:mr-6 md:max-w-lg  sm:self-center w-full md:-mt-[19rem] sm:-mt-40">
               <div className="w-full absolute top-0 z-20">
                 <img
-                  src="../banner-person1.png"
+                  src="/banner-person1.png"
                   className="w-full"
                   alt="banner person"
                 />
@@ -175,11 +182,7 @@ const Home = () => {
                 transition={{ duration: 6, repeat: Infinity, repeatDelay: 0 }}
                 className="bannerblob1 absolute top-0 z-10 w-full"
               >
-                <img
-                  className="w-full"
-                  src="../banner-blob-orange.png"
-                  alt=""
-                />
+                <img className="w-full" src="/banner-blob-orange.png" alt="" />
               </motion.div>
               <motion.div
                 initial={{ rotate: 0 }}
@@ -189,7 +192,7 @@ const Home = () => {
                 transition={{ duration: 6, repeat: Infinity, repeatDelay: 0 }}
                 className="bannerblob2 absolute top-0 z-0 w-full"
               >
-                <img className="w-full" src="../banner-blob-blue.png" alt="" />
+                <img className="w-full" src="/banner-blob-blue.png" alt="" />
               </motion.div>
             </div>
           </div>
@@ -205,7 +208,7 @@ const Home = () => {
           <div className="cards  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 place-items-center mt-5 md:max-w-6xl">
             <div className="card px-4 max-w-md bg-white w-full pt-8 pb-12 rounded shadow-2xl">
               <div className="">
-                <img src="../illustration1.jpg" alt="" />
+                <img src="/illustration1.jpg" alt="" />
               </div>
               <div className="font-semibold poppins md:text-xl   text-[#010101] text-lg mt-6 ">
                 Creative Idea
@@ -217,7 +220,7 @@ const Home = () => {
             </div>
             <div className="card px-4 max-w-md bg-white w-full pt-8 pb-12 rounded shadow-2xl">
               <div className="">
-                <img src="../illustration2.jpg" alt="" />
+                <img src="/illustration2.jpg" alt="" />
               </div>
               <div className="font-semibold poppins md:text-xl  text-[#010101] text-lg mt-6 ">
                 Successful Project
@@ -229,7 +232,7 @@ const Home = () => {
             </div>
             <div className="card px-4 max-w-md bg-white w-full pt-8 pb-12 rounded shadow-2xl">
               <div className="">
-                <img src="../illustration3.jpg" alt="" />
+                <img src="/illustration3.jpg" alt="" />
               </div>
               <div className="font-semibold poppins md:text-xl  text-[#010101] text-lg mt-6 ">
                 Professionalism
@@ -340,7 +343,7 @@ const Home = () => {
             </div> */}
           </div>
           <div className="right-content mt-1 md:mt-0">
-            <img src="../features.png" alt="" />
+            <img src="/features.png" alt="" />
           </div>
         </section>
         {/*Promo Section*/}
