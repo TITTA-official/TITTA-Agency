@@ -29,8 +29,8 @@ const sidebarVariants = {
 //nunito - 400, 600, 700 -body-font
 
 const Home = () => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
-  console.log({ isOpen });
+  // const [isOpen, toggleOpen] = useCycle(false, true);
+  // console.log({ isOpen });
   return (
     <>
       <Head>
