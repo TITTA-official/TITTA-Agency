@@ -35,14 +35,14 @@ const Home = () => {
   const portfolio = [
     {
       id: 0,
-      image: "/TITTA GLOBAL LOAN 2.jpg",
-      title: "Global Loan",
+      image: "/TITTA BRANDO 2.jpg",
+      title: "Brando",
       link: "https://global.com",
     },
     {
       id: 1,
       image: "/TITTA INVENTORY -1.jpg",
-      title: "inventory",
+      title: "Inventory",
       link: "https://global.com",
     },
     {
@@ -55,6 +55,36 @@ const Home = () => {
       id: 3,
       image: "/TITTA PGA 2.jpg",
       title: "Pga",
+      link: "https://global.com",
+    },
+    {
+      id: 4,
+      image: "/TITTA GOSPEL WORLD 2.jpg",
+      title: "Gospel world",
+      link: "https://global.com",
+    },
+    {
+      id: 5,
+      image: "/TITTA LAWTOP 2.jpg",
+      title: "Lawtop",
+      link: "https://global.com",
+    },
+    {
+      id: 6,
+      image: "/TITTA SURVEY 2.jpg",
+      title: "Survey",
+      link: "https://global.com",
+    },
+    {
+      id: 7,
+      image: "/TITTA Ayoni.jpg",
+      title: "Ayoni",
+      link: "https://global.com",
+    },
+    {
+      id: 8,
+      image: "/TITTA TINGLE 2.jpg",
+      title: "Tingle",
       link: "https://global.com",
     },
   ];
@@ -841,16 +871,16 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className="min-h-[50vh] mb-10">
+        <section className="min-h-[50vh] mb-10 px-5 md:px-10">
           <h2 className="font-heading1 text-[#104cba] text-center font-semibold mb-5">
             Featured Works
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {portfolio.map((item) => {
               return (
                 <div
                   key={item.id}
-                  className="relative h-96 w-full overflow-hidden group cursor-pointer"
+                  className="relative h-56 md:h-72 w-full overflow-hidden group cursor-pointer"
                 >
                   <Image
                     src={item.image}
@@ -859,7 +889,7 @@ const Home = () => {
                     objectFit="cover"
                     objectPosition="center"
                   />
-                  <div className="absolute translate-y-full transition-all duration-200 group-hover:translate-y-0 top-0 left-0 bg-black/50 flex justify-end items-start flex-col p-10 h-full w-full text-white">
+                  <div className="absolute translate-y-full transition-all duration-200 group-hover:translate-y-0 top-0 left-0 bg-black/60 flex justify-end items-start flex-col p-10 h-full w-full text-white">
                     <h3 className="text-3xl font-semibold mb-3">
                       {item.title}
                     </h3>
