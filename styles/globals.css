@@ -105,7 +105,7 @@ a:not([class]) {
   background-color: #f6f6f6;
   background-repeat: repeat-x;
   background-position: bottom center;
-  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/banner-img1.jpg");
+  background-image: url(../public//banner-img1.jpg);
   background-size: cover;
   overflow: hidden;
 }
@@ -168,7 +168,7 @@ li {
 }
 
 .background-overlay-2 {
-  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/background-blob.png");
+  background-image: url(../public/background-blob.png);
   background-position: top right;
   background-repeat: no-repeat;
   background-size: auto;
@@ -176,7 +176,7 @@ li {
   transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
 }
 .background-overlay-22 {
-  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/background-blob-22.png");
+  background-image: url(../public/background-blob-22.png);
   background-position: bottom left;
 
   background-repeat: no-repeat;
@@ -209,7 +209,7 @@ tspan {
 /* Promo Section*/
 
 .promo {
-  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/promo.png");
+  background-image: url(../public/promo.png);
   @apply text-white;
   background-position: center center;
   background-repeat: no-repeat;
@@ -218,7 +218,7 @@ tspan {
 
 .bg-another {
   background-color: #113;
-  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/bg-another.jpg");
+  background-image: url(../public/bg-another.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -269,13 +269,13 @@ tspan {
 }
 
 .tech-sol-section {
-  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/blob1.png");
+  background-image: url(../public/blob1.png);
   background-position: top right;
   background-repeat: no-repeat;
   background-size: 24% auto;
 }
 .bg-overlay {
-  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/blob2.png");
+  background-image: url(../public/blob2.png);
   background-position: -80px 780px;
   background-repeat: no-repeat;
   opacity: 1;
@@ -318,7 +318,7 @@ svg {
 /*Connect with us section*/
 
 .consultancy {
-  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/consultancy.png");
+  background-image: url(../public/consultancy.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -331,7 +331,7 @@ svg {
   color: #010101 !important;
 }
 .footer {
-  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/footer.png");
+  background-image: url(../public/footer.png);
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -339,13 +339,11 @@ svg {
 }
 
 .footer.blog {
-  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/blogfooter.jpg");
+  background-image: url(../public/blogfooter.jpg);
 }
 
 .sub-button {
-  background: transparent
-    url("https://titta-agency-d4is19kzj-titta-official.vercel.app/sub-button.png")
-    no-repeat top right !important;
+  background: transparent url(../public/sub-button.png) no-repeat top right !important;
   color: transparent;
   background-size: contain;
 }
