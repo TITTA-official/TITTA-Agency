@@ -35,58 +35,49 @@ const Home = () => {
   const portfolio = [
     {
       id: 0,
-      image: "/TITTA BRANDO 2.jpg",
-      title: "Brando",
-      link: "https://global.com",
-    },
+      image: "/TITTA PROTAROOM 2.jpg",
+      title: "Protaroom Interior Designs",
+        },
     {
       id: 1,
-      image: "/TITTA INVENTORY -1.jpg",
-      title: "Inventory",
-      link: "https://global.com",
-    },
+      image: "/TITTA GLOBAL LOAN 2.jpg",
+      title: "Global Loan",
+        },
     {
       id: 2,
-      image: "/TITTA LODGE EASY 2.jpg",
-      title: "Lodge easy",
-      link: "https://global.com",
-    },
+      image: "/TITTA SURVEY 2.jpg",
+      title: "Dynamic Survey Web App",
+        },
     {
       id: 3,
       image: "/TITTA PGA 2.jpg",
-      title: "Pga",
-      link: "https://global.com",
-    },
+      title: "PGA Travels and Tour",
+        },
     {
       id: 4,
       image: "/TITTA GOSPEL WORLD 2.jpg",
-      title: "Gospel world",
-      link: "https://global.com",
-    },
+      title: "Gospel World Music App",
+        },
     {
       id: 5,
-      image: "/TITTA LAWTOP 2.jpg",
-      title: "Lawtop",
-      link: "https://global.com",
-    },
+      image: "/TITTA TINGLE 2.jpg",
+      title: "Tingle Search Engine",
+        },
     {
       id: 6,
-      image: "/TITTA SURVEY 2.jpg",
-      title: "Survey",
-      link: "https://global.com",
-    },
+      image: "/TITTA BRANDO 2.jpg",
+      title: "Brando Graphics Portfolio",
+        },
     {
       id: 7,
-      image: "/TITTA Ayoni.jpg",
-      title: "Ayoni",
-      link: "https://global.com",
-    },
+      image: "/TITTA LAWTOP 2.jpg",
+      title: "Law Firm Agency",
+        },
     {
       id: 8,
-      image: "/TITTA TINGLE 2.jpg",
-      title: "Tingle",
-      link: "https://global.com",
-    },
+      image: "/TITTA Ayoni.jpg",
+      title: "Ayoni Catering Services",
+        },
   ];
   return (
     <>
@@ -260,7 +251,7 @@ const Home = () => {
             Featured Services
           </h3>
           <div className="poppins text-4xl md:text-4xl leading-relaxed font-semibold">
-            Engaging Creative Minds Via Technology
+           FUSING CREATIVITY WITH TECHNOLOGY
           </div>
           <div className="cards  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 place-items-center mt-5 md:max-w-6xl">
             <div className="card px-4 max-w-md bg-white w-full pt-8 pb-12 rounded shadow-2xl">
@@ -268,7 +259,7 @@ const Home = () => {
                 <img src="/illustration1.jpg" alt="" />
               </div>
               <div className="font-semibold poppins md:text-xl   text-[#010101] text-lg mt-6 ">
-                Creative Idea
+                Creativity
               </div>
               <div className="mt-2 text-sm md:text-base text-[#696969] max-w-xs leading-relaxed">
                 Whether for websites or applications, our designs will always
@@ -280,7 +271,7 @@ const Home = () => {
                 <img src="/illustration2.jpg" alt="" />
               </div>
               <div className="font-semibold poppins md:text-xl  text-[#010101] text-lg mt-6 ">
-                Successful Project
+                Successful Projects
               </div>
               <div className="mt-2 text-sm md:text-base text-[#696969] max-w-xs leading-relaxed">
                 We have several projects completed with satisfactory reviews
@@ -312,8 +303,8 @@ const Home = () => {
               We&apos;re A Software Company That Provides Solutions.
             </div>
             <div className="text-[#696969] mt-2">
-              Passages of available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words.
+              Making awesome websites for your business, we are known to Provide
+              the best UI experience turning your potential clients into customers.
             </div>
             <div className="segments mt-3 w-full">
               <div className="segment flex justify-between items-start w-full">
@@ -349,8 +340,8 @@ const Home = () => {
                     Soft Engineering
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                    Simply dummy text of the and typesetting has been the
-                    industry&apos;s standard dummy text
+                    Our engineers are trained to be detailed and produce 
+                    excellent results being punctual with your delivery.
                   </div>
                 </div>
               </div>
@@ -389,8 +380,8 @@ const Home = () => {
                     Affordable Prices
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                    Simply dummy text of the and typesetting has been the
-                    industry&apos;s standard dummy text
+                     At an affordable price, we provide software Services
+                    to bring your ideas to reality
                   </div>
                 </div>
               </div>
@@ -408,7 +399,8 @@ const Home = () => {
           <div className="cont px-4 py-14 md:flex md:items-center">
             <div className="left-content text-center md:text-left md:w-[75%] md:ml-12">
               <div className="poppins font-semibold text-4xl leading-relaxed ">
-                Let&apos;s Start A Cool Project With TITTA!
+                Begin Your Cool Project With TITTA
+                {/* Let&apos;s Start A Cool Project With TITTA! */}
               </div>
               <div className="mt-2">
                 We Provide Best Solution For Your Business
@@ -447,10 +439,10 @@ const Home = () => {
                       ></path>
                     </svg>
                   </div>
-                  <div className="poppins text-lg mt-2">Innovative Ideas</div>
+                  <div className="poppins text-lg mt-2">Web Development</div>
                   <div className="text-[#a1a1a1]">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Laudantium?
+                  Expert and creative designs for website 
+                  that provide seamless navigation and functionality.
                   </div>
                 </div>
                 <div className="card py-6 flex flex-col items-center gap-y-3 bg-another-cards">
@@ -479,10 +471,33 @@ const Home = () => {
                       ></path>
                     </svg>
                   </div>
-                  <div className="poppins text-lg mt-2">UI Experience</div>
+                  <div className="poppins text-lg mt-2"> UI/UX Design</div>
                   <div className="text-[#a1a1a1]">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Laudantium?
+                  Well-executed user interface that improve customer satisfaction and meet user expectations and ease of use.
+                  </div>
+                </div>
+                <div className="card py-6 flex flex-col items-center gap-y-3 bg-another-cards">
+                  <div className="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill="#ffffff"
+                        d="M17.854 5.646l-4.5-4.5c-0.094-0.094-0.221-0.146-0.354-0.146h-9.5c-0.827 0-1.5 0.673-1.5 1.5v16c0 0.827 0.673 1.5 1.5 1.5h13c0.827 0 1.5-0.673 1.5-1.5v-12.5c0-0.133-0.053-0.26-0.146-0.354zM16.793 6h-3.293c-0.276 0-0.5-0.224-0.5-0.5v-3.293l3.793 3.793zM16.5 19h-13c-0.276 0-0.5-0.224-0.5-0.5v-16c0-0.276 0.224-0.5 0.5-0.5h8.5v3.5c0 0.827 0.673 1.5 1.5 1.5h3.5v11.5c0 0.276-0.224 0.5-0.5 0.5z"
+                      ></path>
+                      <path
+                        fill="#ffffff"
+                        d="M11.5 13h-2.5v-2.5c0-0.276-0.224-0.5-0.5-0.5s-0.5 0.224-0.5 0.5v2.5h-2.5c-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5h2.5v2.5c0 0.276 0.224 0.5 0.5 0.5s0.5-0.224 0.5-0.5v-2.5h2.5c0.276 0 0.5-0.224 0.5-0.5s-0.224-0.5-0.5-0.5z"
+                      ></path>
+                    </svg>
+                  </div>
+
+                  <div className="poppins text-lg mt-2">Graphics Design</div>
+                  <div className="text-[#a1a1a1]">
+                  Topnotch visual creations to improve your online presence.
                   </div>
                 </div>
               </div>
@@ -505,13 +520,9 @@ const Home = () => {
                       ></path>
                     </svg>
                   </div>
-                  <div className="poppins text-lg mt-2">
-                    Highly Customizable
-                  </div>
+                  <div className="poppins text-lg mt-2">  Mobile Application Development</div>
                   <div className="text-[#a1a1a1]">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Laudantium?
-                  </div>
+                  Turning your problem solving ideas to an operational app.                  </div>
                 </div>
                 <div className="card py-6 flex flex-col items-center gap-y-3 bg-another-cards">
                   <div className="icon">
@@ -531,10 +542,9 @@ const Home = () => {
                       ></path>
                     </svg>
                   </div>
-                  <div className="poppins text-lg mt-2">Time Management</div>
+                  <div className="poppins text-lg mt-2"> Digital Marketing</div>
                   <div className="text-[#a1a1a1]">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Laudantium?
+                  Result driven marketing strategies, content creation and SEO writing.
                   </div>
                 </div>
               </div>
@@ -578,11 +588,11 @@ const Home = () => {
                   </div>
                   <div className="right-content mt-2 md:mt-0 ml-auto">
                     <div className="title font-semibold poppins">
-                      Set Everything Up In Minutes
+                      Set Everything Up with ease
                     </div>
                     <div className="title text-[#a1a1a1] mt-4">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Ex nesciunt ipsam placeat voluptatibus distinctio illum.
+                      With a great project managment system, be rest assured your 
+                      projects are treated as priority and urgent.
                     </div>
                   </div>
                 </div>
@@ -620,8 +630,8 @@ const Home = () => {
                       A Seamless UI Experience
                     </div>
                     <div className="title text-[#a1a1a1] mt-4">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Ex nesciunt ipsam placeat voluptatibus distinctio illum.
+                      Giving you a nice feel as you navigate through your apps,
+                      We are very detailed on our UI/UX systems.
                     </div>
                   </div>
                 </div>
@@ -640,7 +650,11 @@ const Home = () => {
      <div className="elementor-widget-container">
 <img width="201" height="129" src="https://softek.radiantthemes.com/wp-content/uploads/2021/07/15-7.png" className="attachment-full size-full" alt="" loading="lazy" data-no-retina=""> </div>        */}
 
-        <section className="tech-sol-section pt-32 pb-20 md:pb-24 w-full relative">
+
+{/* THIS SECTION NEEDS TO BE REPLACED WITH TESTIMONIAL */}
+      
+      
+        {/* <section className="tech-sol-section pt-32 pb-20 md:pb-24 w-full relative">
           <div className="bg-overlay w-full h-full"></div>
           <div className="content w-full mx-auto text-center px-4 flex flex-col items-center">
             <div className="font-heading1 text-[#104cba] poppins font-semibold">
@@ -870,7 +884,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         <section className="min-h-[50vh] mb-10 px-5 md:px-10">
           <h2 className="font-heading1 text-[#104cba] text-center font-semibold mb-5">
             Featured Works
@@ -893,11 +907,7 @@ const Home = () => {
                     <h3 className="text-3xl font-semibold mb-3">
                       {item.title}
                     </h3>
-                    <Link href={item.link} passHref>
-                      <a className="text-sm before:transition-all block before:duration-200 relative before:animate-pulse before:absolute before:bottom-0 before:left-0 hover:before:w-full before:bg-white before:h-[2px]">
-                        View project
-                      </a>
-                    </Link>
+                    
                   </div>
                 </div>
               );
@@ -918,8 +928,8 @@ const Home = () => {
               Perfect Technology Solution For All Medium Business
             </div>
             <div className="text-[#696969]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              magni quae qui voluptate sit aspernatur et.
+            We pay kin attention to your ideas for your project and give 
+            you suggestions and solutions from our experience and expertise.
             </div>
             <div className="progresses mt-6 flex gap-y-6 flex-col">
               <div className="progress w-full ">
@@ -1033,10 +1043,10 @@ const Home = () => {
                 Contact Us
               </div>
               <div className="max-w-[18rem]">
-                121 King St, Melbourne VIC 3000, Australia
+                1 cambridge Road, Benin City, Nigeria
               </div>
-              <div className="">Info@example.com</div>
-              <div className="">+234 816 385 7315</div>
+              <div className="">tittaorg20@gmail.com</div>
+              <div className="">+2348163857315</div>
             </div>
 
             <div className="flex flex-col gap-y-1 ">
@@ -1061,14 +1071,15 @@ const Home = () => {
                 </div>
               </div> */}
               <div className="socialmedialinks mt-8 flex w-full items-center gap-x-6">
-                <div className="fb w-[32px]">
-                  <img src="../facebook.png" className="w-full" alt="" />
-                </div>
                 <div className="twitter w-[32px]">
-                  <img src="../twitter.png" className="w-full" alt="" />
+                  <a href="https://twitter.com/Titta_Agency?t=Ka4vkIzG3i3nq6s097WP3w&s=09">
+                   <img src="../twitter.png" className="w-full" alt="" />
+                  </a>
                 </div>
                 <div className="instagram w-[32px]">
-                  <img src="instagram.png" className="w-full" alt="" />
+                 <a href="https://instagram.com/titta_agency">
+                    <img src="instagram.png" className="w-full" alt="" />
+                  </a>
                 </div>
               </div>
             </div>
