@@ -75,8 +75,8 @@ const Home = () => {
         },
     {
       id: 8,
-      image: "/TITTA Ayoni.jpg",
-      title: "Ayoni Catering Services",
+      image: "/TITTA LODGE EASY 2.jpg",
+      title: "Lodge Easy",
         },
   ];
   return (
