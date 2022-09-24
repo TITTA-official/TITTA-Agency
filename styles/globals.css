@@ -1,12 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 /*
@@ -14,14 +17,15 @@
 */
 * {
   margin: 0;
-  padding:0;
+  padding: 0;
 }
 /*
   3. Allow percentage-based heights in the application
 */
-html, body {
+html,
+body {
   height: 100%;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 /*
   Typographic tweaks!
@@ -37,26 +41,40 @@ body {
 /*
   6. Improve media defaults
 */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 /*
   7. Remove built-in form typography styles
 */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 /*
   8. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 /*
   9. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
@@ -68,9 +86,9 @@ a:not([class]) {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -81,24 +99,22 @@ a:not([class]) {
   }
 }
 
-
-
-.banner{
+.banner {
   /* position: relative; */
-  z-index:2;
+  z-index: 2;
   background-color: #f6f6f6;
-    background-repeat: repeat-x;
-    background-position: bottom center;
-    background-image: url(../public//banner-img1.jpg);
-    background-size: cover;
-    overflow: hidden
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/banner-img1.jpg");
+  background-size: cover;
+  overflow: hidden;
 }
 
-ul{
-  @apply p-5 absolute top-[100px] w-[260px]
+ul {
+  @apply p-5 absolute top-[100px] w-[260px];
 }
 
-li{
+li {
   @apply flex items-center mb-5 space-x-6 cursor-pointer;
 }
 
@@ -106,72 +122,77 @@ li{
   @apply border-0 outline-none focus:outline-none absolute top-[17px] right-0 w-[50px] h-[50px];
 }
 
-
-.bg-linear{
-  background-image: linear-gradient(90deg, rgb(255, 56, 52) 0%, rgb(255, 113, 51) 100%);
+.bg-linear {
+  background-image: linear-gradient(
+    90deg,
+    rgb(255, 56, 52) 0%,
+    rgb(255, 113, 51) 100%
+  );
   @apply py-3 px-5 rounded cursor-pointer;
 }
 
-.bg-outline{
+.bg-outline {
   @apply py-3 px-5 rounded cursor-pointer;
   color: rgb(255, 56, 52);
 }
 
-.relatived{
-  position: relative!important;
+.relatived {
+  position: relative !important;
 }
 
+@-ms-viewport {
+  width: device-width;
+}
 
-@-ms-viewport{
-    width: device-width;
-  }
-
-.poppins{
-  font-family: 'Poppins', sans-serif!important;
+.poppins {
+  font-family: "Poppins", sans-serif !important;
 }
 
 .font-heading1 {
   @apply text-lg md:text-xl font-semibold;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-.font-heading2{
+.font-heading2 {
   @apply text-2xl  md:text-3xl lg:text-[2.75rem] font-bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-.font-body{
+.font-body {
   @apply text-sm leading-loose text-center;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
-.lh{
+.lh {
   line-height: 4rem;
 }
 
-.background-overlay-2{
-  background-image: url(../public/background-blob.png);
-    background-position: top right;
-    background-repeat: no-repeat;
-    background-size: auto;
-    opacity: 1;
-    transition: background .3s,border-radius .3s,opacity .3s;
+.background-overlay-2 {
+  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/background-blob.png");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: auto;
+  opacity: 1;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
 }
-.background-overlay-22{
-  background-image: url(../public/background-blob-22.png);
-    background-position: bottom left;
-    
-    background-repeat: no-repeat;
-    background-size: auto;
-    /* transform: rotateY(290deg), translateX(100px); */
-    opacity: 1;
-    transition: background .3s,border-radius .3s,opacity .3s;
+.background-overlay-22 {
+  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/background-blob-22.png");
+  background-position: bottom left;
+
+  background-repeat: no-repeat;
+  background-size: auto;
+  /* transform: rotateY(290deg), translateX(100px); */
+  opacity: 1;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
 }
 
+tspan {
+  white-space: pre;
+}
 
-tspan { white-space:pre; }	
-
-.shp0 { fill: url(#grd1);}
+.shp0 {
+  fill: url(#grd1);
+}
 
 .segment svg {
   width: 2.45rem;
@@ -180,16 +201,15 @@ tspan { white-space:pre; }
   display: block;
 }
 
-.icon2 svg{
-  width:3.5rem;
+.icon2 svg {
+  width: 3.5rem;
   height: 3.5rem;
 }
-
 
 /* Promo Section*/
 
 .promo {
-  background-image: url(../public/promo.png);
+  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/promo.png");
   @apply text-white;
   background-position: center center;
   background-repeat: no-repeat;
@@ -198,25 +218,29 @@ tspan { white-space:pre; }
 
 .bg-another {
   background-color: #113;
-    background-image: url(../public/bg-another.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/bg-another.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.bg-another-cards{
+.bg-another-cards {
   background-color: #1a1941;
 }
 
 .bg-another .icon svg {
-  background: linear-gradient(90deg,rgba(46,14,132,1) 0%,rgba(16,78,189,1) 100%);
-    fill: #fff;
-    border-radius: 50%;
-    width: 75px;
-    height: 75px;
-    padding: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(46, 14, 132, 1) 0%,
+    rgba(16, 78, 189, 1) 100%
+  );
+  fill: #fff;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  padding: 20px;
 }
 
-.checkmark svg{
+.checkmark svg {
   width: 1em;
   height: 1em;
   position: relative;
@@ -224,7 +248,7 @@ tspan { white-space:pre; }
 }
 
 /*Technology Solutions section*/
-.tech-sol-section .card:hover{
+.tech-sol-section .card:hover {
   background-color: #104cba;
   @apply text-white;
 }
@@ -233,44 +257,42 @@ tspan { white-space:pre; }
   color: #fff;
 }
 
-
 .tech-sol-section .card:hover .bag-icon svg path {
   fill: white !important;
 }
 
-.thc{
- color: #010101;
+.thc {
+  color: #010101;
 }
-.tech-sol-section .card:hover .loremt{
+.tech-sol-section .card:hover .loremt {
   color: #b1bcdb;
 }
 
-
-.tech-sol-section{
-  background-image: url(../public/blob1.png);
+.tech-sol-section {
+  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/blob1.png");
   background-position: top right;
   background-repeat: no-repeat;
   background-size: 24% auto;
 }
-.bg-overlay{
-  background-image: url(../public/blob2.png);
+.bg-overlay {
+  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/blob2.png");
   background-position: -80px 780px;
   background-repeat: no-repeat;
   opacity: 1;
   height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 
-.illustration img{
+.illustration img {
   height: auto;
-    max-width: 100%;
-    border: none;
+  max-width: 100%;
+  border: none;
 }
 
-.bag-icon svg{
+.bag-icon svg {
   width: 3rem;
   height: 3rem;
   position: relative;
@@ -282,59 +304,56 @@ svg {
   vertical-align: middle;
 }
 
-.progressbar{
+.progressbar {
   box-shadow: 10px 10px 24px 0 #c37e7175;
   border: none;
   overflow: inherit;
 }
 
-.progressbar .bar{
+.progressbar .bar {
   background-color: transparent;
-  background-image: linear-gradient(90deg,#FF3834 0%,#FF7133 100%);
+  background-image: linear-gradient(90deg, #ff3834 0%, #ff7133 100%);
 }
 
 /*Connect with us section*/
 
-.consultancy{
-  background-image: url(../public/consultancy.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 40px 0px 105px;
+.consultancy {
+  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/consultancy.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 40px 0px 105px;
 }
 
 /*Footer Section*/
 
-.subemail{
+.subemail {
   color: #010101 !important;
 }
-.footer{
-  background-image: url(../public/footer.png);
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color:white;
+.footer {
+  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/footer.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
 }
 
-.footer.blog{
-  background-image: url(../public/blogfooter.jpg);
+.footer.blog {
+  background-image: url("https://titta-agency-d4is19kzj-titta-official.vercel.app/blogfooter.jpg");
 }
 
-.sub-button{
-  background: transparent url(../public/sub-button.png) no-repeat top right !important;
-    color: transparent;
-    background-size: contain;
-    
+.sub-button {
+  background: transparent
+    url("https://titta-agency-d4is19kzj-titta-official.vercel.app/sub-button.png")
+    no-repeat top right !important;
+  color: transparent;
+  background-size: contain;
 }
 
-.bg-rgba{
-  background-color: rgba(17, 17, 51, .15);
+.bg-rgba {
+  background-color: rgba(17, 17, 51, 0.15);
 }
 
-.rgba{
-  color:rgba(17, 17, 51, 1)
+.rgba {
+  color: rgba(17, 17, 51, 1);
 }
-/* 
-.do{
-    filter: brightness(15%);
-} */

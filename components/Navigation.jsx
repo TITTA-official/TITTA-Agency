@@ -16,7 +16,7 @@ function Navigation({items}) {
   return (
     <motion.ul className='z-20' variants={navigationVariants} >
         {items.map((item,i) => (
-            <MenuItem item={item}/>
+            <MenuItem key={i} item={item}/>
         ))}
     </motion.ul>
   )
