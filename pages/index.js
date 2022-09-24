@@ -53,11 +53,21 @@ const Home = () => {
       <motion.nav
         animate={isOpen ? "open" : "closed"}
         initial={false}
-        className='absolute top-0 right-0 bottom-0 w-[300px]'>
+        className='absolute top-0 right-0 bottom-0 w-[300px] sm:hidden'>
         <motion.div className="background bg-white absolute top-0 right-0 bottom-0 h-screen w-[300px]" variants={sidebarVariants}/>
         <MenuToggler toggle={() => toggleOpen()}/>
         <Navigation items={['Home', 'About','Services','Blog', 'Portfolio', 'Contact']}/>
       </motion.nav>
+      <nav className='smnav'>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Blog</li>
+          <li>Portfolio</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
     </header>
     {/* <section className="hero -top-20 absolute w-screen h-screen md:h-screen overflow-visible ">
       <div className="banner w-full h-full"></div>

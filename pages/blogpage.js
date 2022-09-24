@@ -82,11 +82,11 @@ function blogpage() {
         </motion.nav>
         </header>
 
-      <section className="heroblo z-10 text-white w-[100vw] h-[40vh] sm:h-[55vh] relative">
-        <img src="../bg.jpg" alt="" className="w-full h-full object-cover object-top absolute top-0 do" />
+      <section className="heroblo z-10 text-white w-[100vw] h-[40vh] relative">
+        <img src="../bloghero.jpg" alt="" className="w-full h-full object-cover object-top absolute top-0 do" />
         <div className="h-full w-full flex flex-col justify-center items-center contenthero absolute z-20 pt-20">
-          <div className="text-5xl text-white poppins ">Our Blog</div>
-          <div className="text-white mt-4 poppins"><span>Home</span> {'>'} <span>Blog</span></div>
+          <div className="text-5xl text-white poppins font-semibold">Our Blog</div>
+          <div className="text-white mt-6"><span>Home</span> {'>'} <span>Blog</span></div>
         </div>
       </section>
       <section className="py-32 mx-auto px-4">
