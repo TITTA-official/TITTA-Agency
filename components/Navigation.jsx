@@ -1,5 +1,6 @@
 import React from 'react'
 import {motion} from 'framer-motion'
+import Link from 'next/link'
 import MenuItem from './MenuItem'
 
 const navigationVariants = {
@@ -16,7 +17,7 @@ function Navigation({items}) {
   return (
     <motion.ul className='z-20' variants={navigationVariants} >
         {items.map((item,i) => (
-            <MenuItem key={i} item={item}/>
+            <MenuItem key={i} itemName={item.name} itemLocation={item.location}/>
         ))}
     </motion.ul>
   )

@@ -11,6 +11,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 /*
   2. Remove default margin
@@ -356,4 +357,42 @@ svg {
 
 .rgba {
   color: rgba(17, 17, 51, 1);
+}
+
+.animationPortfolio:hover img{
+  @apply scale-105 duration-300 transition;
+}
+
+.animationPortfolio:hover .fadeOut{
+  animation: fadeOut .3s ease-in-out forwards;
+}
+.animationPortfolio:hover .fadeIn{
+  animation: fadeIn .3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    100%{
+      opacity:1;
+      transform: translateY(-25px);
+    }
+}
+
+@keyframes fadeOut {
+  0%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+ 
+}
+
+.navbar.active{
+  background-color: white!important;
 }

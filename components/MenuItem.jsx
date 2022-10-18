@@ -1,5 +1,6 @@
 import React from 'react'
 import {motion} from 'framer-motion'
+import Link from 'next/link'
 
 const menuItemVariants = {
     open: {
@@ -20,10 +21,10 @@ const menuItemVariants = {
     }
 }
 
-function MenuItem({item}) {
+function MenuItem({itemName, itemLocation}) {
   return (
-    <motion.li className='poppins text-base font-medium text-[#333] hover:text-[#013ca3]' variants={menuItemVariants}>{item}</motion.li>
     
+        <Link href={`${itemLocation}`}><motion.li className='poppins text-base font-medium text-[#333] hover:text-[#013ca3]' variants={menuItemVariants}>{itemName}</motion.li></Link>
   )
 }
 

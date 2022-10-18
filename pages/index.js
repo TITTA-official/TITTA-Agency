@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useCycle, useScroll } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,7 +30,7 @@ const sidebarVariants = {
 //nunito - 400, 600, 700 -body-font
 
 const Home = () => {
-  // const [isOpen, toggleOpen] = useCycle(false, true);
+  const [isOpen, toggleOpen] = useCycle(false, true);
   // console.log({ isOpen });
   const portfolio = [
     {
@@ -79,9 +79,20 @@ const Home = () => {
       title: "Lodge Easy",
         },
   ];
+
+  const [changeNav, setChangeNav] = useState(false)
+
+  const handleChangeNav = (e) => {
+    if(window.scrollY >= 80) {
+      setChangeNav(true)
+    } else{
+      setChangeNav(false)
+    }
+  }
+
+  window.addEventListener('scroll', handleChangeNav)
   return (
     <>
-<<<<<<< HEAD
     <Head>
       <title>Home - TITTA</title>
       <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
@@ -93,104 +104,31 @@ const Home = () => {
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></link>
       <link rel="manifest" href="/site.webmanifest"></link>
     </Head>
-    <main className='relative'>
-    <header className='w-full px-4 py-2 flex justify-between items-center absolute z-50 top-0 bg-transparent'>
-      <div className="header--logo w-[145px]"><img className='w-full' src="../titawhite.png" alt="" /></div>
-      {
-        
-      }
-      <motion.nav
-        animate={isOpen ? "open" : "closed"}
-        initial={false}
-        className='absolute top-0 right-0 bottom-0 w-[300px] sm:hidden'>
-        <motion.div className="background bg-white absolute top-0 right-0 bottom-0 h-screen w-[300px]" variants={sidebarVariants}/>
-        <MenuToggler toggle={() => toggleOpen()}/>
-        <Navigation items={['Home', 'About','Services','Blog', 'Portfolio', 'Contact']}/>
-      </motion.nav>
-      <nav className='smnav'>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
-          <li>Blog</li>
-          <li>Portfolio</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
+    <main  className='relative w-full '>
+    <header  className={`navbar transition-all duration-500 ${changeNav ? 'bg-white text-black' : 'text-white bg-transparent'} poppins w-full sticky px-4 py-2 md:px-[7rem] z-50 top-0 left-0 right-0  flex items-center justify-between  sm:mx-auto`}>
+      <div  className="header-d-logo w-[145px]"><img className='w-full' src={`${changeNav ? '../tittablue.png': '../titawhite.png'}`} alt="" /></div>  
+      <div className="hidden   sm:flex items-center gap-x-8 e mt-8">
+        <li><Link href="/" >Home</Link></li>
+        <li><Link href="#about" >About</Link></li>
+        <li><Link href="#services">Services</Link></li>
+        <li><Link href="/blogpage">Blog</Link></li>
+        <li><Link href="/portfolio">Portfolio</Link></li>
+        <li><Link href="/contact">Contact</Link></li>
+      </div>
+        <motion.nav
+          animate={isOpen ? "open" : "closed"}
+          initial={false}
+          className='absolute top-0 right-0 bottom-0 w-[300px] sm:hidden'>
+          <motion.div className="background bg-white absolute top-0 right-0 bottom-0 h-screen w-[300px]" variants={sidebarVariants}/>
+          <MenuToggler toggle={() => toggleOpen()}/>
+          <Navigation items={[{name:'Home', location:'/'}, {name:'About', location:'/#about'},{name:'Services', location:'/#services'},{name:'Blog', location:'/blogpage'}, {name:'Portfolio', location:'/portfolio'}, {name:'Contact', location:'/contact'}]}/>
+          {/* Solution , array of objects */}
+        </motion.nav>
     </header>
     {/* <section className="hero -top-20 absolute w-screen h-screen md:h-screen overflow-visible ">
-=======
-      <Head>
-        <title>Home - TITTA</title>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        ></meta>
-        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        ></link>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        ></link>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        ></link>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        ></link>
-        <link rel="manifest" href="/site.webmanifest"></link>
-      </Head>
-      <main className="relative">
-        <header className="w-full px-4 py-2 flex justify-between items-center absolute z-50 top-0 bg-transparent">
-          <div className="header--logo max-w-[145px]">
-            <Image
-              className="w-full"
-              src="/titawhite.png"
-              alt="logo"
-              priority
-              width="100"
-              height="50"
-            />
-          </div>
-          {}
-          {/* <motion.nav
-            animate={isOpen ? "open" : "closed"}
-            initial={false}
-            className="absolute top-0 right-0 bottom-0 w-[300px]"
-          >
-            <motion.div
-              className="background bg-white absolute top-0 right-0 bottom-0 h-screen w-[300px]"
-              variants={sidebarVariants}
-            />
-            <MenuToggler toggle={() => toggleOpen()} />
-            <Navigation
-              items={[
-                "Home",
-                "About",
-                "Services",
-                "Blog",
-                "Portfolio",
-                "Contact",
-              ]}
-            />
-          </motion.nav> */}
-        </header>
-        {/* <section className="hero -top-20 absolute w-screen h-screen md:h-screen overflow-visible ">
->>>>>>> 35c427f855802f7c324c28ef07cdc4f4dcc49830
       <div className="banner w-full h-full"></div>
     </section> */}
-        <section className="hero z-10 text-white w-[100vw] h-[110vh] relative  banner 2xl:h-[80vh]">
+        <section className="hero top-[-93px] z-10 text-white w-[100vw] h-[110vh] relative  banner 2xl:h-[80vh]">
           <motion.div
             transition={{
               y: {
@@ -285,13 +223,13 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className="background-overlay-2 pt-28 pb-16 mx-auto w-full flex flex-col relative items-center gap-y-5 text-center px-4 ">
+        <section id='services' className="background-overlay-2 pt-28 pb-16 mx-auto w-full flex flex-col relative items-center gap-y-5 text-center px-4 ">
           <div className="background-overlay-22 h-[100vh] w-screen -z-10 -bottom-[10rem] absolute left-0"></div>
           <h3 className="font-heading1 text-[#104cba] poppins font-semibold">
             Featured Services
           </h3>
           <div className="poppins text-4xl md:text-4xl leading-relaxed font-semibold">
-           FUSING CREATIVITY WITH TECHNOLOGY
+           Fusing Creativity With Technology
           </div>
           <div className="cards  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 place-items-center mt-5 md:max-w-6xl">
             <div className="card px-4 max-w-md bg-white w-full pt-8 pb-12 rounded shadow-2xl">
@@ -326,7 +264,7 @@ const Home = () => {
                 Professionalism
               </div>
               <div className="mt-2 text-sm md:text-base text-[#696969] max-w-xs leading-relaxed">
-                Working with us will leave your with nothing less than
+                Working with us will leave you with nothing less than
                 professional jobs done alongside our excellent work ethics.
               </div>
             </div>
@@ -334,7 +272,7 @@ const Home = () => {
             {/* #7A7A7A; */}
           </div>
         </section>
-        <section className="pt-16 pb-28 md:pb-0 mx-auto w-full px-4 md:max-w-6xl md:px-0 md:grid md:grid-cols-2 md:place-items-between">
+        <section id='about' className="pt-16 pb-28 md:pb-0 mx-auto w-full px-4 md:max-w-6xl md:px-0 md:grid md:grid-cols-2 md:place-items-between">
           <div className="left-content flex flex-col relative items-start gap-y-5 text-start md:max-w-lg">
             <div className="font-heading1 text-[#104cba] poppins font-semibold">
               Core Features
@@ -694,7 +632,7 @@ const Home = () => {
 {/* THIS SECTION NEEDS TO BE REPLACED WITH TESTIMONIAL */}
       
       
-        {/* <section className="tech-sol-section pt-32 pb-20 md:pb-24 w-full relative">
+        <section className="tech-sol-section pt-32 pb-20 md:pb-24 w-full relative">
           <div className="bg-overlay w-full h-full"></div>
           <div className="content w-full mx-auto text-center px-4 flex flex-col items-center">
             <div className="font-heading1 text-[#104cba] poppins font-semibold">
@@ -924,9 +862,9 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </section> */}
-        <section className="min-h-[50vh] mb-10 px-5 md:px-10">
-          <h2 className="font-heading1 text-[#104cba] text-center font-semibold mb-5">
+        </section>
+        {/* <section className="min-h-[50vh] py-32 px-5 md:px-10">
+          <h2 className="font-heading1 text-[#104cba] text-center font-semibold mb-12">
             Featured Works
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -953,7 +891,7 @@ const Home = () => {
               );
             })}
           </div>
-        </section>
+        </section> */}
         <section className="px-4 w-full mx-auto md:max-w-6xl pb-10 md:flex md:items-center md:justify-center md:gap-x-6">
           <div className="left-content">
             <div className="">
@@ -1058,8 +996,8 @@ const Home = () => {
           </div>
         </section>
         <footer className="footer pt-32 px-4 w-full">
-          <div className=" grid grid-cols-1 sm:grid-cols-2 mx-auto sm:place-items-center gap-x-6 sm:max-w-6xl gap-y-14">
-            {/* <div className="stuffz  flex flex-col gap-y-1 ">
+          <div className=" grid grid-cols-1 sm:grid-cols-2 mx-auto lg:justify-items-between lg:items-start lg:grid-cols-4 lg:pt-28 gap-x-6 sm:max-w-6xl gap-y-14">
+            <div className="stuffz  flex flex-col gap-y-1 ">
               <div className="font-semibold text-[17px] poppins  mb-8">
                 Quick Links
               </div>
@@ -1068,8 +1006,8 @@ const Home = () => {
               <div className="">Terms of Services</div>
               <div className="">Customization</div>
               <div className="">Contact Us</div>
-            </div> */}
-            {/* <div className="flex flex-col gap-y-1 ">
+            </div>
+            <div className="flex flex-col gap-y-1 ">
               <div className="font-semibold text-[17px] poppins  mb-8">
                 Company
               </div>
@@ -1077,20 +1015,20 @@ const Home = () => {
               <div className="">About Us</div>
               <div className="">Services</div>
               <div className="">Contact Us</div>
-            </div> */}
+            </div>
             <div className="flex flex-col gap-y-1 ">
               <div className="font-semibold text-[17px] poppins  mb-8">
                 Contact Us
               </div>
               <div className="max-w-[18rem]">
-                1 cambridge Road, Benin City, Nigeria
+                121 King St, Melbourne VIC 3000, Australia
               </div>
-              <div className="">tittaorg20@gmail.com</div>
-              <div className="">+2348163857315</div>
+              <div className="">Info@example.com</div>
+              <div className="">+234 816 385 7315</div>
             </div>
 
             <div className="flex flex-col gap-y-1 ">
-              {/* <div className="font-semibold text-[17px] poppins  mb-8">
+              <div className="font-semibold text-[17px] poppins  mb-8">
                 Subscribe Newsletter
               </div>
               <div className="max-w-[18rem]">
@@ -1109,17 +1047,16 @@ const Home = () => {
                     className="h-full w-full"
                   />
                 </div>
-              </div> */}
+              </div>
               <div className="socialmedialinks mt-8 flex w-full items-center gap-x-6">
+                <div className="fb w-[32px]">
+                  <img src="../facebook.png" className="w-full" alt="" />
+                </div>
                 <div className="twitter w-[32px]">
-                  <a href="https://twitter.com/Titta_Agency?t=Ka4vkIzG3i3nq6s097WP3w&s=09">
-                   <img src="../twitter.png" className="w-full" alt="" />
-                  </a>
+                  <img src="../twitter.png" className="w-full" alt="" />
                 </div>
                 <div className="instagram w-[32px]">
-                 <a href="https://instagram.com/titta_agency">
-                    <img src="instagram.png" className="w-full" alt="" />
-                  </a>
+                  <img src="instagram.png" className="w-full" alt="" />
                 </div>
               </div>
             </div>
