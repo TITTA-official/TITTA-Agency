@@ -105,7 +105,7 @@ export default function blogpage({posts}) {
             {
               // Posts
               posts.map(post => (
-                <article className="blogs grid grid-cols-1 place-items-start gap-y-14 md:w-[72%]">
+                <article key={post._id} className="blogs grid grid-cols-1 place-items-start gap-y-14 md:w-[72%]">
                   <Link key={post._id} href={`/post/${post.slug.current}`}>
                     <div className="blog-post w-full h-[40%] rounded-xl bg-white shadow-2xl pb-6 cursor-pointer">
                       <div className="img relative w-full">
