@@ -33,7 +33,7 @@ const sidebarVariants = {
 function PortfolioItem({ portfolioItem }) {
   console.log(portfolioItem);
 
-  const [isOpen, toggleOpen] = useCycle(false, true);
+  const [isOpen, setToggleOpen] = useState(false);
   // console.log({ isOpen });
 
   return (
@@ -96,7 +96,7 @@ function PortfolioItem({ portfolioItem }) {
                 className="background bg-white absolute top-0 right-0 bottom-0 h-screen w-[300px]"
                 variants={sidebarVariants}
               />
-              <MenuToggler toggle={() => toggleOpen()} />
+              <MenuToggler toggle={() => setToggleOpen(!isOpen)} />
               <Navigation items={[{name:'Home', location:'/'}, {name:'About', location:'/#about'},{name:'Services', location:'/#services'},{name:'Blog', location:'/blogpage'}, {name:'Portfolio', location:'/portfolio'}, {name:'Contact', location:'/contact'}]}/>
             </motion.nav>
           </div>

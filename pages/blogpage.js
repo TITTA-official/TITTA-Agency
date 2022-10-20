@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,7 +30,7 @@ const sidebarVariants = {
 
 export default function blogpage({posts}) {
   console.log(posts)
-  const [isOpen, toggleOpen] = useCycle(false, true);
+  const [isOpen, setToggleOpen] = useState(false);
   // console.log({ isOpen });
   return (
     <>
@@ -86,7 +86,7 @@ export default function blogpage({posts}) {
                   initial={false}
                   className='absolute top-0 right-0 bottom-0 w-[300px] sm:hidden'>
                   <motion.div className="background bg-white absolute top-0 right-0 bottom-0 h-screen w-[300px]" variants={sidebarVariants}/>
-                  <MenuToggler toggle={() => toggleOpen()}/>
+                  <MenuToggler toggle={() => setToggleOpen(!isOpen)}/>
                   <Navigation items={[{name:'Home', location:'/'}, {name:'About', location:'/#about'},{name:'Services', location:'/#services'},{name:'Blog', location:'/blogpage'}, {name:'Portfolio', location:'/portfolio'}, {name:'Contact', location:'/contact'}]}/>
                 </motion.nav>
 

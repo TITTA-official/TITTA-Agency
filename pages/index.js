@@ -2,10 +2,12 @@ import { motion, useCycle, useScroll } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MenuToggler from "../components/MenuToggler";
 import Navigation from "../components/Navigation";
 import styles from "../styles/Home.module.css";
+
+
 
 const sidebarVariants = {
   // open: {opacity: 1, x:0, display:'block'},
@@ -29,8 +31,13 @@ const sidebarVariants = {
 // poppins - 500, 600, 700 - heading-font
 //nunito - 400, 600, 700 -body-font
 
+
+
 const Home = () => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
+  const [isOpen, setToggleOpen] = useState(false);
+  useEffect(() => {
+    window.addEventListener('scroll', handleChangeNav)
+  })
   // console.log({ isOpen });
   const portfolio = [
     {
@@ -89,8 +96,7 @@ const Home = () => {
       setChangeNav(false)
     }
   }
-
-  window.addEventListener('scroll', handleChangeNav)
+  
   return (
     <>
     <Head>
@@ -120,7 +126,7 @@ const Home = () => {
           initial={false}
           className='absolute top-0 right-0 bottom-0 w-[300px] sm:hidden'>
           <motion.div className="background bg-white absolute top-0 right-0 bottom-0 h-screen w-[300px]" variants={sidebarVariants}/>
-          <MenuToggler toggle={() => toggleOpen()}/>
+          <MenuToggler toggle={() => setToggleOpen(!isOpen)}/>
           <Navigation items={[{name:'Home', location:'/'}, {name:'About', location:'/#about'},{name:'Services', location:'/#services'},{name:'Blog', location:'/blogpage'}, {name:'Portfolio', location:'/portfolio'}, {name:'Contact', location:'/contact'}]}/>
           {/* Solution , array of objects */}
         </motion.nav>
