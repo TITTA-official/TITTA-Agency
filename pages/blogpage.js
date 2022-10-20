@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,7 +28,7 @@ const sidebarVariants = {
   },
 };
 
-export default function blogpage({posts}) {
+export default function Blogpage({posts}) {
   console.log(posts)
   const [isOpen, setToggleOpen] = useState(false);
   // console.log({ isOpen });
