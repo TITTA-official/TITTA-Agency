@@ -124,7 +124,7 @@ const Home = () => {
         <motion.nav
           animate={isOpen ? "open" : "closed"}
           initial={false}
-          className='absolute top-0 right-0 bottom-0 w-[300px] sm:hidden'>
+          className={`absolute top-0 right-0 bottom-0 sm:hidden ${isOpen ? 'w-[300px]': 'w-[0px]'}`}>
           <motion.div className="background bg-white absolute top-0 right-0 bottom-0 h-screen w-[300px]" variants={sidebarVariants}/>
           <MenuToggler toggle={() => setToggleOpen(!isOpen)}/>
           <Navigation items={[{name:'Home', location:'/'}, {name:'About', location:'/#about'},{name:'Services', location:'/#services'},{name:'Blog', location:'/blogpage'}, {name:'Portfolio', location:'/portfolio'}, {name:'Contact', location:'/contact'}]}/>

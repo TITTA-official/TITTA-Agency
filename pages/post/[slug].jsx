@@ -69,7 +69,7 @@ function Post({ post }) {
                 <motion.nav
                   animate={isOpen ? "open" : "closed"}
                   initial={false}
-                  className='absolute top-0 right-0 bottom-0 w-[300px] sm:hidden'>
+                  className={`absolute top-0 right-0 bottom-0 sm:hidden ${isOpen ? 'w-[300px]': 'w-[0px]'}`}>
                   <motion.div className="background bg-white absolute top-0 right-0 bottom-0 h-screen w-[300px]" variants={sidebarVariants}/>
                   <MenuToggler toggle={() => setToggleOpen(!isOpen)}/>
                   <Navigation items={[{name:'Home', location:'/'}, {name:'About', location:'/#about'},{name:'Services', location:'/#services'},{name:'Blog', location:'/blogpage'}, {name:'Portfolio', location:'/portfolio'}, {name:'Contact', location:'/contact'}]}/>
@@ -132,7 +132,7 @@ function Post({ post }) {
     
       {
         submitted ? (
-            <div className="flex flex-col p-10 my-10 bg-blue-700 text-white max-w-2xl mx-auto">
+            <div className="flex flex-col p-10 my-10 bg-[#104cba] text-white max-w-2xl mx-auto">
                 <h3 className="text-3xl font-bold">Thank you for submitting your comment!</h3>
                 <p>Once it has been approved, it will appear below!</p>
             </div>
@@ -148,7 +148,7 @@ function Post({ post }) {
                 <span className="text-gray-700">Name</span>
                 <input
                     {...register("name", { required: true })}
-                    className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-800 focus:ring outline-none"
+                    className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-[#104cba] focus:ring outline-none"
                     type="text"
                     placeholder="George Blonde"
                 />
@@ -157,7 +157,7 @@ function Post({ post }) {
                 <span className="text-gray-700">Email</span>
                 <input
                     {...register("email", { required: true })}
-                    className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-800 focus:ring outline-none"
+                    className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-[#104cba] focus:ring outline-none"
                     type="email"
                     placeholder="GeorgeBlonde@gmail.com"
                 />
@@ -166,7 +166,7 @@ function Post({ post }) {
                 <span className="text-gray-700">Comment</span>
                 <textarea
                     {...register("comment", { required: true })}
-                    className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-blue-800 focus:ring outline-none"
+                    className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-[#104cba] focus:ring outline-none"
                     placeholder="Type your comments here"
                     rows={8}
                 />
@@ -187,20 +187,20 @@ function Post({ post }) {
                 </div>
                 <input
                 type="submit"
-                className="shadow bg-[#ff583c]  hover:bg-[#ff583c] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
+                className="shadow bg-[#104cba]  hover:bg-[#104cba] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
                 />
             </form>
         )
       }
 
-      <div className="flex flex-col mb-20 p-10 my-10 max-w-2xl mx-auto shadow-[#ff583c] shadow space-y-2">
+      <div className="flex flex-col mb-20 p-10 my-10 max-w-2xl mx-auto shadow-[#104cba] shadow space-y-2">
         <h3 className="text-4xl">Comments</h3>
         <hr className="pb-2"/>
 
         {post.comments.map((comment) => (
             <div key={comment._id}>
                 <p>
-                    <span className="text-blue-700">{comment.name}: </span>
+                    <span className="text-[#104cba]">{comment.name}: </span>
                     {comment.comment}
                 </p>
             </div>

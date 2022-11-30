@@ -84,7 +84,7 @@ export default function Blogpage({posts}) {
                 <motion.nav
                   animate={isOpen ? "open" : "closed"}
                   initial={false}
-                  className='absolute top-0 right-0 bottom-0 w-[300px] sm:hidden'>
+                  className={`absolute top-0 right-0 bottom-0 sm:hidden ${isOpen ? 'w-[300px]': 'w-[0px]'}`}>
                   <motion.div className="background bg-white absolute top-0 right-0 bottom-0 h-screen w-[300px]" variants={sidebarVariants}/>
                   <MenuToggler toggle={() => setToggleOpen(!isOpen)}/>
                   <Navigation items={[{name:'Home', location:'/'}, {name:'About', location:'/#about'},{name:'Services', location:'/#services'},{name:'Blog', location:'/blogpage'}, {name:'Portfolio', location:'/portfolio'}, {name:'Contact', location:'/contact'}]}/>
@@ -93,7 +93,7 @@ export default function Blogpage({posts}) {
             </div>
         </header>
 
-      <section className="heroblo z-10 text-white w-[100vw] h-[55vh]  relative">
+      <section className="heroblo z-10 text-white w-[100vw] h-[40vh] md:h-[55vh]  relative">
         <img src="../Sprinkle.svg" alt="" className="w-full h-full object-cover object-top absolute top-0 do" />
         <div className="h-full w-full flex flex-col justify-center items-center contenthero absolute z-20 pt-20">
           <div className="text-5xl text-white poppins font-semibold">Our Blog</div>
