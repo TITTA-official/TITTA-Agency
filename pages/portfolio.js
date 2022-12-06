@@ -171,7 +171,7 @@ function Portfolio() {
         <section className=" px-4 portfolio-cards grid grid-cols-1 place-items-start gap-10 mx-auto w-full pt-32 pb-32 sm:max-w-6xl sm:grid-cols-3">
             {
                 portfolios.map((portfolio) => (
-                  <Link key={portfolio.id} href={`/portfolio-details/${portfolio.link}`}>
+                  <Link key={portfolio.id} href={`#`}>
                     <div className="w-full mx-auto animationPortfolio">
                             <div className="img w-full rounded overflow-hidden ">
                                 <img src={portfolio.image} className='w-full pointer-events-none' alt="Porfolio-img" />
