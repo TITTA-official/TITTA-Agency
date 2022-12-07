@@ -102,10 +102,11 @@ export default function Blogpage({posts}) {
       </section>
       
         <section className="py-32 mx-auto px-4 md:flex md:gap-x-[3%] md:max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-8 place-items-start">
             {
               // Posts
               posts.map(post => (
-                <article key={post._id} className="blogs grid grid-cols-1 place-items-start gap-y-14 md:w-[72%]">
+                <article key={post._id} className="blogs  md:w-[100%]">
                   <Link key={post._id} href={`/post/${post.slug.current}`}>
                     <div className="blog-post w-full h-[40%] rounded-xl bg-white shadow-2xl pb-6 cursor-pointer">
                       <div className="img relative w-full">
@@ -161,6 +162,7 @@ export default function Blogpage({posts}) {
                 </article>
               ))
             }
+          </div>
           <aside className="pt-24 md:pt-0 md:w-[37%]">
             <div className="author-card bg-white w-full rounded-xl shadow-2xl py-9 px-4 flex flex-col gap-y-5 justify-center items-center">
               <div className="border-2 border-red-600 rounded-full w-[140px] h-[140px] p-[10px]">
