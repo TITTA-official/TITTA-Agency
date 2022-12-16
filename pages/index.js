@@ -118,7 +118,7 @@ const Home = () => {
         <li><Link href="#about" >About</Link></li>
         <li><Link href="#services">Services</Link></li>
         <li><Link href="/blogpage">Blog</Link></li>
-        <li><Link href="/portfolio">Portfolio</Link></li>
+        <li><Link href="/">Portfolio</Link></li>
         <li><Link href="/contact">Contact</Link></li>
       </div>
         <motion.nav
@@ -638,7 +638,7 @@ const Home = () => {
 {/* THIS SECTION NEEDS TO BE REPLACED WITH TESTIMONIAL */}
       
       
-        <section className="tech-sol-section pt-32 pb-20 md:pb-24 w-full relative">
+        {/* <section className="tech-sol-section pt-32 pb-20 md:pb-24 w-full relative">
           <div className="bg-overlay w-full h-full"></div>
           <div className="content w-full mx-auto text-center px-4 flex flex-col items-center">
             <div className="font-heading1 text-[#104cba] poppins font-semibold">
@@ -868,7 +868,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         {/* <section className="min-h-[50vh] py-32 px-5 md:px-10">
           <h2 className="font-heading1 text-[#104cba] text-center font-semibold mb-12">
             Featured Works
