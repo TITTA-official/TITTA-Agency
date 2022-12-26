@@ -129,11 +129,11 @@ li {
     rgb(255, 56, 52) 0%,
     rgb(255, 113, 51) 100%
   );
-  @apply py-3 px-5 rounded cursor-pointer;
+  @apply px-5 py-3 rounded cursor-pointer;
 }
 
 .bg-outline {
-  @apply py-3 px-5 rounded cursor-pointer;
+  @apply px-5 py-3 rounded cursor-pointer;
   color: rgb(255, 56, 52);
 }
 
@@ -150,7 +150,7 @@ li {
 }
 
 .font-heading1 {
-  @apply text-lg md:text-xl font-semibold;
+  @apply text-lg font-semibold md:text-xl;
   font-family: "Poppins", sans-serif;
 }
 
@@ -359,40 +359,39 @@ svg {
   color: rgba(17, 17, 51, 1);
 }
 
-.animationPortfolio:hover img{
-  @apply scale-105 duration-300 transition;
+.animationPortfolio:hover img {
+  @apply transition duration-300 scale-105;
 }
 
-.animationPortfolio:hover .fadeOut{
-  animation: fadeOut .3s ease-in-out forwards;
+.animationPortfolio:hover .fadeOut {
+  animation: fadeOut 0.3s ease-in-out forwards;
 }
-.animationPortfolio:hover .fadeIn{
-  animation: fadeIn .3s ease-in-out forwards;
+.animationPortfolio:hover .fadeIn {
+  animation: fadeIn 0.3s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(0);
-    }
-    100%{
-      opacity:1;
-      transform: translateY(-25px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-25px);
+  }
 }
 
 @keyframes fadeOut {
-  0%{
+  0% {
     opacity: 1;
     transform: translateY(0);
   }
-  100%{
+  100% {
     opacity: 0;
     transform: translateY(-10px);
   }
- 
 }
 
-.navbar.active{
-  background-color: white!important;
+.navbar.active {
+  background-color: white !important;
 }
