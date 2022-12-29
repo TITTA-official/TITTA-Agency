@@ -1,14 +1,16 @@
-import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useState } from "react";
 // import styles from "../../styles/Home.module.css";
 import { motion, useCycle } from "framer-motion";
 import MenuToggler from "../../components/MenuToggler";
 import Navigation from "../../components/Navigation";
 // import { sanityClient, urlFor } from "../sanity";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 
 const sidebarVariants = {
   // open: {opacity: 1, x:0, display:'block'},
@@ -38,87 +40,51 @@ function PortfolioItem({ portfolioItem }) {
 
   return (
     <>
-      <Head>
-        <title>Portfolio - TITTA</title>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        ></meta>
-        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        ></link>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap"
-          rel="stylesheet"
-        ></link>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        ></link>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        ></link>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        ></link>
-        <link rel="manifest" href="/site.webmanifest"></link>
-      </Head>
       <main className="relative">
-        <header className="w-screen sticky top-0 z-[999] bg-white poppins shadow-xl">
-          <div className="w-full bg-white md:mx-auto max-w-6xl px-4 py-2 relative z-50 top-0 left-0 right-0 flex items-center justify-between  sm:mx-auto ">
-            <div className="header-d-logo w-[145px]">
-              <img className="w-full" src="../tittablue.png" alt="" />
-            </div>
-            <div className="hidden   sm:flex items-center gap-x-8 text-[#000] mt-8">
-            <li><Link href="/" >Home</Link></li>
-        <li><Link href="/#about" >About</Link></li>
-        <li><Link href="/#services">Services</Link></li>
-        <li><Link href="/blogpage">Blog</Link></li>
-        <li><Link href="/portfolio">Portfolio</Link></li>
-        <li><Link href="/contact">Contact</Link></li>
-            </div>
+        <header className="w-screen sticky top-0 z-[999] bg-white shadow-xl poppins">
+          <div className="relative top-0 left-0 right-0 z-50 flex items-center justify-between w-full max-w-6xl px-4 py-2 bg-white md:mx-auto sm:mx-auto ">
+            <Navbar />
             <motion.nav
               animate={isOpen ? "open" : "closed"}
               initial={false}
-              className={`absolute top-0 right-0 bottom-0 sm:hidden ${isOpen ? 'w-[300px]': 'w-[0px]'}`}
+              className={`absolute top-0 right-0 bottom-0 sm:hidden ${
+                isOpen ? "w-[300px]" : "w-[0px]"
+              }`}
             >
               <motion.div
                 className="background bg-white absolute top-0 right-0 bottom-0 h-screen w-[300px]"
                 variants={sidebarVariants}
               />
               <MenuToggler toggle={() => setToggleOpen(!isOpen)} />
-              <Navigation items={[{name:'Home', location:'/'}, {name:'About', location:'/#about'},{name:'Services', location:'/#services'},{name:'Blog', location:'/blogpage'}, {name:'Portfolio', location:'/portfolio'}, {name:'Contact', location:'/contact'}]}/>
+              <Navigation
+                items={[
+                  { name: "Home", location: "/" },
+                  { name: "About", location: "/#about" },
+                  { name: "Services", location: "/#services" },
+                  { name: "Blog", location: "/blog" },
+                  { name: "Portfolio", location: "/portfolio" },
+                  { name: "Contact", location: "/contact" },
+                ]}
+              />
             </motion.nav>
           </div>
         </header>
 
         <section className="heroblo z-10 text-white w-[100vw] h-[40vh] md:h-[55vh]  relative">
-          <img
-            src="../Sprinkle.svg"
-            alt=""
-            className="w-full h-full object-cover object-top absolute top-0 do"
-          />
-          <div className="h-full w-full flex flex-col justify-center items-center contenthero absolute z-20 pt-20">
-            <div className="text-5xl text-white poppins font-semibold text-center">
+          <div className="relative w-full h-full">
+            <Image src="/Sprinkle.svg" alt="sprinkle" layout="fill" priority />
+          </div>
+          <div className="absolute z-20 flex flex-col items-center justify-center w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+            <div className="text-5xl font-semibold text-center text-white poppins">
               Portfolio Details
             </div>
-            <div className="text-white mt-6">
+            <div className="mt-6 text-white">
               <span>Home</span> {">"} <span>Portfolio</span>
             </div>
           </div>
         </section>
 
-        <section className="py-32 px-4 max-w-6xl mx-auto md:mt-20">
+        <section className="max-w-6xl px-4 py-32 mx-auto md:mt-20">
           <div className="w-full">
             <Carousel
               className="p-0 m-0 -mt-[13rem]"
@@ -129,14 +95,18 @@ function PortfolioItem({ portfolioItem }) {
               showIndicators={false}
               infiniteLoop
             >
-              <div className="h-full w-full">
-                <img
+              <div className="w-full h-full">
+                <Image
+                  layout="fill"
+                  alt="image"
                   src={portfolioItem[0].image1}
                   className="w-full h-[40ch] md:h-full object-contain"
                 />
               </div>
-              <div className="h-full w-full">
-                <img
+              <div className="w-full h-full">
+                <Image
+                  layout="fill"
+                  alt="image"
                   src={portfolioItem[0].image2}
                   className="w-full h-[40ch] md:h-full object-contain"
                 />
@@ -152,7 +122,7 @@ function PortfolioItem({ portfolioItem }) {
                 {portfolioItem[0].about}
               </div>
             </div>
-            <div className=" mt-6 md:my-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6 mt-6 md:my-10 md:grid-cols-2">
               <div className="">
                 <div className="text-lg text-[#101010] poppins font-semibold">
                   Client:
@@ -181,21 +151,42 @@ function PortfolioItem({ portfolioItem }) {
                 <div className="text-lg text-[#101010] poppins font-semibold">
                   Share:
                 </div>
-                <div className="socialmedialinks mt-8 flex w-full items-center gap-x-6">
-                  <Link href={portfolioItem[0].socialMediaFb}>
-                    <div className="fb w-[32px]">
-                      <img src="../facebook.png" className="w-full" alt="" />
-                    </div>
+                <div className="flex items-center w-full mt-8 socialmedialinks gap-x-6">
+                  <Link href={portfolioItem[0].socialMediaFb} passHref>
+                    <a>
+                      <div className="relative w-8 h-8 fb">
+                        <Image
+                          layout="fill"
+                          src="../facebook.png"
+                          className="w-full"
+                          alt=""
+                        />
+                      </div>
+                    </a>
                   </Link>
-                  <Link href={portfolioItem[0].socialMediaTw}>
-                    <div className="twitter w-[32px]">
-                      <img src="../twitter.png" className="w-full" alt="" />
-                    </div>
+                  <Link href={portfolioItem[0].socialMediaTw} passHref>
+                    <a>
+                      <div className="relative w-8 h-8 twitter">
+                        <Image
+                          layout="fill"
+                          src="../twitter.png"
+                          className="w-full"
+                          alt=""
+                        />
+                      </div>
+                    </a>
                   </Link>
-                  <Link href={portfolioItem[0].socialMediaIg}>
-                    <div className="instagram w-[32px]">
-                      <img src="instagram.png" className="w-full" alt="" />
-                    </div>
+                  <Link href={portfolioItem[0].socialMediaIg} passHref>
+                    <a>
+                      <div className="relative w-8 h-8 instagram">
+                        <Image
+                          layout="fill"
+                          src="instagram.png"
+                          className="w-full"
+                          alt=""
+                        />
+                      </div>
+                    </a>
                   </Link>
                 </div>
               </div>
@@ -203,76 +194,7 @@ function PortfolioItem({ portfolioItem }) {
           </div>
         </section>
 
-        <footer className="footer blog pt-32 md:pt-0 px-4 w-full">
-          <div className=" grid grid-cols-1 sm:grid-cols-2 mx-auto lg:justify-items-between lg:items-start lg:grid-cols-4 lg:pt-28 gap-x-6 sm:max-w-6xl gap-y-14">
-            <div className="flex flex-col gap-y-1 -mt-4">
-              <div className="w-[50%]  mb-8">
-                <img src="../titawhite.png" alt="" className="w-full"/>
-              </div>
-              <div className="leading-relaxed max-w-xs">
-                Lorem ipsum dolor sit amet.
-              </div>
-              <div className="socialmedialinks mt-8 flex w-full items-center gap-x-6">
-                <div className="fb w-[32px]">
-                  <img src="../facebook.png" className="w-full" alt="" />
-                </div>
-                <div className="twitter w-[32px]">
-                  <img src="../twitter.png" className="w-full" alt="" />
-                </div>
-                <div className="instagram w-[32px]">
-                  <img src="instagram.png" className="w-full" alt="" />
-                </div>
-              </div>
-            </div>
-            <div className="stuffz  flex flex-col gap-y-1 ">
-              <div className="font-semibold text-[17px] poppins  mb-8">
-                Quick Links
-              </div>
-              <div className="">Pricing</div>
-              <div className="">Tracking</div>
-              <div className="">Terms of Services</div>
-              <div className="">Customization</div>
-              <div className="">Contact Us</div>
-            </div>
-            <div className="flex flex-col gap-y-1 ">
-              <div className="font-semibold text-[17px] poppins  mb-8">
-                Contact Us
-              </div>
-              <div className="max-w-[18rem]">
-                121 King St, Melbourne VIC 3000, Australia
-              </div>
-              <div className="">Info@example.com</div>
-              <div className="">+234 816 385 7315</div>
-            </div>
-
-            <div className="flex flex-col gap-y-1 ">
-              <div className="font-semibold text-[17px] poppins  mb-8">
-                Subscribe Newsletter
-              </div>
-              <div className="max-w-[18rem]">
-                Follow our newsletter to stay updated about us
-              </div>
-              <div className="flex subemail mt-2 w-full h-full rounded overflow-hidden">
-                <input
-                  type="text"
-                  className="px-7 py-4 w-[82%]"
-                  placeholder="Email Address"
-                />
-                <div className="bttn border-0 object-contain w-[18%]">
-                  <img
-                    src="../sub-button.png"
-                    alt=""
-                    className="h-full w-full"
-                  />
-                </div>
-              </div>
-              
-            </div>
-          </div>
-          <section className="sm:max-w-6xl mx-auto cprght border-t-[#515dbb] border-t mt-24 py-6 text-center  text-[#a7b4df] text-sm">
-            2022 TITTA. All Rights Reserved.
-          </section>
-        </footer>
+        <Footer />
       </main>
     </>
   );
@@ -290,7 +212,7 @@ export const getStaticPaths = () => {
       title: "Protaroom Interior Designs",
       category: "Website",
       link: "protaroom-project",
-      date: 'ohh',
+      date: "ohh",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -304,7 +226,7 @@ export const getStaticPaths = () => {
       title: "Global Loan",
       category: "Website",
       link: "global-loan-project",
-      date: 'ohh',
+      date: "ohh",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -318,7 +240,7 @@ export const getStaticPaths = () => {
       title: "Dynamic Survey Web App",
       category: "Website",
       link: "survey-project",
-      date: 'ohh',
+      date: "ohh",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -332,7 +254,7 @@ export const getStaticPaths = () => {
       title: "PGA Travels and Tour",
       category: "Website",
       link: "pga-travels-project",
-      date: 'ohh',
+      date: "ohh",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -346,7 +268,7 @@ export const getStaticPaths = () => {
       title: "Gospel World Music App",
       category: "Website",
       link: "gospel-world-project",
-      date: 'ohh',
+      date: "ohh",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -360,7 +282,7 @@ export const getStaticPaths = () => {
       title: "Tingle Search Engine",
       category: "Website",
       link: "tingle-project",
-      date: 'ohh',
+      date: "ohh",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -374,7 +296,7 @@ export const getStaticPaths = () => {
       title: "Brando Graphics Portfolio",
       category: "Website",
       link: "brando-project",
-      date: 'ohh',
+      date: "ohh",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -388,7 +310,7 @@ export const getStaticPaths = () => {
       title: "Law Firm Agency",
       category: "Website",
       link: "brando-project",
-      date: 'ohh',
+      date: "ohh",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -402,7 +324,7 @@ export const getStaticPaths = () => {
       title: "Lodge Easy",
       category: "Website",
       link: "lodge-easy-project",
-      date: 'ohh',
+      date: "ohh",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -436,7 +358,7 @@ export const getStaticProps = ({ params }) => {
       Suscipit, repudiandae ab.`,
       category: "Website",
       link: "protaroom-project",
-      date: '12th November, 2022',
+      date: "12th November, 2022",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -454,7 +376,7 @@ export const getStaticProps = ({ params }) => {
       Suscipit, repudiandae ab.`,
       category: "Website",
       link: "global-loan-project",
-      date: '12th November, 2022',
+      date: "12th November, 2022",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -472,7 +394,7 @@ export const getStaticProps = ({ params }) => {
       Suscipit, repudiandae ab.`,
       category: "Website",
       link: "survey-project",
-      date: '12th November, 2022',
+      date: "12th November, 2022",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -490,7 +412,7 @@ export const getStaticProps = ({ params }) => {
       Suscipit, repudiandae ab.`,
       category: "Website",
       link: "pga-travels-project",
-      date: '12th November, 2022',
+      date: "12th November, 2022",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -508,7 +430,7 @@ export const getStaticProps = ({ params }) => {
       Suscipit, repudiandae ab.`,
       category: "Website",
       link: "gospel-world-project",
-      date: '12th November, 2022',
+      date: "12th November, 2022",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -526,7 +448,7 @@ export const getStaticProps = ({ params }) => {
       Suscipit, repudiandae ab.`,
       category: "Website",
       link: "tingle-project",
-      date: '12th November, 2022',
+      date: "12th November, 2022",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -544,7 +466,7 @@ export const getStaticProps = ({ params }) => {
       Suscipit, repudiandae ab.`,
       category: "Website",
       link: "brando-project",
-      date: '12th November, 2022',
+      date: "12th November, 2022",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -562,7 +484,7 @@ export const getStaticProps = ({ params }) => {
       Suscipit, repudiandae ab.`,
       category: "Website",
       link: "brando-project",
-      date: '12th November, 2022',
+      date: "12th November, 2022",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -580,7 +502,7 @@ export const getStaticProps = ({ params }) => {
       Suscipit, repudiandae ab.`,
       category: "Website",
       link: "lodge-easy-project",
-      date: '12th November, 2022',
+      date: "12th November, 2022",
       socialMediaFb: "www.facebook.com",
       socialMediaIg: "www.facebook.com",
       socialMediaLi: "www.facebook.com",
@@ -601,6 +523,6 @@ export const getStaticProps = ({ params }) => {
     props: {
       portfolioItem,
     },
-  }
-}
-    //after 3600 seconds 60mins/1hr, it'll update: 'ohh';
+  };
+};
+//after 3600 seconds 60mins/1hr, it'll update: 'ohh';

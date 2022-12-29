@@ -2,12 +2,12 @@ import { motion, useCycle, useScroll } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Footer from "../components/Footer";
 import MenuToggler from "../components/MenuToggler";
+import Navbar from "../components/Navbar";
 import Navigation from "../components/Navigation";
 import styles from "../styles/Home.module.css";
-
-
 
 const sidebarVariants = {
   // open: {opacity: 1, x:0, display:'block'},
@@ -31,108 +31,106 @@ const sidebarVariants = {
 // poppins - 500, 600, 700 - heading-font
 //nunito - 400, 600, 700 -body-font
 
-
-
 const Home = () => {
   const [isOpen, setToggleOpen] = useState(false);
   useEffect(() => {
-    window.addEventListener('scroll', handleChangeNav)
-  })
+    window.addEventListener("scroll", handleChangeNav);
+  });
   // console.log({ isOpen });
   const portfolio = [
     {
       id: 0,
       image: "/TITTA PROTAROOM 2.jpg",
       title: "Protaroom Interior Designs",
-        },
+    },
     {
       id: 1,
       image: "/TITTA GLOBAL LOAN 2.jpg",
       title: "Global Loan",
-        },
+    },
     {
       id: 2,
       image: "/TITTA SURVEY 2.jpg",
       title: "Dynamic Survey Web App",
-        },
+    },
     {
       id: 3,
       image: "/TITTA PGA 2.jpg",
       title: "PGA Travels and Tour",
-        },
+    },
     {
       id: 4,
       image: "/TITTA GOSPEL WORLD 2.jpg",
       title: "Gospel World Music App",
-        },
+    },
     {
       id: 5,
       image: "/TITTA TINGLE 2.jpg",
       title: "Tingle Search Engine",
-        },
+    },
     {
       id: 6,
       image: "/TITTA BRANDO 2.jpg",
       title: "Brando Graphics Portfolio",
-        },
+    },
     {
       id: 7,
       image: "/TITTA LAWTOP 2.jpg",
       title: "Law Firm Agency",
-        },
+    },
     {
       id: 8,
       image: "/TITTA LODGE EASY 2.jpg",
       title: "Lodge Easy",
-        },
+    },
   ];
 
-  const [changeNav, setChangeNav] = useState(false)
+  const [changeNav, setChangeNav] = useState(false);
 
   const handleChangeNav = (e) => {
-    if(window.scrollY >= 80) {
-      setChangeNav(true)
-    } else{
-      setChangeNav(false)
+    if (window.scrollY >= 80) {
+      setChangeNav(true);
+    } else {
+      setChangeNav(false);
     }
-  }
-  
+  };
+
   return (
     <>
-    <Head>
-      <title>Home - TITTA</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-      <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true}></link>
-      <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"></link>
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"></link>
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"></link>
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></link>
-      <link rel="manifest" href="/site.webmanifest"></link>
-    </Head>
-    <main  className='relative w-full '>
-    <header  className={`navbar transition-all duration-500 ${changeNav ? 'bg-white text-black' : 'text-white bg-transparent'} poppins w-full sticky px-4 py-2 md:px-[7rem] z-50 top-0 left-0 right-0  flex items-center justify-between  sm:mx-auto`}>
-      <div  className="header-d-logo w-[145px]"><img className='w-full' src={`${changeNav ? '../tittablue.png': '../titawhite.png'}`} alt="" /></div>  
-      <div className="hidden   sm:flex items-center gap-x-8 e mt-8">
-        <li><Link href="/" >Home</Link></li>
-        <li><Link href="#about" >About</Link></li>
-        <li><Link href="#services">Services</Link></li>
-        <li><Link href="/blogpage">Blog</Link></li>
-        <li><Link href="/">Portfolio</Link></li>
-        <li><Link href="/contact">Contact</Link></li>
-      </div>
-        <motion.nav
-          animate={isOpen ? "open" : "closed"}
-          initial={false}
-          className={`absolute top-0 right-0 bottom-0 sm:hidden ${isOpen ? 'w-[300px]': 'w-[0px]'}`}>
-          <motion.div className="background bg-white absolute top-0 right-0 bottom-0 h-screen w-[300px]" variants={sidebarVariants}/>
-          <MenuToggler toggle={() => setToggleOpen(!isOpen)}/>
-          <Navigation items={[{name:'Home', location:'/'}, {name:'About', location:'/#about'},{name:'Services', location:'/#services'},{name:'Blog', location:'/blogpage'}, {name:'Portfolio', location:'/portfolio'}, {name:'Contact', location:'/contact'}]}/>
-          {/* Solution , array of objects */}
-        </motion.nav>
-    </header>
-    {/* <section className="hero -top-20 absolute w-screen h-screen md:h-screen overflow-visible ">
-      <div className="banner w-full h-full"></div>
+      <main className="relative w-full ">
+        <header
+          className={`navbar transition-all duration-500 ${
+            changeNav ? "bg-white text-black" : "text-white bg-transparent"
+          } poppins w-full sticky px-4 py-2 md:px-[7rem] z-50 top-0 left-0 right-0  flex items-center justify-between  sm:mx-auto`}
+        >
+          <Navbar color="#fff" />
+          <motion.nav
+            animate={isOpen ? "open" : "closed"}
+            initial={false}
+            className={`absolute top-0 right-0 bottom-0 sm:hidden ${
+              isOpen ? "w-[300px]" : "w-[0px]"
+            }`}
+          >
+            <motion.div
+              className="background bg-white absolute top-0 right-0 bottom-0 h-screen w-[300px]"
+              variants={sidebarVariants}
+            />
+            <MenuToggler toggle={() => setToggleOpen(!isOpen)} />
+            <Navigation
+              items={[
+                { name: "Home", location: "/" },
+                { name: "About", location: "/#about" },
+                { name: "Services", location: "/#services" },
+                { name: "Blog", location: "/blog" },
+                { name: "Portfolio", location: "/portfolio" },
+                { name: "Contact", location: "/contact" },
+              ]}
+            />
+            {/* Solution , array of objects */}
+          </motion.nav>
+        </header>
+        {/* <section className="absolute w-screen h-screen overflow-visible hero -top-20 md:h-screen ">
+      <div className="w-full h-full banner"></div>
     </section> */}
         <section className="hero top-[-93px] z-10 text-white w-[100vw] h-[110vh] relative  banner 2xl:h-[80vh]">
           <motion.div
@@ -172,9 +170,9 @@ const Home = () => {
             animate={{ y: ["100%", "-100%"] }}
             className="particle4 absolute w-[2px] md:w-[5px] top-[6rem] md:top-[22rem] -z-10 right-[3rem] md:right-[19rem]"
           >
-            <img src="/particle.png" alt="" />
+            <Image layout="fill" src="/particle.png" alt="particle" />
           </motion.div>
-          <div className="hero-content w-full flex flex-col items-center sm:flex-row sm:justify-between sm:items-center mx-auto md:max-w-6xl  gap-y-12 px-4 md:px-0">
+          <div className="flex flex-col items-center w-full px-4 mx-auto hero-content sm:flex-row sm:justify-between sm:items-center md:max-w-6xl gap-y-12 md:px-0">
             <div className="sm:pl-4 left-content h-full w-full mt-[6.2rem] sm:mt-[7.5rem] md:mt-[9rem] justify-center md:gap-y-5 flex flex-col items-center sm:items-start sm:text-left text-center gap-4 sm:mr-6">
               <div className="font-heading1 ">
                 Technology & Software Development
@@ -186,24 +184,26 @@ const Home = () => {
                 We are committed to offering professional services with current
                 technologies backed by years of experience.
               </div>
-              <div className="btn-grp flex items-center gap-4">
+              <div className="flex items-center gap-4 btn-grp">
                 <a
                   href="https://wa.me/message/KOBQXC4TEH5DP1"
-                  className="text-white text-base  bg-linear font-bold "
+                  className="text-base font-bold text-white bg-linear "
                 >
                   Get Started
                 </a>
-                {/* <button className="bg-white text-base font-bold bg-outline">
+                {/* <button className="text-base font-bold bg-white bg-outline">
                   How we work
                 </button> */}
               </div>
             </div>
             <div className="banner-person-animation relative max-w-[22rem] sm:max-w-md sm:mr-6 md:max-w-lg  sm:self-center w-full md:-mt-[19rem] sm:-mt-40">
-              <div className="w-full absolute top-0 z-20">
-                <img
+              <div className="absolute top-0 z-20">
+                <Image
                   src="/banner-person1.png"
                   className="w-full"
                   alt="banner person"
+                  height={650}
+                  width={650}
                 />
               </div>
               <motion.div
@@ -212,9 +212,15 @@ const Home = () => {
                   rotate: 360,
                 }}
                 transition={{ duration: 6, repeat: Infinity, repeatDelay: 0 }}
-                className="bannerblob1 absolute top-0 z-10 w-full"
+                className="absolute top-0 z-10 w-full bannerblob1"
               >
-                <img className="w-full" src="/banner-blob-orange.png" alt="" />
+                <Image
+                  height={500}
+                  width={500}
+                  className="w-full"
+                  src="/banner-blob-orange.png"
+                  alt="orange"
+                />
               </motion.div>
               <motion.div
                 initial={{ rotate: 0 }}
@@ -222,25 +228,38 @@ const Home = () => {
                   rotate: 360,
                 }}
                 transition={{ duration: 6, repeat: Infinity, repeatDelay: 0 }}
-                className="bannerblob2 absolute top-0 z-0 w-full"
+                className="absolute top-0 z-0 w-full bannerblob2"
               >
-                <img className="w-full" src="/banner-blob-blue.png" alt="" />
+                <Image
+                  height={500}
+                  width={500}
+                  className="w-full"
+                  src="/banner-blob-blue.png"
+                  alt="blue"
+                />
               </motion.div>
             </div>
           </div>
         </section>
-        <section id='service' className="background-overlay-2 pt-28 pb-16 mx-auto w-full flex flex-col relative items-center gap-y-5 text-center px-4 ">
+        <section
+          id="service"
+          className="relative flex flex-col items-center w-full px-4 pb-16 mx-auto text-center background-overlay-2 pt-28 gap-y-5 "
+        >
           <div className="background-overlay-22 h-[100vh] w-screen -z-10 -bottom-[10rem] absolute left-0"></div>
           <h3 className="font-heading1 text-[#104cba] poppins font-semibold">
             Featured Services
           </h3>
-          <div className="poppins text-4xl md:text-4xl leading-relaxed font-semibold">
-           Fusing Creativity With Technology
+          <div className="text-4xl font-semibold leading-relaxed poppins md:text-4xl">
+            Fusing Creativity With Technology
           </div>
-          <div className="cards  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 place-items-center mt-5 md:max-w-6xl">
-            <div className="card px-4 max-w-md bg-white w-full pt-8 pb-12 rounded shadow-2xl">
-              <div className="">
-                <img src="/illustration1.jpg" alt="" />
+          <div className="grid grid-cols-1 gap-12 mt-5 cards sm:grid-cols-2 md:grid-cols-3 place-items-center md:max-w-6xl">
+            <div className="w-full max-w-md px-4 pt-8 pb-12 bg-white rounded shadow-2xl card">
+              <div className="relative w-full h-40">
+                <Image
+                  layout="fill"
+                  src="/illustration1.jpg"
+                  alt="illustration"
+                />
               </div>
               <div className="font-semibold poppins md:text-xl   text-[#010101] text-lg mt-6 ">
                 Creativity
@@ -250,9 +269,13 @@ const Home = () => {
                 show unique ingenuity.
               </div>
             </div>
-            <div className="card px-4 max-w-md bg-white w-full pt-8 pb-12 rounded shadow-2xl">
-              <div className="">
-                <img src="/illustration2.jpg" alt="" />
+            <div className="w-full max-w-md px-4 pt-8 pb-12 bg-white rounded shadow-2xl card">
+              <div className="relative w-full h-40">
+                <Image
+                  layout="fill"
+                  src="/illustration2.jpg"
+                  alt="illustration"
+                />
               </div>
               <div className="font-semibold poppins md:text-xl  text-[#010101] text-lg mt-6 ">
                 Successful Projects
@@ -262,9 +285,13 @@ const Home = () => {
                 from clients.
               </div>
             </div>
-            <div className="card px-4 max-w-md bg-white w-full pt-8 pb-12 rounded shadow-2xl">
-              <div className="">
-                <img src="/illustration3.jpg" alt="" />
+            <div className="w-full max-w-md px-4 pt-8 pb-12 bg-white rounded shadow-2xl card">
+              <div className="relative w-full h-40">
+                <Image
+                  layout="fill"
+                  src="/illustration3.jpg"
+                  alt="illustration"
+                />
               </div>
               <div className="font-semibold poppins md:text-xl  text-[#010101] text-lg mt-6 ">
                 Professionalism
@@ -278,8 +305,11 @@ const Home = () => {
             {/* #7A7A7A; */}
           </div>
         </section>
-        <section id='about' className="pt-16 pb-28 md:pb-0 mx-auto w-full px-4 md:max-w-6xl md:px-0 md:grid md:grid-cols-2 md:place-items-between">
-          <div className="left-content flex flex-col relative items-start gap-y-5 text-start md:max-w-lg">
+        <section
+          id="about"
+          className="w-full px-4 pt-16 mx-auto pb-28 md:pb-0 md:max-w-6xl md:px-0 md:grid md:grid-cols-2 md:place-items-between"
+        >
+          <div className="relative flex flex-col items-start left-content gap-y-5 text-start md:max-w-lg">
             <div className="font-heading1 text-[#104cba] poppins font-semibold">
               Core Features
             </div>
@@ -288,10 +318,11 @@ const Home = () => {
             </div>
             <div className="text-[#696969] mt-2">
               Making awesome websites for your business, we are known to Provide
-              the best UI experience turning your potential clients into customers.
+              the best UI experience turning your potential clients into
+              customers.
             </div>
-            <div className="segments mt-3 w-full">
-              <div className="segment flex justify-between items-start w-full">
+            <div className="w-full mt-3 segments">
+              <div className="flex items-start justify-between w-full segment">
                 <div className="icon1 w-[20%] md:w-[15%]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -324,12 +355,12 @@ const Home = () => {
                     Soft Engineering
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                    Our engineers are trained to be detailed and produce 
+                    Our engineers are trained to be detailed and produce
                     excellent results being punctual with your delivery.
                   </div>
                 </div>
               </div>
-              <div className="segment flex w-full justify-between items-start mt-9">
+              <div className="flex items-start justify-between w-full segment mt-9">
                 <div className="icon2 w-[20%] md:w-[15%]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -364,25 +395,25 @@ const Home = () => {
                     Affordable Prices
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                     At an affordable price, we provide software Services
-                    to bring your ideas to reality
+                    At an affordable price, we provide software Services to
+                    bring your ideas to reality
                   </div>
                 </div>
               </div>
             </div>
-            {/* <div className="btn text-white text-lg mt-6 bg-linear font-bold">
+            {/* <div className="mt-6 text-lg font-bold text-white btn bg-linear">
               Discover More
             </div> */}
           </div>
-          <div className="right-content mt-1 md:mt-0">
-            <img src="/features.png" alt="" />
+          <div className="relative w-full mt-1 h-[550px] right-content md:mt-0">
+            <Image layout="fill" src="/features.png" alt="features" />
           </div>
         </section>
         {/*Promo Section*/}
         <section className="promo w-full md:max-w-6xl mx-auto md:rounded md:relative md:-bottom-[5.5rem] shadow-xl">
-          <div className="cont px-4 py-14 md:flex md:items-center">
+          <div className="px-4 cont py-14 md:flex md:items-center">
             <div className="left-content text-center md:text-left md:w-[75%] md:ml-12">
-              <div className="poppins font-semibold text-4xl leading-relaxed ">
+              <div className="text-4xl font-semibold leading-relaxed poppins ">
                 Begin Your Cool Project With TITTA
                 {/* Let&apos;s Start A Cool Project With TITTA! */}
               </div>
@@ -401,11 +432,14 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="bg-another pt-32 md:pt-64 pb-24 text-white md:flex md:justify-center md:gap-x-6 w-full" id="services">
-          <div className="stuff w-full px-4 md:max-w-6xl md:px-0 md:grid md:grid-cols-2  md:place-items-center">
-            <div className="left-content text-center flex flex-col  sm:flex-row  px-4 sm:gap-x-5 gap-y-7">
-              <div className="cards1 flex flex-col gap-7 sm:mt-4">
-                <div className="card py-6 flex flex-col items-center gap-y-3 bg-another-cards rounded">
+        <section
+          className="w-full pt-32 pb-24 text-white bg-another md:pt-64 md:flex md:justify-center md:gap-x-6"
+          id="services"
+        >
+          <div className="w-full px-4 stuff md:max-w-6xl md:px-0 md:grid md:grid-cols-2 md:place-items-center">
+            <div className="flex flex-col px-4 text-center left-content sm:flex-row sm:gap-x-5 gap-y-7">
+              <div className="flex flex-col cards1 gap-7 sm:mt-4">
+                <div className="flex flex-col items-center py-6 rounded card gap-y-3 bg-another-cards">
                   <div className="icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -423,13 +457,13 @@ const Home = () => {
                       ></path>
                     </svg>
                   </div>
-                  <div className="poppins text-lg mt-2">Web Development</div>
+                  <div className="mt-2 text-lg poppins">Web Development</div>
                   <div className="text-[#a1a1a1]">
-                  Expert and creative designs for website 
-                  that provide seamless navigation and functionality.
+                    Expert and creative designs for website that provide
+                    seamless navigation and functionality.
                   </div>
                 </div>
-                <div className="card py-6 flex flex-col items-center gap-y-3 bg-another-cards">
+                <div className="flex flex-col items-center py-6 card gap-y-3 bg-another-cards">
                   <div className="icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -455,12 +489,13 @@ const Home = () => {
                       ></path>
                     </svg>
                   </div>
-                  <div className="poppins text-lg mt-2"> UI/UX Design</div>
+                  <div className="mt-2 text-lg poppins"> UI/UX Design</div>
                   <div className="text-[#a1a1a1]">
-                  Well-executed user interface that improve customer satisfaction and meet user expectations and ease of use.
+                    Well-executed user interface that improve customer
+                    satisfaction and meet user expectations and ease of use.
                   </div>
                 </div>
-                <div className="card py-6 flex flex-col items-center gap-y-3 bg-another-cards">
+                <div className="flex flex-col items-center py-6 card gap-y-3 bg-another-cards">
                   <div className="icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -479,14 +514,14 @@ const Home = () => {
                     </svg>
                   </div>
 
-                  <div className="poppins text-lg mt-2">Graphics Design</div>
+                  <div className="mt-2 text-lg poppins">Graphics Design</div>
                   <div className="text-[#a1a1a1]">
-                  Topnotch visual creations to improve your online presence.
+                    Topnotch visual creations to improve your online presence.
                   </div>
                 </div>
               </div>
-              <div className="cards2 flex flex-col gap-7 sm:mt-8">
-                <div className="card py-6 flex flex-col items-center gap-y-3 bg-another-cards">
+              <div className="flex flex-col cards2 gap-7 sm:mt-8">
+                <div className="flex flex-col items-center py-6 card gap-y-3 bg-another-cards">
                   <div className="icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -504,11 +539,15 @@ const Home = () => {
                       ></path>
                     </svg>
                   </div>
-                  <div className="poppins text-lg mt-2">  Mobile Application Development</div>
+                  <div className="mt-2 text-lg poppins">
+                    {" "}
+                    Mobile Application Development
+                  </div>
                   <div className="text-[#a1a1a1]">
-                  Turning your problem solving ideas to an operational app.                  </div>
+                    Turning your problem solving ideas to an operational app.{" "}
+                  </div>
                 </div>
-                <div className="card py-6 flex flex-col items-center gap-y-3 bg-another-cards">
+                <div className="flex flex-col items-center py-6 card gap-y-3 bg-another-cards">
                   <div className="icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -526,21 +565,22 @@ const Home = () => {
                       ></path>
                     </svg>
                   </div>
-                  <div className="poppins text-lg mt-2"> Digital Marketing</div>
+                  <div className="mt-2 text-lg poppins"> Digital Marketing</div>
                   <div className="text-[#a1a1a1]">
-                  Result driven marketing strategies, content creation and SEO writing.
+                    Result driven marketing strategies, content creation and SEO
+                    writing.
                   </div>
                 </div>
               </div>
             </div>
-            <div className="right-content mt-14 md:mt-14 text-white flex flex-col gap-y-5 px-4 sm:max-w-lg">
+            <div className="flex flex-col px-4 text-white right-content mt-14 md:mt-14 gap-y-5 sm:max-w-lg">
               <div className="font-heading1 text-[#104cba] poppins font-semibold">
                 Featured Services
               </div>
               <div className="poppins text-4xl md:text-4xl md:leading-[1.4] leading-relaxed font-semibold">
                 We Are Creative In Design & Development
               </div>
-              <div className="grp flex flex-col gap-y-10">
+              <div className="flex flex-col grp gap-y-10">
                 <div className="single1 md:flex md:w-full">
                   <div className="checkmark md:w-[12%] md:mt-1">
                     <svg
@@ -570,13 +610,13 @@ const Home = () => {
                       </defs>
                     </svg>
                   </div>
-                  <div className="right-content mt-2 md:mt-0 ml-auto">
-                    <div className="title font-semibold poppins">
+                  <div className="mt-2 ml-auto right-content md:mt-0">
+                    <div className="font-semibold title poppins">
                       Set Everything Up with ease
                     </div>
                     <div className="title text-[#a1a1a1] mt-4">
-                      With a great project managment system, be rest assured your 
-                      projects are treated as priority and urgent.
+                      With a great project managment system, be rest assured
+                      your projects are treated as priority and urgent.
                     </div>
                   </div>
                 </div>
@@ -609,8 +649,8 @@ const Home = () => {
                       </defs>
                     </svg>
                   </div>
-                  <div className="right-content mt-2 md:mt-0">
-                    <div className="title poppins font-semibold">
+                  <div className="mt-2 right-content md:mt-0">
+                    <div className="font-semibold title poppins">
                       A Seamless UI Experience
                     </div>
                     <div className="title text-[#a1a1a1] mt-4">
@@ -634,17 +674,15 @@ const Home = () => {
      <div className="elementor-widget-container">
 <img width="201" height="129" src="https://softek.radiantthemes.com/wp-content/uploads/2021/07/15-7.png" className="attachment-full size-full" alt="" loading="lazy" data-no-retina=""> </div>        */}
 
+        {/* THIS SECTION NEEDS TO BE REPLACED WITH TESTIMONIAL */}
 
-{/* THIS SECTION NEEDS TO BE REPLACED WITH TESTIMONIAL */}
-      
-      
-        {/* <section className="tech-sol-section pt-32 pb-20 md:pb-24 w-full relative">
-          <div className="bg-overlay w-full h-full"></div>
-          <div className="content w-full mx-auto text-center px-4 flex flex-col items-center">
+        {/* <section className="relative w-full pt-32 pb-20 tech-sol-section md:pb-24">
+          <div className="w-full h-full bg-overlay"></div>
+          <div className="flex flex-col items-center w-full px-4 mx-auto text-center content">
             <div className="font-heading1 text-[#104cba] poppins font-semibold">
               Technology Solutions
             </div>
-            <div className="poppins text-4xl md:text-4xl leading-relaxed font-semibold my-4 md:my-6">
+            <div className="my-4 text-4xl font-semibold leading-relaxed poppins md:text-4xl md:my-6">
               We Provide Software & IT Solutions
             </div>
             <div className="text-[#696969] mb-24 md:max-w-3xl leading-relaxed mx-auto">
@@ -652,9 +690,9 @@ const Home = () => {
               quasi nam ipsum placeat at incidunt, adipisci laborum sapiente
               vero corrupti repellendus deleniti veniam.
             </div>
-            <div className="illustration relative ">
+            <div className="relative illustration ">
               <div className="">
-                <div className="cloud1 absolute -top-24 md:-top-38 left-0 md:-left-48 z-0">
+                <div className="absolute left-0 z-0 cloud1 -top-24 md:-top-38 md:-left-48">
                   <img src="../cloud1.png" alt="" />
                 </div>
                 <div className="dot-red absolute top-2 md:top-[24rem] md:z-0 left-0 md:left-[-9.5rem] -z-10">
@@ -667,7 +705,7 @@ const Home = () => {
                   <img src="../cloud2.png" alt="" />
                 </div>
               </div>
-              <div className="illus-img relative">
+              <div className="relative illus-img">
                 <img
                   src="../illustationNew.png"
                   alt="illustration"
@@ -677,9 +715,9 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="cards relative mt-28 grid grid-cols-1 sm:grid-cols-2 place-items-center gap-8 md:max-w-6xl">
-              <div className="card transition duration-300 px-4 bg-white w-full py-9 flex flex-col justify-center items-center gap-y-2 rounded shadow-2xl text-center ">
-                <div className="bag-icon -mb-2">
+            <div className="relative grid grid-cols-1 gap-8 cards mt-28 sm:grid-cols-2 place-items-center md:max-w-6xl">
+              <div className="flex flex-col items-center justify-center w-full px-4 text-center transition duration-300 bg-white rounded shadow-2xl card py-9 gap-y-2 ">
+                <div className="-mb-2 bag-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xlink="http://www.w3.org/1999/xlink"
@@ -719,7 +757,7 @@ const Home = () => {
                     <g></g>
                   </svg>
                 </div>
-                <div className="font-semibold poppins md:text-xl thc text-lg mt-6">
+                <div className="mt-6 text-lg font-semibold poppins md:text-xl thc">
                   Business Collaboration
                 </div>
                 <div className=" text-base loremt md:text-base text-[#696969] px-5 text-center leading-relaxed">
@@ -727,8 +765,8 @@ const Home = () => {
                   obcaecati quasi beatae repudiandae.
                 </div>
               </div>
-              <div className="card transition duration-300 px-4 bg-white w-full py-9 flex flex-col justify-center items-center gap-y-2 rounded shadow-2xl text-center">
-                <div className="bag-icon  -mb-2">
+              <div className="flex flex-col items-center justify-center w-full px-4 text-center transition duration-300 bg-white rounded shadow-2xl card py-9 gap-y-2">
+                <div className="-mb-2 bag-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xlink="http://www.w3.org/1999/xlink"
@@ -778,7 +816,7 @@ const Home = () => {
                     <g></g>
                   </svg>
                 </div>
-                <div className="font-semibold poppins md:text-xl  thc text-lg mt-6">
+                <div className="mt-6 text-lg font-semibold poppins md:text-xl thc">
                   Engineering & Services
                 </div>
                 <div className=" text-base loremt md:text-base text-[#696969] px-5 text-center leading-relaxed">
@@ -786,8 +824,8 @@ const Home = () => {
                   obcaecati quasi beatae repudiandae.
                 </div>
               </div>
-              <div className="card transition duration-300 px-4 bg-white w-full py-9 flex flex-col justify-center items-center gap-y-2 rounded shadow-2xl text-center">
-                <div className="bag-icon  -mb-2">
+              <div className="flex flex-col items-center justify-center w-full px-4 text-center transition duration-300 bg-white rounded shadow-2xl card py-9 gap-y-2">
+                <div className="-mb-2 bag-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     id="Layer_1"
@@ -822,7 +860,7 @@ const Home = () => {
                     ></path>
                   </svg>
                 </div>
-                <div className="font-semibold poppins md:text-xl  thc text-lg mt-6">
+                <div className="mt-6 text-lg font-semibold poppins md:text-xl thc">
                   Creative Minds
                 </div>
                 <div className=" text-base loremt md:text-base text-[#696969] px-5 text-center leading-relaxed">
@@ -830,8 +868,8 @@ const Home = () => {
                   obcaecati quasi beatae repudiandae.
                 </div>
               </div>
-              <div className="card transition duration-300 px-4 bg-white w-full py-9 flex flex-col justify-center items-center gap-y-2 rounded shadow-2xl text-center">
-                <div className="bag-icon  -mb-2">
+              <div className="flex flex-col items-center justify-center w-full px-4 text-center transition duration-300 bg-white rounded shadow-2xl card py-9 gap-y-2">
+                <div className="-mb-2 bag-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xlink="http://www.w3.org/1999/xlink"
@@ -858,7 +896,7 @@ const Home = () => {
                     </g>{" "}
                   </svg>
                 </div>
-                <div className="font-semibold poppins md:text-xl  thc text-lg mt-6">
+                <div className="mt-6 text-lg font-semibold poppins md:text-xl thc">
                   Revenue Generation
                 </div>
                 <div className=" text-base loremt md:text-base text-[#696969] px-5 text-center leading-relaxed">
@@ -873,12 +911,12 @@ const Home = () => {
           <h2 className="font-heading1 text-[#104cba] text-center font-semibold mb-12">
             Featured Works
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
             {portfolio.map((item) => {
               return (
                 <div
                   key={item.id}
-                  className="relative h-56 md:h-72 w-full overflow-hidden group cursor-pointer"
+                  className="relative w-full h-56 overflow-hidden cursor-pointer md:h-72 group"
                 >
                   <Image
                     src={item.image}
@@ -887,8 +925,8 @@ const Home = () => {
                     objectFit="cover"
                     objectPosition="center"
                   />
-                  <div className="absolute translate-y-full transition-all duration-200 group-hover:translate-y-0 top-0 left-0 bg-black/60 flex justify-end items-start flex-col p-10 h-full w-full text-white">
-                    <h3 className="text-3xl font-semibold mb-3">
+                  <div className="absolute top-0 left-0 flex flex-col items-start justify-end w-full h-full p-10 text-white transition-all duration-200 translate-y-full group-hover:translate-y-0 bg-black/60">
+                    <h3 className="mb-3 text-3xl font-semibold">
                       {item.title}
                     </h3>
                     
@@ -898,13 +936,13 @@ const Home = () => {
             })}
           </div>
         </section> */}
-        <section className="px-4 w-full mx-auto md:max-w-6xl pb-10 md:flex md:items-center md:justify-center md:gap-x-6">
+        <section className="w-full px-4 pb-10 mx-auto md:max-w-6xl md:flex md:items-center md:justify-center md:gap-x-6">
           <div className="left-content">
-            <div className="">
-              <img src="../idea.png" alt="" />
+            <div className="relative w-96 h-96">
+              <Image layout="fill" src="/idea.png" alt="idea" />
             </div>
           </div>
-          <div className="right-content mt-4">
+          <div className="mt-4 right-content">
             <div className="font-heading1 text-[#104cba] poppins font-semibold ">
               Corporate Ideas
             </div>
@@ -912,11 +950,11 @@ const Home = () => {
               Perfect Technology Solution For All Medium Business
             </div>
             <div className="text-[#696969]">
-            We pay kin attention to your ideas for your project and give 
-            you suggestions and solutions from our experience and expertise.
+              We pay kin attention to your ideas for your project and give you
+              suggestions and solutions from our experience and expertise.
             </div>
-            <div className="progresses mt-6 flex gap-y-6 flex-col">
-              <div className="progress w-full ">
+            <div className="flex flex-col mt-6 progresses gap-y-6">
+              <div className="w-full progress ">
                 <div className="flex justify-between">
                   <div className="text-[#696969] font-semibold mb-1">
                     Business Goal
@@ -927,7 +965,7 @@ const Home = () => {
                   <div className="bar w-[65%] h-full bg-black rounded"></div>
                 </div>
               </div>
-              <div className="progress w-full">
+              <div className="w-full progress">
                 <div className="flex justify-between">
                   <div className="text-[#696969] font-semibold mb-1">
                     Traffic Growth
@@ -938,7 +976,7 @@ const Home = () => {
                   <div className="bar w-[90%] h-full bg-black rounded"></div>
                 </div>
               </div>
-              <div className="progress w-full">
+              <div className="w-full progress">
                 <div className="flex justify-between">
                   <div className="text-[#696969] font-semibold mb-1">
                     Competitor Research
@@ -952,37 +990,41 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className="consultancy w-full  text-center px-4">
-          <div className="md:max-w-6xl relative  mx-auto w-full">
-            <div className="absolute z-10 top-28 right-6 md:top-[-1.1rem] md:right-[14rem]">
-              <img src="../upsidedowntriangle.svg" alt="" />
+        <section className="w-full px-4 text-center consultancy">
+          <div className="relative w-full mx-auto md:max-w-6xl">
+            <div className="absolute z-10 top-28 right-6 w-8 h-8 md:top-[-1.1rem] md:right-[14rem]">
+              <Image
+                layout="fill"
+                src="/upsidedowntriangle.svg"
+                alt="triangle"
+              />
             </div>
-            <div className="absolute z-10 top-5 left-[23.95rem]">
-              <img src="../particle2.png" alt="" />
+            <div className="absolute z-10 top-5 left-[23.95rem] w-4 h-4">
+              <Image layout="fill" src="/particle2.png" alt="particle" />
             </div>
-            <div className="absolute z-10 bottom-6 right-32">
-              <img src="../particleyellow.png" alt="" />
+            <div className="absolute z-10 w-4 h-4 bottom-6 right-32">
+              <Image layout="fill" src="/partice3yellow.png" alt="yellow" />
             </div>
-            <div className="absolute z-10 -bottom-12 left-[25.5rem]">
-              <img src="../triangle.png" alt="" />
+            <div className="absolute z-10 -bottom-12 left-[25.5rem] w-4 h-4">
+              <Image layout="fill" src="/triangle.png" alt="triangle" />
             </div>
-            <div className="absolute hidden md:block z-10 top-8 left-28">
-              <img src="../person1.png" alt="" />
+            <div className="absolute z-10 hidden w-16 h-16 md:block top-8 left-28">
+              <Image layout="fill" src="/person1.png" alt="person" />
             </div>
-            <div className="absolute hidden md:block z-10 top-2 right-24">
-              <img src="../person2.png" alt="" />
+            <div className="absolute z-10 hidden w-16 h-16 md:block top-2 right-24">
+              <Image layout="fill" src="/person2.png" alt="person" />
             </div>
-            <div className="absolute hidden md:block z-10 top-40 left-0">
-              <img src="../person3.png" alt="" />
+            <div className="absolute left-0 z-10 hidden w-16 h-16 md:block top-40">
+              <Image layout="fill" src="/person3.png" alt="person" />
             </div>
-            <div className="absolute hidden md:block z-10 -bottom-20 left-52">
-              <img src="../person4.png" alt="" />
+            <div className="absolute z-10 hidden w-16 h-16 md:block -bottom-20 left-52">
+              <Image layout="fill" src="/person4.png" alt="person" />
             </div>
-            <div className="absolute hidden md:block z-10 -bottom-20 right-44">
-              <img src="../person5.png" alt="" />
+            <div className="absolute z-10 hidden w-16 h-16 md:block -bottom-20 right-44">
+              <Image layout="fill" src="/person5.png" alt="person" />
             </div>
-            <div className="absolute hidden md:block z-10 top-40 right-10">
-              <img src="../person6.png" alt="" />
+            <div className="absolute z-10 hidden w-16 h-16 md:block top-40 right-10">
+              <Image layout="fill" src="/person6.png" alt="person" />
             </div>
             <div className="font-heading1 text-[#104cba] poppins font-semibold ">
               Connect With Us
@@ -1001,76 +1043,7 @@ const Home = () => {
             </a>
           </div>
         </section>
-        <footer className="footer pt-32 px-4 w-full">
-          <div className=" grid grid-cols-1 sm:grid-cols-2 mx-auto lg:justify-items-between lg:items-start lg:grid-cols-4 lg:pt-28 gap-x-6 sm:max-w-6xl gap-y-14">
-            <div className="stuffz  flex flex-col gap-y-1 ">
-              <div className="font-semibold text-[17px] poppins  mb-8">
-                Quick Links
-              </div>
-              <div className="">Pricing</div>
-              <div className="">Tracking</div>
-              <div className="">Terms of Services</div>
-              <div className="">Customization</div>
-              <div className="">Contact Us</div>
-            </div>
-            <div className="flex flex-col gap-y-1 ">
-              <div className="font-semibold text-[17px] poppins  mb-8">
-                Company
-              </div>
-              <div className="">Home</div>
-              <div className="">About Us</div>
-              <div className="">Services</div>
-              <div className="">Contact Us</div>
-            </div>
-            <div className="flex flex-col gap-y-1 ">
-              <div className="font-semibold text-[17px] poppins  mb-8">
-                Contact Us
-              </div>
-              <div className="max-w-[18rem]">
-                121 King St, Melbourne VIC 3000, Australia
-              </div>
-              <div className="">Info@example.com</div>
-              <div className="">+234 816 385 7315</div>
-            </div>
-
-            <div className="flex flex-col gap-y-1 ">
-              <div className="font-semibold text-[17px] poppins  mb-8">
-                Subscribe Newsletter
-              </div>
-              <div className="max-w-[18rem]">
-                Follow our newsletter to stay updated about us
-              </div>
-              <div className="flex subemail mt-2 w-full h-full rounded overflow-hidden">
-                <input
-                  type="text"
-                  className="px-7 py-4 w-[82%]"
-                  placeholder="Email Address"
-                />
-                <div className="bttn border-0 object-contain w-[18%]">
-                  <img
-                    src="../sub-button.png"
-                    alt=""
-                    className="h-full w-full"
-                  />
-                </div>
-              </div>
-              <div className="socialmedialinks mt-8 flex w-full items-center gap-x-6">
-                <div className="fb w-[32px]">
-                  <img src="../facebook.png" className="w-full" alt="" />
-                </div>
-                <div className="twitter w-[32px]">
-                  <img src="../twitter.png" className="w-full" alt="" />
-                </div>
-                <div className="instagram w-[32px]">
-                  <img src="instagram.png" className="w-full" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <section className="sm:max-w-6xl mx-auto cprght border-t-[#515dbb] border-t mt-24 py-6 text-center  text-[#a7b4df] text-sm">
-            2022 TITTA. All Rights Reserved.
-          </section>
-        </footer>
+        <Footer />
       </main>
     </>
   );
