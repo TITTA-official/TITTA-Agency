@@ -229,7 +229,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section id='services' className="background-overlay-2 pt-28 pb-16 mx-auto w-full flex flex-col relative items-center gap-y-5 text-center px-4 ">
+        <section id='service' className="background-overlay-2 pt-28 pb-16 mx-auto w-full flex flex-col relative items-center gap-y-5 text-center px-4 ">
           <div className="background-overlay-22 h-[100vh] w-screen -z-10 -bottom-[10rem] absolute left-0"></div>
           <h3 className="font-heading1 text-[#104cba] poppins font-semibold">
             Featured Services
@@ -401,7 +401,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="bg-another pt-32 md:pt-64 pb-24 text-white md:flex md:justify-center md:gap-x-6 w-full">
+        <section className="bg-another pt-32 md:pt-64 pb-24 text-white md:flex md:justify-center md:gap-x-6 w-full" id="services">
           <div className="stuff w-full px-4 md:max-w-6xl md:px-0 md:grid md:grid-cols-2  md:place-items-center">
             <div className="left-content text-center flex flex-col  sm:flex-row  px-4 sm:gap-x-5 gap-y-7">
               <div className="cards1 flex flex-col gap-7 sm:mt-4">
