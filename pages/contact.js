@@ -1,12 +1,14 @@
+import emailjs from "@emailjs/browser";
 import { motion, useCycle } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Footer from "../components/Footer";
 import MenuToggler from "../components/MenuToggler";
 import Navbar from "../components/Navbar";
 import Navigation from "../components/Navigation";
+import Notification from "../components/Notification";
 import { sanityClient, urlFor } from "../sanity";
 import styles from "../styles/Home.module.css";
 
@@ -33,6 +35,47 @@ const sidebarVariants = {
 export default function Contact() {
   const [isOpen, setToggleOpen] = useState(false);
   // console.log({ isOpen });
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [message, setMessage] = useState({});
+  const formRef = useRef(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSending(true);
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        formRef.current,
+        process.env.NEXT_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          //console.log(result.text);
+          if (result) {
+            setSending(false);
+            setMessage({
+              message: "Message sent successfully",
+              type: "success",
+            });
+            setSent(true);
+            setTimeout(() => {
+              setSent(false);
+            }, 3000);
+          }
+        },
+        (error) => {
+          setSending(false);
+          setMessage({
+            message: error?.message || "Failed to send message",
+            type: "error",
+          });
+          //console.log(error.text);
+        }
+      );
+  };
+
   return (
     <>
       <main className="relative">
@@ -79,8 +122,8 @@ export default function Contact() {
           </div>
         </section>
 
-        <section className="py-32 px-4">
-          <div className="w-full relative h-96">
+        <section className="py-32 px-4 flex flex-col md:flex-row space-y-5 md:space-y-0 items-start md:space-x-5">
+          <div className="w-full relative h-52 md:h-96 md:max-w-xl">
             <Image
               layout="fill"
               src="/contact.png"
@@ -90,37 +133,45 @@ export default function Contact() {
               objectPosition="center"
             />
           </div>
-          <div className="content mt-6">
+          <div className="content mt-6 w-full">
+            {sent && <Notification message={message} />}
             <div className="font-heading1 text-[#104cba] poppins font-semibold mb-3">
               Get In Touch
             </div>
             <div className="poppins text-4xl leading-normal md:text-4xl font-semibold mb-7">
               We Provide The Best Services. Need Help?
             </div>
-            <div className="form-contact w-full relative">
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="form-contact w-full relative"
+            >
               <input
                 className="w-full form-input shadow rounded block hover:ring ring-[#104cba] focus:ring outline-none py-3 px-4 border text-[#3A3A3A] text-base"
                 type="text"
                 placeholder="Your Name*"
+                name="name"
               />
               <input
                 className="w-full form-input shadow rounded block hover:ring ring-[#104cba] focus:ring outline-none py-3 px-4 border text-[#3A3A3A] text-base mt-4"
                 type="email"
+                name="email"
                 placeholder="Your Email*"
               />
               <textarea
                 rows={5}
+                name="message"
                 className="w-full form-textarea shadow rounded  block hover:ring ring-[#104cba] focus:ring outline-none py-3 px-4 border text-[#3A3A3A] text-base mt-4"
                 placeholder="Message*"
               />
-              <div className="right-conten mt-4 text-left w-full">
-                <a
-                  href="#"
-                  className="btn text-white text-lg mt-6 block bg-linear font-bold w-[180px] text-center"
-                >
-                  Send Message
-                </a>
-              </div>
+              <button
+                type="submit"
+                disabled={sending}
+                className="btn text-white text-lg mt-6 block bg-linear font-bold w-[180px] text-center"
+                style={{ opacity: sending ? ".5" : "1" }}
+              >
+                {sending ? "sending" : "Send Message"}
+              </button>
               <div className="absolute bottom-7 right-20 w-6 h-6">
                 <Image
                   layout="fill"
@@ -128,7 +179,7 @@ export default function Contact() {
                   alt="triangle"
                 />
               </div>
-            </div>
+            </form>
           </div>
         </section>
 
