@@ -242,7 +242,7 @@ const Home = () => {
           </div>
         </section>
         <section
-          id="services"
+          id="service"
           className="relative flex flex-col items-center w-full px-4 pb-16 mx-auto text-center background-overlay-2 pt-28 gap-y-5 "
         >
           <div className="background-overlay-22 h-[100vh] w-screen -z-10 -bottom-[10rem] absolute left-0"></div>
@@ -432,7 +432,10 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="w-full pt-32 pb-24 text-white bg-another md:pt-64 md:flex md:justify-center md:gap-x-6">
+        <section
+          className="w-full pt-32 pb-24 text-white bg-another md:pt-64 md:flex md:justify-center md:gap-x-6"
+          id="services"
+        >
           <div className="w-full px-4 stuff md:max-w-6xl md:px-0 md:grid md:grid-cols-2 md:place-items-center">
             <div className="flex flex-col px-4 text-center left-content sm:flex-row sm:gap-x-5 gap-y-7">
               <div className="flex flex-col cards1 gap-7 sm:mt-4">
