@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-function Navbar() {
+function Navbar({ color = "#000" }) {
   return (
     <>
       <div className="header-d-logo w-[145px]">
@@ -12,9 +12,12 @@ function Navbar() {
           className="w-full"
           src="/tittablue.png"
           alt="logo"
+          priority
         />
       </div>
-      <div className="hidden sm:flex items-center gap-x-8 text-[#000] mt-8">
+      <div
+        className={`hidden sm:flex items-center gap-x-8 text-[${color}] mt-8`}
+      >
         <li>
           <Link href="/">Home</Link>
         </li>
@@ -25,7 +28,7 @@ function Navbar() {
           <Link href="#services">Services</Link>
         </li>
         <li>
-          <Link href="/blogpage">Blog</Link>
+          <Link href="/blog">Blog</Link>
         </li>
         <li>
           <Link href="/portfolio">Portfolio</Link>

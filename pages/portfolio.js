@@ -118,9 +118,9 @@ function Portfolio() {
               <Navigation
                 items={[
                   { name: "Home", location: "/" },
-                  { name: "About", location: "#about" },
-                  { name: "Services", location: "#services" },
-                  { name: "Blog", location: "/blogpage" },
+                  { name: "About", location: "/#about" },
+                  { name: "Services", location: "/#services" },
+                  { name: "Blog", location: "/blog" },
                   { name: "Portfolio", location: "/portfolio" },
                   { name: "Contact", location: "/contact" },
                 ]}
@@ -131,7 +131,7 @@ function Portfolio() {
 
         <section className="text-white w-[100vw] h-[40vh] md:h-[55vh]  relative">
           <div className="relative w-full h-full">
-            <Image src="/Sprinkle.svg" alt="sprinkle" layout="fill" />
+            <Image src="/Sprinkle.svg" alt="sprinkle" layout="fill" priority />
           </div>
           <div className="absolute z-20 flex flex-col items-center justify-center w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 contenthero">
             <div className="text-5xl font-semibold text-white poppins">
