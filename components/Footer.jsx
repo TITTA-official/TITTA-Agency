@@ -65,10 +65,10 @@ function Footer() {
             Contact Us
           </div>
           <div className="max-w-[18rem]">
-            121 King St, Melbourne VIC 3000, Australia
+            24th Street, off Ugbowo Road, Benin City Nigeria
           </div>
-          <div className="">Info@example.com</div>
-          <div className="">+234 816 385 7315</div>
+          <div className="">tittaorg20@gmail.com</div>
+          <div className="">+234 915 967 8772</div>
         </div>
 
         <div className="flex flex-col gap-y-1 ">
