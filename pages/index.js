@@ -405,7 +405,7 @@ const Home = () => {
               Discover More
             </div> */}
           </div>
-          <div className="relative w-full mt-1 h-[550px] right-content md:mt-0">
+          <div className="relative w-full mt-1 h-[350px] md:h-[550px] right-content md:mt-0">
             <Image layout="fill" src="/features.png" alt="features" />
           </div>
         </section>
