@@ -6,21 +6,22 @@ function Navbar({ color = "#000" }) {
   return (
     <>
       <div className="header-d-logo">
-        <Image
-          width={145}
-          height={68}
-          className="w-full"
-          src="/tittablue.png"
-          alt="logo"
-          priority
-        />
+        <Link href="/" passHref>
+          <a>
+            <Image
+              width={145}
+              height={68}
+              className="w-full"
+              src="/tittablue.png"
+              alt="logo"
+              priority
+            />
+          </a>
+        </Link>
       </div>
       <div
         className={`hidden sm:flex items-center gap-x-8 px-2 text-[${color}] mt-8`}
       >
-        <li>
-          <Link href="/">Home</Link>
-        </li>
         <li>
           <Link href="#about">About</Link>
         </li>

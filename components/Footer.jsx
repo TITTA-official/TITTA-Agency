@@ -100,7 +100,7 @@ function Footer() {
                 disabled={submitting}
                 style={{ opacity: submitting ? ".5" : "1" }}
                 type="submit"
-                className="relative h-14 object-contain w-16 md:w-28 bg-[#FF4134] px-2 text-sm text-white font-medium"
+                className="relative h-14 object-contain w-fit md:w-28 bg-[#FF4134] px-2 text-sm text-white font-medium"
               >
                 Subscribe
               </button>
