@@ -414,7 +414,7 @@ const Home = () => {
           <div className="px-4 cont py-14 md:flex md:items-center">
             <div className="left-content text-center md:text-left md:w-[75%] md:ml-12">
               <div className="text-4xl font-semibold leading-relaxed poppins ">
-                Begin Your Cool Project With TITTA
+                Execute your creative projects With TITTA
                 {/* Let&apos;s Start A Cool Project With TITTA! */}
               </div>
               <div className="mt-2">
@@ -1002,9 +1002,9 @@ const Home = () => {
             <div className="absolute z-10 top-5 left-[23.95rem] w-4 h-4">
               <Image layout="fill" src="/particle2.png" alt="particle" />
             </div>
-            <div className="absolute z-10 w-4 h-4 bottom-6 right-32">
+            {/* <div className="absolute z-10 w-4 h-4 bottom-6 right-32">
               <Image layout="fill" src="/partice3yellow.png" alt="yellow" />
-            </div>
+            </div> */}
             <div className="absolute z-10 -bottom-12 left-[25.5rem] w-4 h-4">
               <Image layout="fill" src="/triangle.png" alt="triangle" />
             </div>

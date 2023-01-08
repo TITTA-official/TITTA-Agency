@@ -9,6 +9,7 @@ import MenuToggler from "../../components/MenuToggler";
 import Navbar from "../../components/Navbar";
 import Navigation from "../../components/Navigation";
 import { sanityClient, urlFor } from "../../sanity";
+import moment from "moment/moment";
 
 const sidebarVariants = {
   // open: {opacity: 1, x:0, display:'block'},
@@ -88,7 +89,7 @@ function Post({ post }) {
           </motion.nav>
         </div>
       </header>
-      <div className="w-full h-40 ">
+      <div className="relative w-full h-40 ">
         <Image
           layout="fill"
           objectFit="cover"
@@ -104,7 +105,7 @@ function Post({ post }) {
           {post.description}
         </h2>
         <div className="flex items-center space-x-2">
-          <span className="block w-10 h-10 rounded-full">
+          <span className="relative block w-10 h-10 rounded-full">
             <Image
               layout="fill"
               objectFit="cover"
@@ -116,7 +117,7 @@ function Post({ post }) {
           <p className="text-sm font-extralight">
             Blog post by{" "}
             <span className="text-[#696969]">{post.author.name}</span> -
-            Published at {new Date(post._createdAt).toLocaleString()}
+            Published at {moment(post._createdAt).format("LLL")}
           </p>
         </div>
 
