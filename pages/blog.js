@@ -80,7 +80,7 @@ export default function Blog({ posts }) {
         </section>
 
         <section className="py-32 mx-auto px-4 md:flex md:gap-x-[3%] md:max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-8 place-items-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-14 gap-x-8 place-items-start">
             {
               // Posts
               posts.map((post) => (
@@ -101,7 +101,7 @@ export default function Blog({ posts }) {
                               alt="post image"
                             />
                           </div>
-                          <div className="absolute left-0 flex gap-2 text-sm pills -bottom-5">
+                          <div className="absolute left-4 flex gap-2 text-sm pills -bottom-5">
                             <div className="pill py-2 px-4 text-white bg-[#1367fe] rounded">
                               Latest Posts
                             </div>
@@ -111,15 +111,14 @@ export default function Blog({ posts }) {
                           </div>
                         </div>
                         <div className="flex flex-col contz gap-y-1">
-                          <div className="pt-10 px-4 font-semibold text-[#000] text-2xl poppins">
+                          <div className="pt-10 px-4 font-semibold text-[#000] text-base md:text-lg poppins">
                             {post.title}
                           </div>
-                          <div className="details flex w-full justify-between px-4 text-sm text-[#696969] mb-2">
+                          <div className="details flex w-full justify-between px-4 text-xs text-[#696969] mb-2">
                             <div className="flex items-center gap-4 author">
-                              <div className="author w-[32px] h-[32px] relative">
+                              <div className="author w-[36px] h-[28px] relative">
                                 <Image
                                   layout="fill"
-                                  className="w-full h-full"
                                   src={urlFor(post.author.image).url()}
                                   alt="thumbnail"
                                 />
@@ -147,10 +146,10 @@ export default function Blog({ posts }) {
                               <span>0</span> Comments
                             </div>
                           </div>
-                          <div className="text-[#696969] px-4 text-base">
+                          <div className="text-[#696969] px-4 text-xs md:text-sm">
                             {post.description} by {post.author.name}
                           </div>
-                          <div className="text-white text-base  bg-linear font-bold w-[140px] text-center mt-8 mx-4">
+                          <div className="text-white text-sm bg-linear font-bold w-[140px] text-center mt-5 mx-4">
                             Read More
                           </div>
                         </div>
@@ -161,7 +160,7 @@ export default function Blog({ posts }) {
               ))
             }
           </div>
-          <aside className="pt-24 md:pt-0 md:w-[37%]">
+          {/* <aside className="pt-24 md:pt-0 md:w-[37%]">
             <div className="flex flex-col items-center justify-center w-full px-4 bg-white shadow-2xl author-card rounded-xl py-9 gap-y-5">
               <div className="relative border-2 border-red-600 rounded-full w-[140px] h-[140px] p-[10px]">
                 <Image
@@ -263,7 +262,7 @@ export default function Blog({ posts }) {
                 </div>
               </div>
             </div>
-          </aside>
+          </aside> */}
         </section>
         <Footer />
       </main>
