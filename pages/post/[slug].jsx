@@ -78,7 +78,6 @@ function Post({ post }) {
             <MenuToggler toggle={() => setToggleOpen(!isOpen)} />
             <Navigation
               items={[
-                { name: "Home", location: "/" },
                 { name: "About", location: "/#about" },
                 { name: "Services", location: "/#services" },
                 { name: "Blog", location: "/blog" },
