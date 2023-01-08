@@ -1,4 +1,5 @@
 import { motion, useCycle } from "framer-motion";
+import moment from "moment";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -133,7 +134,7 @@ export default function Blog({ posts }) {
                                   alt="calendar"
                                 />
                               </span>
-                              {new Date(post._createdAt).toLocaleString}
+                              {moment(post._createdAt).format("LLL")}
                             </div>
                             <div className="flex gap-2 comments">
                               <span className="comment-icon relative w-4 h-4">

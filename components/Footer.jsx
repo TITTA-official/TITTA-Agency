@@ -1,5 +1,6 @@
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
+import React, { useRef, useState } from "react";
 
 function Footer() {
   const [submitting, setSubmitting] = useState(false);
@@ -35,9 +36,6 @@ function Footer() {
               className="w-full"
             />
           </div>
-          {/* <div className="max-w-xs leading-relaxed">
-            Lorem ipsum dolor sit amet.
-          </div> */}
           <div className="flex items-center w-full socialmedialinks gap-x-6">
             <div className="fb relative w-8 h-8">
               <Image layout="fill" src="/facebook.png" alt="icon" />
@@ -54,11 +52,15 @@ function Footer() {
           <div className="font-semibold text-[17px] poppins mb-4">
             Quick Links
           </div>
-          <div className="">Pricing</div>
-          <div className="">Tracking</div>
-          <div className="">Terms of Services</div>
-          <div className="">Customization</div>
-          <div className="">Contact Us</div>
+          <Link href="/blog">
+            <a>Blog</a>
+          </Link>
+          <Link href="/portfolio">
+            <a>Portfolio</a>
+          </Link>
+          <Link href="/contact">
+            <a>Contact</a>
+          </Link>
         </div>
         <div className="flex flex-col gap-y-1 ">
           <div className="font-semibold text-[17px] poppins mb-4">
@@ -78,20 +80,17 @@ function Footer() {
           <div className="max-w-[18rem]">
             Follow our newsletter to stay updated about us
           </div>
-          <form
-            onSubmit={handleSubmit}
-            className="flex w-full h-full mt-2 overflow-hidden rounded subemail"
-          >
+          <form onSubmit={handleSubmit} className="flex mt-2 rounded subemail">
             <input
               type="text"
-              className="px-7 py-4 w-[82%]"
+              className="px-7 py-4 w-56 outline-none"
               placeholder="Email Address"
             />
             <button
               disabled={submitting}
               style={{ opacity: submitting ? ".5" : "1" }}
               type="submit"
-              className="relative h-full bttn border-0 object-contain w-[18%]"
+              className="relative h-14 object-contain w-16 md:w-28"
             >
               <Image layout="fill" src="/sub-button.png" alt="sub" />
             </button>
