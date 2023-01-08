@@ -5,7 +5,7 @@ import React from "react";
 function Navbar({ color = "#000" }) {
   return (
     <>
-      <div className="header-d-logo w-[145px]">
+      <div className="header-d-logo">
         <Image
           width={145}
           height={68}
@@ -16,7 +16,7 @@ function Navbar({ color = "#000" }) {
         />
       </div>
       <div
-        className={`hidden sm:flex items-center gap-x-8 text-[${color}] mt-8`}
+        className={`hidden sm:flex items-center gap-x-8 px-2 text-[${color}] mt-8`}
       >
         <li>
           <Link href="/">Home</Link>

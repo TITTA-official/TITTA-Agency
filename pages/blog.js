@@ -80,7 +80,7 @@ export default function Blog({ posts }) {
         </section>
 
         <section className="py-32 mx-auto px-4 md:flex md:gap-x-[3%] md:max-w-6xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-14 gap-x-8 place-items-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-14 gap-x-8 place-items-start">
             {
               // Posts
               posts.map((post) => (
