@@ -34,7 +34,7 @@ function Footer() {
       <footer className="w-full px-4 pt-20 footer blog md:pt-0">
         <div className="grid grid-cols-1 mx-auto sm:grid-cols-2 lg:justify-items-between lg:items-start lg:grid-cols-4 lg:pt-28 gap-x-6 sm:max-w-6xl gap-y-14">
           <div className="flex flex-col gap-y-1">
-            <div className="relative w-32 h-16 mb-8">
+            <div className="relative w-32 h-16 mb-5">
               <Image
                 layout="fill"
                 src="/titawhite.png"
@@ -42,16 +42,33 @@ function Footer() {
                 className="w-full"
               />
             </div>
+            <p className="mb-3">
+              Email: <strong>tittamedia@gmail.com</strong>
+            </p>
             <div className="flex items-center w-full socialmedialinks gap-x-6">
-              <div className="fb relative w-8 h-8">
-                <Image layout="fill" src="/facebook.png" alt="icon" />
-              </div>
-              <div className="twitter relative w-8 h-8">
-                <Image layout="fill" src="/twitter.png" alt="icon" />
-              </div>
-              <div className="instagram relative w-8 h-8">
-                <Image layout="fill" src="/instagram.png" alt="icon" />
-              </div>
+              {/* <a href="/" target="_blank">
+                <div className="fb relative w-8 h-8">
+                  <Image layout="fill" src="/facebook.png" alt="icon" />
+                </div>
+              </a> */}
+              <a
+                href="https://twitter.com/Titta_Agency"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <div className="twitter relative w-8 h-8">
+                  <Image layout="fill" src="/twitter.png" alt="icon" />
+                </div>
+              </a>
+              <a
+                href="https://Instagram.com/tittaagency"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="instagram relative w-8 h-8">
+                  <Image layout="fill" src="/instagram.png" alt="icon" />
+                </div>
+              </a>
             </div>
           </div>
           <div className="flex flex-col stuffz gap-y-1 ">
