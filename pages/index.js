@@ -171,7 +171,7 @@ const Home = () => {
           >
             <Image layout="fill" src="/particle.png" alt="particle" />
           </motion.div>
-          <div className="flex flex-col items-center w-full px-4 mx-auto hero-content sm:flex-row sm:justify-between sm:items-center md:max-w-6xl gap-y-12 md:px-0">
+          <div className="flex flex-col items-center w-full px-4 mx-auto hero-content sm:flex-row sm:justify-between sm:items-center md:max-w-6xl space-y-12 sm:space-x-6 sm:space-y-0 md:px-0">
             <div className="sm:pl-4 left-content h-full w-full mt-[6.2rem] sm:mt-[7.5rem] md:mt-[9rem] justify-center md:gap-y-5 flex flex-col items-center sm:items-start sm:text-left text-center gap-4 sm:mr-6">
               <div className="font-heading1 ">
                 Technology & Software Development
