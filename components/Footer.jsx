@@ -42,15 +42,13 @@ function Footer() {
                 className="w-full"
               />
             </div>
-            <p className="mb-3">
-              Email: <strong>tittamedia@gmail.com</strong>
-            </p>
+            
             <div className="flex items-center w-full socialmedialinks gap-x-6">
-              {/* <a href="/" target="_blank">
+              {<a href="https://www.facebook.com/profile.php?id=100090747078779&mibextid=ZbWKwL" target="_blank">
                 <div className="fb relative w-8 h-8">
                   <Image layout="fill" src="/facebook.png" alt="icon" />
                 </div>
-              </a> */}
+              </a>}
               <a
                 href="https://twitter.com/Titta_Agency"
                 rel="noreferrer"
@@ -92,8 +90,8 @@ function Footer() {
             <div className="max-w-[18rem]">
               24th Street, off Ugbowo Road, Benin City Nigeria
             </div>
-            <div className="">tittaorg20@gmail.com</div>
-            <div className="">+234 915 967 8772</div>
+            <div className="">tittaagency@gmail.com</div>
+            <div className="">+234 811 04 74183</div>
           </div>
 
           <div className="flex flex-col gap-y-1 ">
@@ -125,7 +123,7 @@ function Footer() {
           </div>
         </div>
         <section className="sm:max-w-6xl mx-auto cprght border-t-[#515dbb] border-t mt-24 py-6 text-center  text-[#a7b4df] text-sm">
-          2022 TITTA. All Rights Reserved.
+          2023 TITTA. All Rights Reserved.
         </section>
       </footer>
     </>
