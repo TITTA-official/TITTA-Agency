@@ -44,7 +44,9 @@ function Footer() {
             </div>
             
             <div className="flex items-center w-full socialmedialinks gap-x-6">
-              <a href="https://www.facebook.com/profile.php?id=100090747078779&mibextid=ZbWKwL" target="_blank">
+              <a href="https://www.facebook.com/profile.php?id=100090747078779&mibextid=ZbWKwL" 
+                target="_blank 
+                rel="noreferrer"">
                 <div className="fb relative w-8 h-8">
                   <Image layout="fill" src="/facebook.png" alt="icon" />
                 </div>
