@@ -45,7 +45,7 @@ function Footer() {
             
             <div className="flex items-center w-full socialmedialinks gap-x-6">
               <a
-                href="https://facebook.com/Titta_Agency"
+                href="https://www.facebook.com/profile.php?id=100090747078779&mibextid=ZbWKwL"
                 rel="noreferrer"
                 target="_blank"
               >
