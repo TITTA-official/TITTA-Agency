@@ -17,6 +17,7 @@
     "next": "^12.2.5",
     "next-sanity": "^0.8.4",
     "next-seo": "^5.15.0",
+    "nextjs-google-analytics": "^2.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.37.0",
