@@ -51,7 +51,7 @@ function Portfolio() {
       id: 2,
       image: "/TITTA SURVEY 2.jpg",
       title: "Dynamic Survey Web App",
-      category: "Website",
+      category: "Web App",
       link: "survey-project",
     },
     {
@@ -65,7 +65,7 @@ function Portfolio() {
       id: 4,
       image: "/TITTA GOSPEL WORLD 2.jpg",
       title: "Gospel World Music App",
-      category: "Website",
+      category: "Mobile App",
       link: "gospel-world-project",
     },
     {
@@ -74,13 +74,6 @@ function Portfolio() {
       title: "Tingle Search Engine",
       category: "Website",
       link: "tingle-project",
-    },
-    {
-      id: 6,
-      image: "/TITTA BRANDO 2.jpg",
-      title: "Brando Graphics Portfolio",
-      category: "Website",
-      link: "brando-project",
     },
     {
       id: 7,
