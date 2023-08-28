@@ -91,11 +91,11 @@ function Footer() {
             <div className="font-semibold text-[17px] poppins mb-4">
               Contact Us
             </div>
-            <div className="max-w-[18rem]">
+{/*             <div className="max-w-[18rem]">
               24th Street, off Ugbowo Road, Benin City Nigeria
-            </div>
+            </div> */}
             <div className="">tittaagency@gmail.com</div>
-            <div className="">+234 811 04 74183</div>
+            <div className="">+1(336) 773-8420</div>
           </div>
 
           <div className="flex flex-col gap-y-1 ">
