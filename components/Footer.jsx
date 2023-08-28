@@ -95,7 +95,7 @@ function Footer() {
               24th Street, off Ugbowo Road, Benin City Nigeria
             </div> */}
             <div className="">tittaagency@gmail.com</div>
-            <div className="">+1(336) 773-8420</div>
+            <div className="">+1 (336) 773-8420</div>
           </div>
 
           <div className="flex flex-col gap-y-1 ">
