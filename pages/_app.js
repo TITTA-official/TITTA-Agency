@@ -2,6 +2,8 @@ import { DefaultSeo } from "next-seo";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import "../styles/globals.css";
 import { Analytics } from '@vercel/analytics/react';
+import FacebookPixel from "../components/FacebookPixel";
+
  
 
 function MyApp({ Component, pageProps }) {
@@ -10,6 +12,7 @@ function MyApp({ Component, pageProps }) {
     <div className="overflow-hidden">
       <GoogleAnalytics trackPageViews />
       <Analytics />
+      <FacebookPixel />
       <DefaultSeo
         title="TITTA Agency"
         description="We are committed to offering professional services with current technologies backed by years of experience."
