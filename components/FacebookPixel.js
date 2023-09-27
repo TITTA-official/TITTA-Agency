@@ -7,8 +7,6 @@ const handleRouteChange = () => {
   pageview()
 }
 
-const FB_PIXEL_ID = 1540797856672473
-
 const pageview = () => {
   window.fbq('track', 'PageView')
 }
@@ -35,7 +33,7 @@ const FacebookPixel = ({ children }) => {
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', ${FB_PIXEL_ID});
+        fbq('init', ${1540797856672473});
         fbq('track', 'PageView');
       `}
     </Script>
