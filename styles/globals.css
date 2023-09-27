@@ -395,3 +395,11 @@ svg {
 .navbar.active {
   background-color: white !important;
 }
+
+.clientDiv::-webkit-scrollbar{
+  display: none;
+}
+
+.darkbg{
+  background-color: #111133;
+}

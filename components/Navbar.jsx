@@ -12,7 +12,7 @@ function Navbar({ color = "#000" }) {
               width={145}
               height={68}
               className="w-full"
-              src="/tittablue.png"
+              src="/titawhite.png"
               alt="logo"
               priority
             />

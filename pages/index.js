@@ -408,6 +408,44 @@ const Home = () => {
             <Image layout="fill" src="/features.png" alt="features" />
           </div>
         </section>
+
+        <section className="py-[1px] mt-16 mb-32 md:mb-0 bg-[#2b37fe]">
+          <div className="flex py-4 flex-col items-center justify-center bg-white rounded-tl-[50px] rounded-br-[50px]">
+            <div className="text-[#010101] poppins mt-4 font-semibold text-lg md:text-xl ">
+              Our <span className="text-[#ff4235] font-bold">Clients</span>
+            </div>
+            <div className="clientDiv grid grid-flow-col grid-rows-2 items-center justify-between mt-3 md:mt-4 overflow-scroll w-[90vw] max-w-[800px]">
+              <div className="logo1 relative overflow-hidden w-32 h-8 m-4 mr-6">
+                  <Image src={"/logo1.png"} layout="fill" />
+              </div>
+              <div className="relative overflow-hidden w-32 h-16 m-4">
+                <Image src={"/logo2.png"} layout="fill"/>
+              </div>
+              <div className="relative rounded-full overflow-hidden w-24 h-8 m-4 mr-9">
+                <Image src={"/logo3.png"} layout="fill" />
+              </div>
+              <div className="logodiv relative rounded-full overflow-hidden w-24 h-24 m-4">
+                <Image src={"/logo4.png"} layout="fill" />
+              </div>
+              <div className="logodiv relative rounded-full overflow-hidden w-24 h-24 bg-black m-4 mr-9">
+                <Image src={"/logo5.png"} layout="fill" />
+              </div>
+              <div className="darkbg relative rounded-full overflow-hidden w-24 h-24 m-4">
+                <Image src={"/logo6.png"} layout="fill" />
+              </div>
+              <div className="logodiv relative rounded-full overflow-hidden w-24 h-24 m-4 mr-9">
+                <Image src={"/logo7.png"} layout="fill" />
+              </div>
+              <div className="darkbg relative rounded-full overflow-hidden w-24 h-24 m-4">
+                <Image src={"/logo8.png"} layout="fill" />
+              </div>
+              <div className="darkbg relative rounded-full overflow-hidden w-24 h-24 m-4">
+                <Image src={"/logo9.png"} layout="fill" />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/*Promo Section*/}
         <section className="promo w-full md:max-w-6xl mx-auto md:rounded md:relative md:-bottom-[5.5rem] shadow-xl">
           <div className="px-4 cont py-14 md:flex md:items-center">
