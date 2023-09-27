@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import {pageview, FB_PIXEL_ID} from '../../lib/fpixel'
 import Script from 'next/script'
 
 const handleRouteChange = () => {
