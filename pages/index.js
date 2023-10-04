@@ -177,7 +177,7 @@ const Home = () => {
               Driving Digital Excellence for Your Business
               </div>
               <div className="font-heading2 sm:leading-relaxed xl:text-[3rem]">
-              Enhancing Your Business's Digital Presence
+              Enhancing Your Business&apos;s Digital Presence
               </div>
               <div className="font-body sm:text-left xl:text-base xl:leading-relaxed">
               Welcome to TITTA Agency, your trusted partner for all things digital! We're here to help your business shine
