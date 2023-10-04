@@ -188,7 +188,7 @@ const Home = () => {
                   href="https://wa.me/message/KOBQXC4TEH5DP1"
                   className="text-base font-bold text-white bg-linear "
                 >
-                  Start a Chat Now
+                  Start a Chat Now.
                 </a>
                 {/* <button className="text-base font-bold bg-white bg-outline">
                   How we work
