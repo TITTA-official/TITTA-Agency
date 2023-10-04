@@ -353,7 +353,7 @@ const Home = () => {
                   Software Solutions
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                  We&apos;re not just a digital agency; we&apos;re your software solution partners. From crafting exceptional websites to delivering top-notch user experiences,
+                  We&apos;re not just a digital agency, we&apos;re your software solution partners. From crafting exceptional websites to delivering top-notch user experiences,
                    we excel at turning potential clients into loyal customers.
                   </div>
                 </div>
