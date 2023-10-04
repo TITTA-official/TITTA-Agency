@@ -174,14 +174,14 @@ const Home = () => {
           <div className="flex flex-col items-center w-full px-4 mx-auto hero-content sm:flex-row sm:justify-between sm:items-center md:max-w-6xl space-y-12 sm:space-x-6 sm:space-y-0 md:px-0">
             <div className="sm:pl-4 left-content h-full w-full mt-[6.2rem] sm:mt-[7.5rem] md:mt-[9rem] justify-center md:gap-y-5 flex flex-col items-center sm:items-start sm:text-left text-center gap-4 sm:mr-6">
               <div className="font-heading1 ">
-                Technology & Software Development
+              Enhancing Your Business's Digital Presence
               </div>
               <div className="font-heading2 sm:leading-relaxed xl:text-[3rem]">
                 Building and Creating IT Solutions
               </div>
               <div className="font-body sm:text-left xl:text-base xl:leading-relaxed">
-                We are committed to offering professional services with current
-                technologies backed by years of experience.
+              Welcome to TITTA Agency, your trusted partner for all things digital! We're here to help your business shine
+               online and achieve remarkable success in the digital world.
               </div>
               <div className="flex items-center gap-4 btn-grp">
                 <a
