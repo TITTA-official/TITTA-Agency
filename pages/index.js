@@ -180,7 +180,7 @@ const Home = () => {
               Enhancing Your Business&apos;s Digital Presence
               </div>
               <div className="font-body sm:text-left xl:text-base xl:leading-relaxed">
-              Welcome to TITTA Agency, your trusted partner for all things digital! We're here to help your business shine
+              Welcome to TITTA Agency, your trusted partner for all things digital! We&apos;re here to help your business shine
                online and achieve remarkable success in the digital world.
               </div>
               <div className="flex items-center gap-4 btn-grp">
@@ -280,8 +280,8 @@ const Home = () => {
               Transparency & Accountability
               </div>
               <div className="mt-2 text-sm md:text-base text-[#696969] max-w-xs leading-relaxed">
-              We believe in open communication and transparency. You'll always know how your digital initiatives are performing, 
-              and we'll continuously optimize to achieve the best results.
+              We believe in open communication and transparency. You&apos;ll always know how your digital initiatives are performing, 
+              and we&apos;ll continuously optimize to achieve the best results.
               </div>
             </div>
             <div className="w-full max-w-md px-4 pt-8 pb-12 bg-white rounded shadow-2xl card">
@@ -316,7 +316,7 @@ const Home = () => {
               We Provide Digital Marketing Solutions For Businesses.
             </div>
             <div className="text-[#696969] mt-2">
-            We're an agency that provides tailored digital marketing solutions for businesses across various industries, including
+            We&apos;re an agency that provides tailored digital marketing solutions for businesses across various industries, including
              e-commerce, healthcare, technology startups, and more.
             </div>
             <div className="w-full mt-3 segments">
@@ -353,7 +353,7 @@ const Home = () => {
                   Software Solutions
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                  We're not just a digital agency; we're your software solution partners. From crafting exceptional websites to delivering top-notch user experiences,
+                  We&apos;re not just a digital agency; we&apos;re your software solution partners. From crafting exceptional websites to delivering top-notch user experiences,
                    we excel at turning potential clients into loyal customers.
                   </div>
                 </div>
@@ -393,7 +393,7 @@ const Home = () => {
                   Budget-Friendly Pricing
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                  Quality shouldn't break the bank. We offer affordable software services that turn your creative ideas into reality. Your digital success is our priority, 
+                  Quality shouldn&apos;t break the bank. We offer affordable software services that turn your creative ideas into reality. Your digital success is our priority, 
                   and we make it accessible to businesses of all sizes.
                   </div>
                 </div>
