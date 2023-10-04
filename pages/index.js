@@ -174,10 +174,10 @@ const Home = () => {
           <div className="flex flex-col items-center w-full px-4 mx-auto hero-content sm:flex-row sm:justify-between sm:items-center md:max-w-6xl space-y-12 sm:space-x-6 sm:space-y-0 md:px-0">
             <div className="sm:pl-4 left-content h-full w-full mt-[6.2rem] sm:mt-[7.5rem] md:mt-[9rem] justify-center md:gap-y-5 flex flex-col items-center sm:items-start sm:text-left text-center gap-4 sm:mr-6">
               <div className="font-heading1 ">
-              Enhancing Your Business's Digital Presence
+              Driving Digital Excellence for Your Business
               </div>
               <div className="font-heading2 sm:leading-relaxed xl:text-[3rem]">
-                Building and Creating IT Solutions
+              Enhancing Your Business's Digital Presence
               </div>
               <div className="font-body sm:text-left xl:text-base xl:leading-relaxed">
               Welcome to TITTA Agency, your trusted partner for all things digital! We're here to help your business shine
@@ -188,7 +188,7 @@ const Home = () => {
                   href="https://wa.me/message/KOBQXC4TEH5DP1"
                   className="text-base font-bold text-white bg-linear "
                 >
-                  Get instant response
+                  Start a Chat Now
                 </a>
                 {/* <button className="text-base font-bold bg-white bg-outline">
                   How we work
@@ -246,10 +246,10 @@ const Home = () => {
         >
           <div className="background-overlay-22 h-[100vh] w-screen -z-10 -bottom-[10rem] absolute left-0"></div>
           <h3 className="font-heading1 text-[#104cba] poppins font-semibold">
-            Featured Services
+            Who We Are At TITTA Agency
           </h3>
           <div className="text-4xl font-semibold leading-relaxed poppins md:text-4xl">
-            Fusing Creativity With Technology
+          Why Partner with Us
           </div>
           <div className="grid grid-cols-1 gap-12 mt-5 cards sm:grid-cols-2 md:grid-cols-3 place-items-center md:max-w-6xl">
             <div className="w-full max-w-md px-4 pt-8 pb-12 bg-white rounded shadow-2xl card">
@@ -261,11 +261,11 @@ const Home = () => {
                 />
               </div>
               <div className="font-semibold poppins md:text-xl   text-[#010101] text-lg mt-6 ">
-                Creativity
+                Expertise That Matters
               </div>
               <div className="mt-2 text-sm md:text-base text-[#696969] max-w-xs leading-relaxed">
-                Whether for websites or applications, our designs will always
-                show unique ingenuity.
+              Our passionate team excels in digital marketing, web development, and design. We stay current 
+              with industry trends to offer tailored, innovative solutions.
               </div>
             </div>
             <div className="w-full max-w-md px-4 pt-8 pb-12 bg-white rounded shadow-2xl card">
@@ -277,11 +277,11 @@ const Home = () => {
                 />
               </div>
               <div className="font-semibold poppins md:text-xl  text-[#010101] text-lg mt-6 ">
-                Successful Projects
+              Transparency & Accountability
               </div>
               <div className="mt-2 text-sm md:text-base text-[#696969] max-w-xs leading-relaxed">
-                We have several projects completed with satisfactory reviews
-                from clients.
+              We believe in open communication and transparency. You'll always know how your digital initiatives are performing, 
+              and we'll continuously optimize to achieve the best results.
               </div>
             </div>
             <div className="w-full max-w-md px-4 pt-8 pb-12 bg-white rounded shadow-2xl card">
@@ -293,11 +293,11 @@ const Home = () => {
                 />
               </div>
               <div className="font-semibold poppins md:text-xl  text-[#010101] text-lg mt-6 ">
-                Professionalism
+              Your Success, Our Priority
               </div>
               <div className="mt-2 text-sm md:text-base text-[#696969] max-w-xs leading-relaxed">
-                Working with us will leave you with nothing less than
-                professional jobs done alongside our excellent work ethics.
+              We prioritize your business goals and craft strategies that align with your objectives, 
+              ensuring growth in every project we undertake.
               </div>
             </div>
 
@@ -313,12 +313,11 @@ const Home = () => {
               Core Features
             </div>
             <div className="poppins text-3xl md:text-4xl md:leading-[1.4] leading-relaxed text-[#000] font-bold">
-              We&apos;re A Software Company That Provides Solutions.
+              We Provide Digital Marketing Solutions For Businesses.
             </div>
             <div className="text-[#696969] mt-2">
-              Making awesome websites for your business, we are known to Provide
-              the best UI experience turning your potential clients into
-              customers.
+            We're an agency that provides tailored digital marketing solutions for businesses across various industries, including
+             e-commerce, healthcare, technology startups, and more.
             </div>
             <div className="w-full mt-3 segments">
               <div className="flex items-start justify-between w-full segment">
@@ -351,11 +350,11 @@ const Home = () => {
                 </div>
                 <div className="content w-[80%] md:w-[85%]">
                   <div className="topic text-[#010101] poppins font-semibold text-lg md:text-xl ">
-                    Soft Engineering
+                  Software Solutions
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                    Our engineers are trained to be detailed and produce
-                    excellent results being punctual with your delivery.
+                  We're not just a digital agency; we're your software solution partners. From crafting exceptional websites to delivering top-notch user experiences,
+                   we excel at turning potential clients into loyal customers.
                   </div>
                 </div>
               </div>
@@ -391,11 +390,11 @@ const Home = () => {
                 </div>
                 <div className="content w-[80%] md:w-[85%]">
                   <div className="topic text-[#010101] poppins font-semibold text-lg md:text-xl ">
-                    Affordable Prices
+                  Budget-Friendly Pricing
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                    At an affordable price, we provide software Services to
-                    bring your ideas to reality
+                  Quality shouldn't break the bank. We offer affordable software services that turn your creative ideas into reality. Your digital success is our priority, 
+                  and we make it accessible to businesses of all sizes.
                   </div>
                 </div>
               </div>
@@ -451,11 +450,11 @@ const Home = () => {
           <div className="px-4 cont py-14 md:flex md:items-center">
             <div className="left-content text-center md:text-left md:w-[75%] md:ml-12">
               <div className="text-4xl font-semibold leading-relaxed poppins ">
-                Execute your creative projects With TITTA
+                Execute your creative projects With TITTA Agency
                 {/* Let&apos;s Start A Cool Project With TITTA! */}
               </div>
               <div className="mt-2">
-                We Provide Best Solution For Your Business
+                We Provide Best Solutions For Your Business
               </div>
             </div>
             <div className="right-content mt-3 md:mt-0 text-center w-full md:w-[25%]">
@@ -463,7 +462,7 @@ const Home = () => {
                 href="https://wa.me/message/KOBQXC4TEH5DP1"
                 className="btn text-white text-lg mt-6 block bg-linear font-bold w-[180px] mx-auto"
               >
-                Start a Project
+                Reach Out
               </a>
             </div>
           </div>
