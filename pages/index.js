@@ -1,3 +1,4 @@
+"use client";
 import { motion, useCycle, useScroll } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
@@ -8,6 +9,12 @@ import MenuToggler from "../components/MenuToggler";
 import Navbar from "../components/Navbar";
 import Navigation from "../components/Navigation";
 import styles from "../styles/Home.module.css";
+import { GrFormClose } from "react-icons/gr";
+import { IconContext } from "react-icons";
+import { event } from "nextjs-google-analytics";
+import { doc, updateDoc, arrayUnion } from "firebase/firestore";
+import { db } from "./firebase";
+import { TfiEmail } from "react-icons/tfi";
 
 const sidebarVariants = {
   // open: {opacity: 1, x:0, display:'block'},
@@ -95,13 +102,92 @@ const Home = () => {
     }
   };
 
+  const [popup, setPopup] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setPopup(true);
+    }, 10000);
+  }, []);
+
+  const [email, setEmail] = useState();
+  const [whatsapp, setWhatsapp] = useState();
+
   return (
     <>
       <main className="relative w-full ">
+        <div
+          className={`fixed transition-all duration-500 z-20 top-0 ${
+            popup ? "left-0" : "left-[-100%]"
+          } w-full h-full bg-black opacity-40`}
+        ></div>
+        <div
+          className={`fixed transition-all duration-500 z-30 ${
+            popup ? "left-0 md:left-[15vw]" : "left-[-100%]"
+          } md:top-[15vh] top-[25vh] w-[100vw] md:w-[70vw] h-[50vh] md:h-[70vh] rounded-[20px] bg-white popup flex flex-col md:flex-row items-center justify-center`}
+        >
+          <IconContext.Provider value={{ color: "#0a2761", size: "30px" }}>
+            <div className="absolute top-[20px] right-[20px] md:top-[-11px] md:right-[-11px] bg-white rounded-full shadow-sm shadow-black">
+              <GrFormClose onClick={() => setPopup(false)} />
+            </div>
+          </IconContext.Provider>
+
+          <IconContext.Provider value={{ color: "white", size: "50px" }}>
+            <div className="bg-gradient-to-r from-[#ff3834] to-[#ff7133] static md:absolute rounded-full p-[20px] shadow-sm shadow-black mt-[-45px] md:left-[-45px] md:top-[50px]">
+              <TfiEmail />
+            </div>
+          </IconContext.Provider>
+
+          <div className="px-[40px] w-[50%] h-full bg-gradient-to-b from-[#3e1786] to-[#0a51c7] hidden lg:flex flex-col text-white items-center justify-center">
+            <div className="text-[28px] font-semibold">SUBSCRIBE TO OUR</div>
+            <div className="text-[56px] font-bold leading-[60px]">
+              Newsletter
+            </div>
+            <div className="text-[18px] italic text-center mt-[30px]">
+              ...for exclusive content, early access to updates, special offers,
+              personalized recommendations, and a chance to join a like-minded
+              community. Don't miss out, join us today!"
+            </div>
+          </div>
+          <div className="lg:px-[40px] lg:pt-[100px] lg:w-[50%] w-full h-full">
+            <div className="lg:p-[40px] p-[20px] flex flex-col lg:items-end items-center justify-center">
+              <div className="text-[16px] font-semibold static lg:hidden">SUBSCRIBE TO OUR</div>
+              <div className="text-[32px] font-bold leading-[30px] static lg:hidden">
+                Newsletter
+              </div>
+              <input
+                className="md:w-full mt-[30px] w-[250px] h-[40px] bg-[#e9e9e9] p-[10px] mb-[20px]"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+              <input
+                className="md:w-full w-[250px] bg-[#e9e9e9] p-[10px] mb-[30px]"
+                placeholder="Whatsapp (optional)"
+                value={whatsapp}
+                onChange={(e) => {
+                  setWhatsapp(e.target.value);
+                }}
+              />
+              <button
+                className="bg-gradient-to-r from-[#ff3834] to-[#ff7133] py-[10px] px-[20px] text-white font-bold"
+                onClick={() => {
+                  updateDoc(doc(db, "User", "Contact"), {
+                    contacts: arrayUnion({ email: email, whatsapp: whatsapp }),
+                  });
+                  setPopup(false);
+                }}
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
         <header
           className={`navbar transition-all duration-500 ${
             changeNav ? "bg-white text-black" : "text-white bg-transparent"
-          } poppins w-full sticky px-4 py-2 lg:px-[4rem] z-50 top-0 left-0 right-0 flex items-center justify-between  sm:mx-auto`}
+          } poppins w-full sticky px-4 py-2 lg:px-[4rem] z-10 top-0 left-0 right-0 flex items-center justify-between  sm:mx-auto`}
         >
           <Navbar color="#fff" />
           <motion.nav
@@ -174,21 +260,21 @@ const Home = () => {
           <div className="flex flex-col items-center w-full px-4 mx-auto hero-content sm:flex-row sm:justify-between sm:items-center md:max-w-6xl space-y-12 sm:space-x-6 sm:space-y-0 md:px-0">
             <div className="sm:pl-4 left-content h-full w-full mt-[6.2rem] sm:mt-[7.5rem] md:mt-[9rem] justify-center md:gap-y-5 flex flex-col items-center sm:items-start sm:text-left text-center gap-4 sm:mr-6">
               <div className="font-heading1 ">
-              Driving Digital Excellence for Your Business
+                Technology & Software Development
               </div>
               <div className="font-heading2 sm:leading-relaxed xl:text-[3rem]">
-              Enhancing Your Business&apos;s Digital Presence
+                Building and Creating IT Solutions
               </div>
               <div className="font-body sm:text-left xl:text-base xl:leading-relaxed">
-              Welcome to TITTA Agency, your trusted partner for all things digital! We&apos;re here to help your business shine
-               online and achieve remarkable success in the digital world.
+                We are committed to offering professional services with current
+                technologies backed by years of experience.
               </div>
               <div className="flex items-center gap-4 btn-grp">
                 <a
                   href="https://wa.me/message/KOBQXC4TEH5DP1"
                   className="text-base font-bold text-white bg-linear "
                 >
-                  Start a Chat Now.
+                  Get Started
                 </a>
                 {/* <button className="text-base font-bold bg-white bg-outline">
                   How we work
@@ -246,10 +332,10 @@ const Home = () => {
         >
           <div className="background-overlay-22 h-[100vh] w-screen -z-10 -bottom-[10rem] absolute left-0"></div>
           <h3 className="font-heading1 text-[#104cba] poppins font-semibold">
-            Who We Are At TITTA Agency
+            Featured Services
           </h3>
           <div className="text-4xl font-semibold leading-relaxed poppins md:text-4xl">
-          Why Partner with Us
+            Fusing Creativity With Technology
           </div>
           <div className="grid grid-cols-1 gap-12 mt-5 cards sm:grid-cols-2 md:grid-cols-3 place-items-center md:max-w-6xl">
             <div className="w-full max-w-md px-4 pt-8 pb-12 bg-white rounded shadow-2xl card">
@@ -261,11 +347,11 @@ const Home = () => {
                 />
               </div>
               <div className="font-semibold poppins md:text-xl   text-[#010101] text-lg mt-6 ">
-                Expertise That Matters
+                Creativity
               </div>
               <div className="mt-2 text-sm md:text-base text-[#696969] max-w-xs leading-relaxed">
-              Our passionate team excels in digital marketing, web development, and design. We stay current 
-              with industry trends to offer tailored, innovative solutions.
+                Whether for websites or applications, our designs will always
+                show unique ingenuity.
               </div>
             </div>
             <div className="w-full max-w-md px-4 pt-8 pb-12 bg-white rounded shadow-2xl card">
@@ -277,11 +363,11 @@ const Home = () => {
                 />
               </div>
               <div className="font-semibold poppins md:text-xl  text-[#010101] text-lg mt-6 ">
-              Transparency & Accountability
+                Successful Projects
               </div>
               <div className="mt-2 text-sm md:text-base text-[#696969] max-w-xs leading-relaxed">
-              We believe in open communication and transparency. You&apos;ll always know how your digital initiatives are performing, 
-              and we&apos;ll continuously optimize to achieve the best results.
+                We have several projects completed with satisfactory reviews
+                from clients.
               </div>
             </div>
             <div className="w-full max-w-md px-4 pt-8 pb-12 bg-white rounded shadow-2xl card">
@@ -293,11 +379,11 @@ const Home = () => {
                 />
               </div>
               <div className="font-semibold poppins md:text-xl  text-[#010101] text-lg mt-6 ">
-              Your Success, Our Priority
+                Professionalism
               </div>
               <div className="mt-2 text-sm md:text-base text-[#696969] max-w-xs leading-relaxed">
-              We prioritize your business goals and craft strategies that align with your objectives, 
-              ensuring growth in every project we undertake.
+                Working with us will leave you with nothing less than
+                professional jobs done alongside our excellent work ethics.
               </div>
             </div>
 
@@ -313,11 +399,12 @@ const Home = () => {
               Core Features
             </div>
             <div className="poppins text-3xl md:text-4xl md:leading-[1.4] leading-relaxed text-[#000] font-bold">
-              We Provide Digital Marketing Solutions For Businesses.
+              We&apos;re A Software Company That Provides Solutions.
             </div>
             <div className="text-[#696969] mt-2">
-            We&apos;re an agency that provides tailored digital marketing solutions for businesses across various industries, including
-             e-commerce, healthcare, technology startups, and more.
+              Making awesome websites for your business, we are known to Provide
+              the best UI experience turning your potential clients into
+              customers.
             </div>
             <div className="w-full mt-3 segments">
               <div className="flex items-start justify-between w-full segment">
@@ -350,11 +437,11 @@ const Home = () => {
                 </div>
                 <div className="content w-[80%] md:w-[85%]">
                   <div className="topic text-[#010101] poppins font-semibold text-lg md:text-xl ">
-                  Software Solutions
+                    Soft Engineering
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                  We&apos;re not just a digital agency, we&apos;re your software solution partners. From crafting exceptional websites to delivering top-notch user experiences,
-                   we excel at turning potential clients into loyal customers.
+                    Our engineers are trained to be detailed and produce
+                    excellent results being punctual with your delivery.
                   </div>
                 </div>
               </div>
@@ -390,11 +477,11 @@ const Home = () => {
                 </div>
                 <div className="content w-[80%] md:w-[85%]">
                   <div className="topic text-[#010101] poppins font-semibold text-lg md:text-xl ">
-                  Budget-Friendly Pricing
+                    Affordable Prices
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                  Quality shouldn&apos;t break the bank. We offer affordable software services that turn your creative ideas into reality. Your digital success is our priority, 
-                  and we make it accessible to businesses of all sizes.
+                    At an affordable price, we provide software Services to
+                    bring your ideas to reality
                   </div>
                 </div>
               </div>
@@ -415,10 +502,10 @@ const Home = () => {
             </div>
             <div className="clientDiv grid grid-flow-col grid-rows-2 items-center justify-between mt-3 md:mt-4 overflow-scroll w-[90vw] max-w-[800px]">
               <div className="logo1 relative overflow-hidden w-32 h-8 m-4 mr-6">
-                  <Image src={"/logo1.png"} layout="fill" />
+                <Image src={"/logo1.png"} layout="fill" />
               </div>
               <div className="relative overflow-hidden w-32 h-16 m-4">
-                <Image src={"/logo2.png"} layout="fill"/>
+                <Image src={"/logo2.png"} layout="fill" />
               </div>
               <div className="relative rounded-full overflow-hidden w-24 h-8 m-4 mr-9">
                 <Image src={"/logo3.png"} layout="fill" />
@@ -450,11 +537,11 @@ const Home = () => {
           <div className="px-4 cont py-14 md:flex md:items-center">
             <div className="left-content text-center md:text-left md:w-[75%] md:ml-12">
               <div className="text-4xl font-semibold leading-relaxed poppins ">
-                Execute your creative projects With TITTA Agency
+                Execute your creative projects With TITTA
                 {/* Let&apos;s Start A Cool Project With TITTA! */}
               </div>
               <div className="mt-2">
-                We Provide Best Solutions For Your Business
+                We Provide Best Solution For Your Business
               </div>
             </div>
             <div className="right-content mt-3 md:mt-0 text-center w-full md:w-[25%]">
@@ -462,7 +549,7 @@ const Home = () => {
                 href="https://wa.me/message/KOBQXC4TEH5DP1"
                 className="btn text-white text-lg mt-6 block bg-linear font-bold w-[180px] mx-auto"
               >
-                Reach Out
+                Start a Project
               </a>
             </div>
           </div>
