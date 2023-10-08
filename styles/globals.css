@@ -403,3 +403,7 @@ svg {
 .darkbg{
   background-color: #111133;
 }
+
+.popup {
+  box-shadow: 2px 2px 2px 2px #0a2761, -2px -2px 2px 2px #0a2761;
+}

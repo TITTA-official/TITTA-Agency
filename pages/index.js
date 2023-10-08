@@ -503,8 +503,10 @@ const Home = () => {
             <div className="clientDiv grid grid-flow-col grid-rows-2 items-center justify-between mt-3 md:mt-4 overflow-scroll w-[90vw] max-w-[800px]">
               <div className="logo1 relative overflow-hidden w-32 h-8 m-4 mr-6">
                 <Image src={"/logo1.png"} layout="fill" />
+                <Image src={"/logo1.png"} layout="fill" />
               </div>
               <div className="relative overflow-hidden w-32 h-16 m-4">
+                <Image src={"/logo2.png"} layout="fill" />
                 <Image src={"/logo2.png"} layout="fill" />
               </div>
               <div className="relative rounded-full overflow-hidden w-24 h-8 m-4 mr-9">
