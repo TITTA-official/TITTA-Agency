@@ -109,8 +109,8 @@ const Home = () => {
     }, 10000);
   }, []);
 
-  const [email, setEmail] = useState();
-  const [whatsapp, setWhatsapp] = useState();
+  const [email, setEmail] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
 
   return (
     <>
