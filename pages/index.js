@@ -143,7 +143,7 @@ const Home = () => {
               Newsletter
             </div>
             <div className="text-[18px] italic text-center mt-[30px]">
-              {`...for exclusive content, early access to updates, special offers,
+              {`"...for exclusive content, early access to updates, special offers,
               personalized recommendations, and a chance to join a like-minded
               community. Don't miss out, join us today!"`}
             </div>
