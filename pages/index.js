@@ -143,9 +143,9 @@ const Home = () => {
               Newsletter
             </div>
             <div className="text-[18px] italic text-center mt-[30px]">
-              ...for exclusive content, early access to updates, special offers,
+              {`...for exclusive content, early access to updates, special offers,
               personalized recommendations, and a chance to join a like-minded
-              community. Don't miss out, join us today!"
+              community. Don't miss out, join us today!"`}
             </div>
           </div>
           <div className="lg:px-[40px] lg:pt-[100px] lg:w-[50%] w-full h-full">
@@ -502,33 +502,33 @@ const Home = () => {
             </div>
             <div className="clientDiv grid grid-flow-col grid-rows-2 items-center justify-between mt-3 md:mt-4 overflow-scroll w-[90vw] max-w-[800px]">
               <div className="logo1 relative overflow-hidden w-32 h-8 m-4 mr-6">
-                <Image src={"/logo1.png"} layout="fill" />
-                <Image src={"/logo1.png"} layout="fill" />
+                <Image src={"/logo1.png"} alt="logo1" layout="fill" />
+                <Image src={"/logo1.png"} alt="logo1" layout="fill" />
               </div>
               <div className="relative overflow-hidden w-32 h-16 m-4">
-                <Image src={"/logo2.png"} layout="fill" />
-                <Image src={"/logo2.png"} layout="fill" />
+                <Image src={"/logo2.png"} alt="logo2" layout="fill" />
+                <Image src={"/logo2.png"} alt="logo2" layout="fill" />
               </div>
               <div className="relative rounded-full overflow-hidden w-24 h-8 m-4 mr-9">
-                <Image src={"/logo3.png"} layout="fill" />
+                <Image src={"/logo3.png"} alt="logo3" layout="fill" />
               </div>
               <div className="logodiv relative rounded-full overflow-hidden w-24 h-24 m-4">
-                <Image src={"/logo4.png"} layout="fill" />
+                <Image src={"/logo4.png"} alt="logo4" layout="fill" />
               </div>
               <div className="logodiv relative rounded-full overflow-hidden w-24 h-24 bg-black m-4 mr-9">
-                <Image src={"/logo5.png"} layout="fill" />
+                <Image src={"/logo5.png"} alt="logo5" layout="fill" />
               </div>
               <div className="darkbg relative rounded-full overflow-hidden w-24 h-24 m-4">
-                <Image src={"/logo6.png"} layout="fill" />
+                <Image src={"/logo6.png"} alt="logo6" layout="fill" />
               </div>
               <div className="logodiv relative rounded-full overflow-hidden w-24 h-24 m-4 mr-9">
-                <Image src={"/logo7.png"} layout="fill" />
+                <Image src={"/logo7.png"} alt="logo7" layout="fill" />
               </div>
               <div className="darkbg relative rounded-full overflow-hidden w-24 h-24 m-4">
-                <Image src={"/logo8.png"} layout="fill" />
+                <Image src={"/logo8.png"} alt="logo8" layout="fill" />
               </div>
               <div className="darkbg relative rounded-full overflow-hidden w-24 h-24 m-4">
-                <Image src={"/logo9.png"} layout="fill" />
+                <Image src={"/logo9.png"} alt="logo9" layout="fill" />
               </div>
             </div>
           </div>
