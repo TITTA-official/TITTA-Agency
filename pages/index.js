@@ -106,7 +106,7 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setPopup(true);
-    }, 10000);
+    }, 10001);
   }, []);
 
   const [email, setEmail] = useState();
