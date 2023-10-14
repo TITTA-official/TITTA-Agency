@@ -13,7 +13,7 @@ import { GrFormClose } from "react-icons/gr";
 import { IconContext } from "react-icons";
 import { event } from "nextjs-google-analytics";
 import { doc, updateDoc, arrayUnion } from "firebase/firestore";
-import { db } from "./firebase";
+import { db } from "../components/firebase";
 import { TfiEmail } from "react-icons/tfi";
 
 const sidebarVariants = {
@@ -106,7 +106,7 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setPopup(true);
-    }, 10001);
+    }, 10000);
   }, []);
 
   const [email, setEmail] = useState();
