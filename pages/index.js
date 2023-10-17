@@ -15,6 +15,11 @@ import { event } from "nextjs-google-analytics";
 import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import { db } from "../components/firebase";
 import { TfiEmail } from "react-icons/tfi";
+import { BsGlobe2 } from "react-icons/bs";
+import { BsPalette } from "react-icons/bs";
+import { MdOutlineDesignServices } from "react-icons/md";
+import { ImVideoCamera } from "react-icons/im";
+import { SlScreenSmartphone } from "react-icons/sl";
 
 const sidebarVariants = {
   // open: {opacity: 1, x:0, display:'block'},
@@ -150,7 +155,9 @@ const Home = () => {
           </div>
           <div className="lg:px-[40px] lg:pt-[100px] lg:w-[50%] w-full h-full">
             <div className="lg:p-[40px] p-[20px] flex flex-col lg:items-end items-center justify-center">
-              <div className="text-[16px] font-semibold static lg:hidden">SUBSCRIBE TO OUR</div>
+              <div className="text-[16px] font-semibold static lg:hidden">
+                SUBSCRIBE TO OUR
+              </div>
               <div className="text-[32px] font-bold leading-[30px] static lg:hidden">
                 Newsletter
               </div>
@@ -260,21 +267,22 @@ const Home = () => {
           <div className="flex flex-col items-center w-full px-4 mx-auto hero-content sm:flex-row sm:justify-between sm:items-center md:max-w-6xl space-y-12 sm:space-x-6 sm:space-y-0 md:px-0">
             <div className="sm:pl-4 left-content h-full w-full mt-[6.2rem] sm:mt-[7.5rem] md:mt-[9rem] justify-center md:gap-y-5 flex flex-col items-center sm:items-start sm:text-left text-center gap-4 sm:mr-6">
               <div className="font-heading1 ">
-                Technology & Software Development
+                {`Driving Digital Excellence for Your Business`}
               </div>
               <div className="font-heading2 sm:leading-relaxed xl:text-[3rem]">
-                Building and Creating IT Solutions
+                {`Enhancing Your Business's Digital Presence`}
               </div>
               <div className="font-body sm:text-left xl:text-base xl:leading-relaxed">
-                We are committed to offering professional services with current
-                technologies backed by years of experience.
+                {`Welcome to TITTA Agency, your trusted partner for all things
+                digital! We're here to help your business shine online and
+                achieve remarkable success in the digital world.`}
               </div>
               <div className="flex items-center gap-4 btn-grp">
                 <a
                   href="https://wa.me/message/KOBQXC4TEH5DP1"
                   className="text-base font-bold text-white bg-linear "
                 >
-                  Get Started
+                  Start a Chat Now
                 </a>
                 {/* <button className="text-base font-bold bg-white bg-outline">
                   How we work
@@ -332,10 +340,10 @@ const Home = () => {
         >
           <div className="background-overlay-22 h-[100vh] w-screen -z-10 -bottom-[10rem] absolute left-0"></div>
           <h3 className="font-heading1 text-[#104cba] poppins font-semibold">
-            Featured Services
+            Who We Are At TITTA Agency
           </h3>
           <div className="text-4xl font-semibold leading-relaxed poppins md:text-4xl">
-            Fusing Creativity With Technology
+            Why Partner with Us
           </div>
           <div className="grid grid-cols-1 gap-12 mt-5 cards sm:grid-cols-2 md:grid-cols-3 place-items-center md:max-w-6xl">
             <div className="w-full max-w-md px-4 pt-8 pb-12 bg-white rounded shadow-2xl card">
@@ -347,11 +355,12 @@ const Home = () => {
                 />
               </div>
               <div className="font-semibold poppins md:text-xl   text-[#010101] text-lg mt-6 ">
-                Creativity
+                Expertise That Matters
               </div>
               <div className="mt-2 text-sm md:text-base text-[#696969] max-w-xs leading-relaxed">
-                Whether for websites or applications, our designs will always
-                show unique ingenuity.
+                {`Our passionate team excels in digital marketing, web
+                development, and design. We stay current with industry trends to
+                offer tailored, innovative solutions.`}
               </div>
             </div>
             <div className="w-full max-w-md px-4 pt-8 pb-12 bg-white rounded shadow-2xl card">
@@ -363,11 +372,12 @@ const Home = () => {
                 />
               </div>
               <div className="font-semibold poppins md:text-xl  text-[#010101] text-lg mt-6 ">
-                Successful Projects
+                Transparency & Accountability
               </div>
               <div className="mt-2 text-sm md:text-base text-[#696969] max-w-xs leading-relaxed">
-                We have several projects completed with satisfactory reviews
-                from clients.
+                {`We believe in open communication and transparency. You'll always
+                know how your digital initiatives are performing, and we'll
+                continuously optimize to achieve the best results.`}
               </div>
             </div>
             <div className="w-full max-w-md px-4 pt-8 pb-12 bg-white rounded shadow-2xl card">
@@ -379,11 +389,12 @@ const Home = () => {
                 />
               </div>
               <div className="font-semibold poppins md:text-xl  text-[#010101] text-lg mt-6 ">
-                Professionalism
+                Your Success, Our Priority
               </div>
               <div className="mt-2 text-sm md:text-base text-[#696969] max-w-xs leading-relaxed">
-                Working with us will leave you with nothing less than
-                professional jobs done alongside our excellent work ethics.
+                {`We prioritize your business goals and craft strategies that
+                align with your objectives, ensuring growth in every project we
+                undertake.`}
               </div>
             </div>
 
@@ -399,12 +410,12 @@ const Home = () => {
               Core Features
             </div>
             <div className="poppins text-3xl md:text-4xl md:leading-[1.4] leading-relaxed text-[#000] font-bold">
-              We&apos;re A Software Company That Provides Solutions.
+              We Provide Digital Marketing Solutions For Businesses.
             </div>
             <div className="text-[#696969] mt-2">
-              Making awesome websites for your business, we are known to Provide
-              the best UI experience turning your potential clients into
-              customers.
+              We're an agency that provides tailored digital marketing solutions
+              for businesses across various industries, including e-commerce,
+              healthcare, technology startups, and more.
             </div>
             <div className="w-full mt-3 segments">
               <div className="flex items-start justify-between w-full segment">
@@ -437,11 +448,13 @@ const Home = () => {
                 </div>
                 <div className="content w-[80%] md:w-[85%]">
                   <div className="topic text-[#010101] poppins font-semibold text-lg md:text-xl ">
-                    Soft Engineering
+                    Software Solutions
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                    Our engineers are trained to be detailed and produce
-                    excellent results being punctual with your delivery.
+                    We're not just a digital agency, we're your software
+                    solution partners. From crafting exceptional websites to
+                    delivering top-notch user experiences, we excel at turning
+                    potential clients into loyal customers.
                   </div>
                 </div>
               </div>
@@ -477,11 +490,13 @@ const Home = () => {
                 </div>
                 <div className="content w-[80%] md:w-[85%]">
                   <div className="topic text-[#010101] poppins font-semibold text-lg md:text-xl ">
-                    Affordable Prices
+                    Budget-Friendly Pricing
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                    At an affordable price, we provide software Services to
-                    bring your ideas to reality
+                    Quality shouldn't break the bank. We offer affordable
+                    software services that turn your creative ideas into
+                    reality. Your digital success is our priority, and we make
+                    it accessible to businesses of all sizes.
                   </div>
                 </div>
               </div>
@@ -535,15 +550,15 @@ const Home = () => {
         </section>
 
         {/*Promo Section*/}
-        <section className="promo w-full md:max-w-6xl mx-auto md:rounded md:relative md:-bottom-[5.5rem] shadow-xl">
+        <section className="promo w-full md:max-w-7xl mx-auto md:rounded md:relative md:-bottom-[5.5rem] shadow-xl">
           <div className="px-4 cont py-14 md:flex md:items-center">
             <div className="left-content text-center md:text-left md:w-[75%] md:ml-12">
               <div className="text-4xl font-semibold leading-relaxed poppins ">
-                Execute your creative projects With TITTA
+                Execute your creative projects With TITTA Agency
                 {/* Let&apos;s Start A Cool Project With TITTA! */}
               </div>
               <div className="mt-2">
-                We Provide Best Solution For Your Business
+                We Provide Best Solutions For Your Business
               </div>
             </div>
             <div className="right-content mt-3 md:mt-0 text-center w-full md:w-[25%]">
@@ -551,7 +566,7 @@ const Home = () => {
                 href="https://wa.me/message/KOBQXC4TEH5DP1"
                 className="btn text-white text-lg mt-6 block bg-linear font-bold w-[180px] mx-auto"
               >
-                Start a Project
+                Reach Out
               </a>
             </div>
           </div>
@@ -566,134 +581,69 @@ const Home = () => {
               <div className="flex flex-col cards1 gap-7 sm:mt-4">
                 <div className="flex flex-col items-center py-6 rounded card gap-y-3 bg-another-cards">
                   <div className="icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill="#ffffff"
-                        d="M16.006 16h-3.506c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h3.506c1.651 0 2.994-1.343 2.994-2.994s-1.343-2.994-2.994-2.994c-0.352 0-0.696 0.060-1.023 0.179-0.218 0.079-0.462-0.002-0.589-0.196s-0.104-0.45 0.056-0.618c0.355-0.373 0.55-0.862 0.55-1.377 0-1.103-0.897-2-2-2-0.642 0-1.229 0.297-1.61 0.814-0.229 0.31-0.362 0.677-0.386 1.061-0.013 0.212-0.159 0.393-0.364 0.451s-0.423-0.021-0.545-0.195l-0.005-0.007c-0.107-0.152-0.226-0.302-0.351-0.442-0.949-1.068-2.312-1.681-3.74-1.681-2.757 0-5 2.243-5 5s2.243 5 5 5h2.5c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-2.5c-3.308 0-6-2.692-6-6s2.692-6 6-6c1.603 0 3.137 0.643 4.261 1.775 0.087-0.195 0.196-0.381 0.324-0.555 0.564-0.764 1.467-1.22 2.415-1.22 1.654 0 3 1.346 3 3 0 0.351-0.061 0.694-0.176 1.017 0.061-0.003 0.122-0.004 0.183-0.004 2.202 0 3.994 1.792 3.994 3.994s-1.792 3.994-3.994 3.994z"
-                      ></path>
-                      <path
-                        fill="#ffffff"
-                        d="M12.854 12.146l-2-2c-0.195-0.195-0.512-0.195-0.707 0l-2 2c-0.195 0.195-0.195 0.512 0 0.707s0.512 0.195 0.707 0l1.146-1.146v3.793c0 0.276 0.224 0.5 0.5 0.5s0.5-0.224 0.5-0.5v-3.793l1.146 1.146c0.098 0.098 0.226 0.146 0.354 0.146s0.256-0.049 0.354-0.146c0.195-0.195 0.195-0.512 0-0.707z"
-                      ></path>
-                    </svg>
+                    <BsGlobe2 />
                   </div>
-                  <div className="mt-2 text-lg poppins">Web Development</div>
+                  <div className="mt-2 text-lg poppins">Web Design</div>
                   <div className="text-[#a1a1a1]">
-                    Expert and creative designs for website that provide
-                    seamless navigation and functionality.
+                    {`Your website is your digital storefront, and we craft it
+                    with precision. Our expert web designers will ensure your
+                    online presence not only looks stunning but is also
+                    user-friendly, responsive, and built for success. Say hello
+                    to a website that captivates and converts!`}
                   </div>
                 </div>
                 <div className="flex flex-col items-center py-6 card gap-y-3 bg-another-cards">
                   <div className="icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill=""
-                        d="M17.5 20h-16c-0.827 0-1.5-0.673-1.5-1.5v-16c0-0.827 0.673-1.5 1.5-1.5h16c0.827 0 1.5 0.673 1.5 1.5v16c0 0.827-0.673 1.5-1.5 1.5zM1.5 2c-0.276 0-0.5 0.224-0.5 0.5v16c0 0.276 0.224 0.5 0.5 0.5h16c0.276 0 0.5-0.224 0.5-0.5v-16c0-0.276-0.224-0.5-0.5-0.5h-16z"
-                      ></path>
-                      <path
-                        fill=""
-                        d="M6.5 17h-2c-0.276 0-0.5-0.224-0.5-0.5v-9c0-0.276 0.224-0.5 0.5-0.5h2c0.276 0 0.5 0.224 0.5 0.5v9c0 0.276-0.224 0.5-0.5 0.5zM5 16h1v-8h-1v8z"
-                      ></path>
-                      <path
-                        fill=""
-                        d="M10.5 17h-2c-0.276 0-0.5-0.224-0.5-0.5v-12c0-0.276 0.224-0.5 0.5-0.5h2c0.276 0 0.5 0.224 0.5 0.5v12c0 0.276-0.224 0.5-0.5 0.5zM9 16h1v-11h-1v11z"
-                      ></path>
-                      <path
-                        fill=""
-                        d="M14.5 17h-2c-0.276 0-0.5-0.224-0.5-0.5v-5c0-0.276 0.224-0.5 0.5-0.5h2c0.276 0 0.5 0.224 0.5 0.5v5c0 0.276-0.224 0.5-0.5 0.5zM13 16h1v-4h-1v4z"
-                      ></path>
-                    </svg>
+                    <BsPalette />
                   </div>
-                  <div className="mt-2 text-lg poppins"> UI/UX Design</div>
+                  <div className="mt-2 text-lg poppins"> Logo Branding </div>
                   <div className="text-[#a1a1a1]">
-                    Well-executed user interface that improve customer
-                    satisfaction and meet user expectations and ease of use.
+                    {`Your logo is your brand's identity. Let us help you create a
+                    logo that not only represents your business but also leaves
+                    a lasting impression. Our team of talented designers will
+                    ensure your logo stands out in the crowd.`}
                   </div>
                 </div>
                 <div className="flex flex-col items-center py-6 card gap-y-3 bg-another-cards">
                   <div className="icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill="#ffffff"
-                        d="M17.854 5.646l-4.5-4.5c-0.094-0.094-0.221-0.146-0.354-0.146h-9.5c-0.827 0-1.5 0.673-1.5 1.5v16c0 0.827 0.673 1.5 1.5 1.5h13c0.827 0 1.5-0.673 1.5-1.5v-12.5c0-0.133-0.053-0.26-0.146-0.354zM16.793 6h-3.293c-0.276 0-0.5-0.224-0.5-0.5v-3.293l3.793 3.793zM16.5 19h-13c-0.276 0-0.5-0.224-0.5-0.5v-16c0-0.276 0.224-0.5 0.5-0.5h8.5v3.5c0 0.827 0.673 1.5 1.5 1.5h3.5v11.5c0 0.276-0.224 0.5-0.5 0.5z"
-                      ></path>
-                      <path
-                        fill="#ffffff"
-                        d="M11.5 13h-2.5v-2.5c0-0.276-0.224-0.5-0.5-0.5s-0.5 0.224-0.5 0.5v2.5h-2.5c-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5h2.5v2.5c0 0.276 0.224 0.5 0.5 0.5s0.5-0.224 0.5-0.5v-2.5h2.5c0.276 0 0.5-0.224 0.5-0.5s-0.224-0.5-0.5-0.5z"
-                      ></path>
-                    </svg>
+                    <MdOutlineDesignServices />
                   </div>
 
-                  <div className="mt-2 text-lg poppins">Graphics Design</div>
+                  <div className="mt-2 text-lg poppins">Flyer Design</div>
                   <div className="text-[#a1a1a1]">
-                    Topnotch visual creations to improve your online presence.
+                    {`Need to make a statement offline? Our flyer design services
+                    are the perfect solution. Whether you're promoting an event,
+                    product, or service, our designs will grab attention and
+                    make your message unforgettable.`}
                   </div>
                 </div>
               </div>
               <div className="flex flex-col cards2 gap-7 sm:mt-8">
                 <div className="flex flex-col items-center py-6 card gap-y-3 bg-another-cards">
                   <div className="icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill="#ffffff"
-                        d="M7.631 19.702c-0.041 0-0.083-0.005-0.125-0.016-0.898-0.231-1.761-0.587-2.564-1.059-0.233-0.137-0.315-0.434-0.186-0.671 0.159-0.292 0.243-0.622 0.243-0.957 0-1.103-0.897-2-2-2-0.334 0-0.665 0.084-0.957 0.243-0.237 0.129-0.534 0.047-0.671-0.186-0.472-0.804-0.828-1.666-1.059-2.564-0.065-0.254 0.077-0.515 0.325-0.598 0.814-0.274 1.362-1.036 1.362-1.895s-0.547-1.621-1.362-1.895c-0.248-0.084-0.39-0.344-0.325-0.598 0.231-0.898 0.587-1.761 1.059-2.564 0.137-0.233 0.434-0.315 0.671-0.186 0.291 0.159 0.622 0.243 0.957 0.243 1.103 0 2-0.897 2-2 0-0.334-0.084-0.665-0.243-0.957-0.129-0.237-0.047-0.534 0.186-0.671 0.804-0.472 1.666-0.828 2.564-1.059 0.254-0.065 0.515 0.077 0.598 0.325 0.274 0.814 1.036 1.362 1.895 1.362s1.621-0.547 1.895-1.362c0.084-0.248 0.345-0.39 0.598-0.325 0.898 0.231 1.761 0.587 2.564 1.059 0.233 0.137 0.315 0.434 0.186 0.671-0.159 0.292-0.243 0.622-0.243 0.957 0 1.103 0.897 2 2 2 0.334 0 0.665-0.084 0.957-0.243 0.237-0.129 0.534-0.047 0.671 0.186 0.472 0.804 0.828 1.666 1.059 2.564 0.065 0.254-0.077 0.515-0.325 0.598-0.814 0.274-1.362 1.036-1.362 1.895s0.547 1.621 1.362 1.895c0.248 0.084 0.39 0.344 0.325 0.598-0.231 0.898-0.587 1.761-1.059 2.564-0.137 0.233-0.434 0.315-0.671 0.186-0.292-0.159-0.622-0.243-0.957-0.243-1.103 0-2 0.897-2 2 0 0.334 0.084 0.665 0.243 0.957 0.129 0.237 0.047 0.534-0.186 0.671-0.804 0.472-1.666 0.828-2.564 1.059-0.254 0.065-0.515-0.077-0.598-0.325-0.274-0.814-1.036-1.362-1.895-1.362s-1.621 0.547-1.895 1.362c-0.070 0.207-0.264 0.341-0.474 0.341zM10 17c1.127 0 2.142 0.628 2.655 1.602 0.52-0.161 1.026-0.369 1.51-0.622-0.108-0.314-0.164-0.646-0.164-0.98 0-1.654 1.346-3 3-3 0.334 0 0.666 0.056 0.98 0.164 0.253-0.484 0.462-0.989 0.622-1.51-0.974-0.512-1.602-1.527-1.602-2.655s0.628-2.142 1.602-2.655c-0.161-0.52-0.369-1.026-0.622-1.51-0.314 0.108-0.646 0.164-0.98 0.164-1.654 0-3-1.346-3-3 0-0.334 0.056-0.666 0.164-0.98-0.484-0.253-0.989-0.462-1.51-0.622-0.512 0.974-1.527 1.602-2.655 1.602s-2.142-0.628-2.655-1.602c-0.52 0.16-1.026 0.369-1.51 0.622 0.108 0.314 0.164 0.646 0.164 0.98 0 1.654-1.346 3-3 3-0.334 0-0.666-0.056-0.98-0.164-0.253 0.484-0.462 0.989-0.622 1.51 0.974 0.512 1.602 1.527 1.602 2.655s-0.628 2.142-1.602 2.655c0.16 0.52 0.369 1.026 0.622 1.51 0.314-0.108 0.646-0.164 0.98-0.164 1.654 0 3 1.346 3 3 0 0.334-0.056 0.666-0.164 0.98 0.484 0.253 0.989 0.462 1.51 0.622 0.512-0.974 1.527-1.602 2.655-1.602z"
-                      ></path>
-                      <path
-                        fill="#ffffff"
-                        d="M10 13c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3zM10 8c-1.103 0-2 0.897-2 2s0.897 2 2 2c1.103 0 2-0.897 2-2s-0.897-2-2-2z"
-                      ></path>
-                    </svg>
+                    <ImVideoCamera />
                   </div>
-                  <div className="mt-2 text-lg poppins">
-                    {" "}
-                    Mobile Application Development
-                  </div>
+                  <div className="mt-2 text-lg poppins"> Animation Design</div>
                   <div className="text-[#a1a1a1]">
-                    Turning your problem solving ideas to an operational app.{" "}
+                    {`Elevate your storytelling with animation. Engage your
+                    audience with dynamic and eye-catching animations that
+                    convey your message in a unique and captivating way. We
+                    bring your ideas to life!`}
                   </div>
                 </div>
                 <div className="flex flex-col items-center py-6 card gap-y-3 bg-another-cards">
                   <div className="icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill="#ffffff"
-                        d="M17.854 5.646l-4.5-4.5c-0.094-0.094-0.221-0.146-0.354-0.146h-9.5c-0.827 0-1.5 0.673-1.5 1.5v16c0 0.827 0.673 1.5 1.5 1.5h13c0.827 0 1.5-0.673 1.5-1.5v-12.5c0-0.133-0.053-0.26-0.146-0.354zM16.793 6h-3.293c-0.276 0-0.5-0.224-0.5-0.5v-3.293l3.793 3.793zM16.5 19h-13c-0.276 0-0.5-0.224-0.5-0.5v-16c0-0.276 0.224-0.5 0.5-0.5h8.5v3.5c0 0.827 0.673 1.5 1.5 1.5h3.5v11.5c0 0.276-0.224 0.5-0.5 0.5z"
-                      ></path>
-                      <path
-                        fill="#ffffff"
-                        d="M11.5 13h-2.5v-2.5c0-0.276-0.224-0.5-0.5-0.5s-0.5 0.224-0.5 0.5v2.5h-2.5c-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5h2.5v2.5c0 0.276 0.224 0.5 0.5 0.5s0.5-0.224 0.5-0.5v-2.5h2.5c0.276 0 0.5-0.224 0.5-0.5s-0.224-0.5-0.5-0.5z"
-                      ></path>
-                    </svg>
+                    <SlScreenSmartphone />
                   </div>
-                  <div className="mt-2 text-lg poppins"> Digital Marketing</div>
+                  <div className="mt-2 text-lg poppins">
+                    {" "}
+                    Social Media Marketing{" "}
+                  </div>
                   <div className="text-[#a1a1a1]">
-                    Result driven marketing strategies, content creation and SEO
-                    writing.
+                    {`The power of social media can't be underestimated. We're
+                    experts in creating and managing social media campaigns that
+                    engage your audience, build your brand, and drive
+                    conversions. Let's make your social presence remarkable.`}
                   </div>
                 </div>
               </div>
@@ -737,11 +687,11 @@ const Home = () => {
                   </div>
                   <div className="mt-2 ml-auto right-content md:mt-0">
                     <div className="font-semibold title poppins">
-                      Set Everything Up with ease
+                      Customization
                     </div>
                     <div className="title text-[#a1a1a1] mt-4">
-                      With a great project managment system, be rest assured
-                      your projects are treated as priority and urgent.
+                      We tailor our services to your unique business needs and
+                      goals.
                     </div>
                   </div>
                 </div>
@@ -776,11 +726,89 @@ const Home = () => {
                   </div>
                   <div className="mt-2 right-content md:mt-0">
                     <div className="font-semibold title poppins">
-                      A Seamless UI Experience
+                      Results-Driven
                     </div>
                     <div className="title text-[#a1a1a1] mt-4">
-                      Giving you a nice feel as you navigate through your apps,
-                      We are very detailed on our UI/UX systems.
+                      Our focus is on delivering tangible results that boost
+                      your brand and bottom line.
+                    </div>
+                  </div>
+                </div>
+                <div className="single3 md:flex md:w-full">
+                  <div className="checkmark md:w-[12%] md:mt-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="56"
+                      height="41"
+                      viewBox="0 0 56 41"
+                      fill="none"
+                    >
+                      <path
+                        d="M3 19L20.5 36L52.5 3"
+                        stroke="url(#paint3_linear)"
+                        strokeWidth="7"
+                      ></path>
+                      <defs>
+                        <linearGradient
+                          id="paint3_linear"
+                          x1="7"
+                          y1="41"
+                          x2="59"
+                          y2="3"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stopColor="#FF3834"></stop>
+                          <stop offset="0.905999" stopColor="#FF7133"></stop>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div className="mt-2 right-content md:mt-0">
+                    <div className="font-semibold title poppins">
+                      Creativity
+                    </div>
+                    <div className="title text-[#a1a1a1] mt-4">
+                      We think outside the box to create memorable designs and
+                      campaigns.
+                    </div>
+                  </div>
+                </div>
+                <div className="single4 md:flex md:w-full">
+                  <div className="checkmark md:w-[12%] md:mt-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="56"
+                      height="41"
+                      viewBox="0 0 56 41"
+                      fill="none"
+                    >
+                      <path
+                        d="M3 19L20.5 36L52.5 3"
+                        stroke="url(#paint3_linear)"
+                        strokeWidth="7"
+                      ></path>
+                      <defs>
+                        <linearGradient
+                          id="paint3_linear"
+                          x1="7"
+                          y1="41"
+                          x2="59"
+                          y2="3"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stopColor="#FF3834"></stop>
+                          <stop offset="0.905999" stopColor="#FF7133"></stop>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div className="mt-2 right-content md:mt-0">
+                    <div className="font-semibold title poppins">
+                      Collaboration
+                    </div>
+                    <div className="title text-[#a1a1a1] mt-4">
+                      We work closely with you to ensure your vision is brought
+                      to life.
                     </div>
                   </div>
                 </div>
@@ -806,8 +834,10 @@ const Home = () => {
               Perfect Technology Solution For All Medium Business
             </div>
             <div className="text-[#696969]">
-              We pay kin attention to your ideas for your project and give you
-              suggestions and solutions from our experience and expertise.
+              {`Don't wait to take your digital presence to the next level. Get in
+              touch with us today, and let's create a lasting impact together.
+              Your journey to online success starts with [Your Digital Agency
+              Name].`}
             </div>
             <div className="flex flex-col mt-6 progresses gap-y-6">
               <div className="w-full progress ">
