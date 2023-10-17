@@ -413,9 +413,9 @@ const Home = () => {
               We Provide Digital Marketing Solutions For Businesses.
             </div>
             <div className="text-[#696969] mt-2">
-              We're an agency that provides tailored digital marketing solutions
+              {`We're an agency that provides tailored digital marketing solutions
               for businesses across various industries, including e-commerce,
-              healthcare, technology startups, and more.
+              healthcare, technology startups, and more.`}
             </div>
             <div className="w-full mt-3 segments">
               <div className="flex items-start justify-between w-full segment">
@@ -451,10 +451,10 @@ const Home = () => {
                     Software Solutions
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                    We're not just a digital agency, we're your software
+                    {`We're not just a digital agency, we're your software
                     solution partners. From crafting exceptional websites to
                     delivering top-notch user experiences, we excel at turning
-                    potential clients into loyal customers.
+                    potential clients into loyal customers.`}
                   </div>
                 </div>
               </div>
@@ -493,10 +493,10 @@ const Home = () => {
                     Budget-Friendly Pricing
                   </div>
                   <div className="body-segment text-[#696969] mt-3 md:mt-4">
-                    Quality shouldn't break the bank. We offer affordable
+                    {`Quality shouldn't break the bank. We offer affordable
                     software services that turn your creative ideas into
                     reality. Your digital success is our priority, and we make
-                    it accessible to businesses of all sizes.
+                    it accessible to businesses of all sizes.`}
                   </div>
                 </div>
               </div>
