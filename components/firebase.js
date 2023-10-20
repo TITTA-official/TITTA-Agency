@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC-P2HacDMN41K0dJKraopQwzBUPoxCyFo",
-  authDomain: "titta-contacts.firebaseapp.com",
-  projectId: "titta-contacts",
-  storageBucket: "titta-contacts.appspot.com",
-  messagingSenderId: "124823311119",
-  appId: "1:124823311119:web:cb56f35d825d1bb249a47a",
-  measurementId: "G-GXGHSQ5ET1"
+  apiKey: "AIzaSyCrSHFuXcUwCSNddFaWRkSJMtdfUBpXjcY",
+  authDomain: "titta-s-contacts.firebaseapp.com",
+  projectId: "titta-s-contacts",
+  storageBucket: "titta-s-contacts.appspot.com",
+  messagingSenderId: "216447438884",
+  appId: "1:216447438884:web:7b396d764a251b21b7c8b1",
+  measurementId: "G-Q25HR6WHFL"
 };
 
 const app = initializeApp(firebaseConfig);

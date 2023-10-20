@@ -9,6 +9,7 @@ import MenuToggler from "../components/MenuToggler";
 import Navbar from "../components/Navbar";
 import Navigation from "../components/Navigation";
 import { sanityClient, urlFor } from "../sanity";
+import Popup from "../components/Popup";
 
 const sidebarVariants = {
   // open: {opacity: 1, x:0, display:'block'},
@@ -36,6 +37,7 @@ export default function Blog({ posts }) {
   return (
     <>
       <main className="relative">
+      <Popup/>
         <header className="w-screen sticky top-0 z-[999] bg-white shadow-xl poppins">
           <div className="relative top-0 left-0 right-0 z-50 flex items-center justify-between w-full max-w-6xl px-4 py-2 bg-white md:mx-auto sm:mx-auto ">
             <Navbar />

@@ -9,17 +9,13 @@ import MenuToggler from "../components/MenuToggler";
 import Navbar from "../components/Navbar";
 import Navigation from "../components/Navigation";
 import styles from "../styles/Home.module.css";
-import { GrFormClose } from "react-icons/gr";
-import { IconContext } from "react-icons";
 import { event } from "nextjs-google-analytics";
-import { doc, updateDoc, arrayUnion } from "firebase/firestore";
-import { db } from "../components/firebase";
-import { TfiEmail } from "react-icons/tfi";
 import { BsGlobe2 } from "react-icons/bs";
 import { BsPalette } from "react-icons/bs";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { ImVideoCamera } from "react-icons/im";
 import { SlScreenSmartphone } from "react-icons/sl";
+import Popup from "../components/Popup";
 
 const sidebarVariants = {
   // open: {opacity: 1, x:0, display:'block'},
@@ -107,90 +103,10 @@ const Home = () => {
     }
   };
 
-  const [popup, setPopup] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setPopup(true);
-    }, 10000);
-  }, []);
-
-  const [email, setEmail] = useState("");
-  const [whatsapp, setWhatsapp] = useState("");
-
   return (
     <>
       <main className="relative w-full ">
-        <div
-          className={`fixed transition-all duration-500 z-20 top-0 ${
-            popup ? "left-0" : "left-[-100%]"
-          } w-full h-full bg-black opacity-40`}
-        ></div>
-        <div
-          className={`fixed transition-all duration-500 z-30 ${
-            popup ? "left-0 md:left-[15vw]" : "left-[-100%]"
-          } md:top-[15vh] top-[25vh] w-[100vw] md:w-[70vw] h-[50vh] md:h-[70vh] rounded-[20px] bg-white popup flex flex-col md:flex-row items-center justify-center`}
-        >
-          <IconContext.Provider value={{ color: "#0a2761", size: "30px" }}>
-            <div className="absolute top-[20px] right-[20px] md:top-[-11px] md:right-[-11px] bg-white rounded-full shadow-sm shadow-black">
-              <GrFormClose onClick={() => setPopup(false)} />
-            </div>
-          </IconContext.Provider>
-
-          <IconContext.Provider value={{ color: "white", size: "50px" }}>
-            <div className="bg-gradient-to-r from-[#ff3834] to-[#ff7133] static md:absolute rounded-full p-[20px] shadow-sm shadow-black mt-[-45px] md:left-[-45px] md:top-[50px]">
-              <TfiEmail />
-            </div>
-          </IconContext.Provider>
-
-          <div className="px-[40px] w-[50%] h-full bg-gradient-to-b from-[#3e1786] to-[#0a51c7] hidden lg:flex flex-col text-white items-center justify-center">
-            <div className="text-[28px] font-semibold">SUBSCRIBE TO OUR</div>
-            <div className="text-[56px] font-bold leading-[60px]">
-              Newsletter
-            </div>
-            <div className="text-[18px] italic text-center mt-[30px]">
-              {`"...for exclusive content, early access to updates, special offers,
-              personalized recommendations, and a chance to join a like-minded
-              community. Don't miss out, join us today!"`}
-            </div>
-          </div>
-          <div className="lg:px-[40px] lg:pt-[100px] lg:w-[50%] w-full h-full">
-            <div className="lg:p-[40px] p-[20px] flex flex-col lg:items-end items-center justify-center">
-              <div className="text-[16px] font-semibold static lg:hidden">
-                SUBSCRIBE TO OUR
-              </div>
-              <div className="text-[32px] font-bold leading-[30px] static lg:hidden">
-                Newsletter
-              </div>
-              <input
-                className="md:w-full mt-[30px] w-[250px] h-[40px] bg-[#e9e9e9] p-[10px] mb-[20px]"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-              <input
-                className="md:w-full w-[250px] bg-[#e9e9e9] p-[10px] mb-[30px]"
-                placeholder="Whatsapp (optional)"
-                value={whatsapp}
-                onChange={(e) => {
-                  setWhatsapp(e.target.value);
-                }}
-              />
-              <button
-                className="bg-gradient-to-r from-[#ff3834] to-[#ff7133] py-[10px] px-[20px] text-white font-bold"
-                onClick={() => {
-                  updateDoc(doc(db, "User", "Contact"), {
-                    contacts: arrayUnion({ email: email, whatsapp: whatsapp }),
-                  });
-                  setPopup(false);
-                }}
-              >
-                Submit
-              </button>
-            </div>
-          </div>
-        </div>
+        <Popup/>
         <header
           className={`navbar transition-all duration-500 ${
             changeNav ? "bg-white text-black" : "text-white bg-transparent"
@@ -836,8 +752,7 @@ const Home = () => {
             <div className="text-[#696969]">
               {`Don't wait to take your digital presence to the next level. Get in
               touch with us today, and let's create a lasting impact together.
-              Your journey to online success starts with [Your Digital Agency
-              Name].`}
+              Your journey to online success starts with TITTA Agency.`}
             </div>
             <div className="flex flex-col mt-6 progresses gap-y-6">
               <div className="w-full progress ">
