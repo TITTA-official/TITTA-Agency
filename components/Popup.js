@@ -56,7 +56,7 @@ export default function Popup() {
             </div>
             <div className="w-full text-left text-[14px] md:text-[16px]">Name</div>
             <input
-              className="w-full text-[14px] md:text-[16px] h-[30px] md:h-[40px] bg-[#e9e9e9] p-[10px] mb-[10px] md:mb-[20px]"
+              className="w-full text-[14px] md:text-[16px] h-[30px] bg-[#e9e9e9] p-[10px] mb-[10px] md:mb-[16px]"
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
@@ -64,7 +64,7 @@ export default function Popup() {
             />
             <div className="w-full text-left text-[14px] md:text-[16px]">Email Address</div>
             <input
-              className="w-full h-[30px] text-[14px] md:text-[16px] md:h-[40px] bg-[#e9e9e9] p-[10px] mb-[10px] md:mb-[20px] "
+              className="w-full h-[30px] text-[14px] md:text-[16px] bg-[#e9e9e9] p-[10px] mb-[10px] md:mb-[16px] "
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -72,7 +72,7 @@ export default function Popup() {
             />
             <div className="w-full text-left text-[14px] md:text-[16px]">Type of Business</div>
             <input
-              className="w-full h-[30px] text-[14px] md:text-[16px] md:h-[40px] bg-[#e9e9e9] p-[10px] mb-[10px] md:mb-[20px]"
+              className="w-full h-[30px] text-[14px] md:text-[16px] bg-[#e9e9e9] p-[10px] mb-[10px] md:mb-[16px]"
               placeholder="E.g. Restaurant, Real Estate"
               value={bus}
               onChange={(e) => {
@@ -81,7 +81,7 @@ export default function Popup() {
             />
             <div className="w-full text-left text-[14px] md:text-[16px]">{`Phone Number (optional)`}</div>
             <input
-              className="w-full h-[30px] text-[14px] md:text-[16px] md:h-[40px] bg-[#e9e9e9] p-[10px] mb-[10px] md:mb-[20px]"
+              className="w-full h-[30px] text-[14px] md:text-[16px] bg-[#e9e9e9] p-[10px] mb-[10px] md:mb-[16px]"
               placeholder="E.g. Restaurant, Real Estate"
               value={phone}
               onChange={(e) => {
@@ -90,7 +90,7 @@ export default function Popup() {
             />
             <div className="w-full text-left text-[14px] md:text-[16px]">{`Company Name (optional)`}</div>
             <input
-              className="w-full h-[30px] text-[14px] md:text-[16px] md:h-[40px] bg-[#e9e9e9] p-[10px] mb-[20px]"
+              className="w-full h-[30px] text-[14px] md:text-[16px] bg-[#e9e9e9] p-[10px] mb-[20px]"
               placeholder="E.g. Restaurant, Real Estate"
               value={company}
               onChange={(e) => {
