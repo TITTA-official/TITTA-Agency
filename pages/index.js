@@ -195,7 +195,7 @@ const Home = () => {
               </div>
               <div className="flex items-center gap-4 btn-grp">
                 <a
-                  href="https://wa.me/message/KOBQXC4TEH5DP1"
+                  href="wa.me//+2348058179652"
                   className="text-base font-bold text-white bg-linear "
                 >
                   Start a Chat Now
@@ -479,7 +479,7 @@ const Home = () => {
             </div>
             <div className="right-content mt-3 md:mt-0 text-center w-full md:w-[25%]">
               <a
-                href="https://wa.me/message/KOBQXC4TEH5DP1"
+                href="wa.me//+2348058179652"
                 className="btn text-white text-lg mt-6 block bg-linear font-bold w-[180px] mx-auto"
               >
                 Reach Out
@@ -837,7 +837,7 @@ const Home = () => {
               </span>
             </div>
             <a
-              href="https://wa.me/message/KOBQXC4TEH5DP1"
+              href="wa.me//+2348058179652"
               className="btn text-white text-lg block mt-6 bg-linear font-bold w-[11rem] mx-auto"
             >
               Start a Project
