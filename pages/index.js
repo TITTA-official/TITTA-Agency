@@ -15,7 +15,7 @@ import { BsPalette } from "react-icons/bs";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { ImVideoCamera } from "react-icons/im";
 import { SlScreenSmartphone } from "react-icons/sl";
-import Popup from "../components/Popup";
+import TawkMessenger from "@tawk.to/tawk-messenger-react";
 
 const sidebarVariants = {
   // open: {opacity: 1, x:0, display:'block'},
@@ -105,8 +105,8 @@ const Home = () => {
 
   return (
     <>
+      <TawkMessenger propertyId="66167e481ec1082f04e0cf0d" widgetId="1hr3tqjlm"/>
       <main className="relative w-full ">
-        <Popup/>
         <header
           className={`navbar transition-all duration-500 ${
             changeNav ? "bg-white text-black" : "text-white bg-transparent"
